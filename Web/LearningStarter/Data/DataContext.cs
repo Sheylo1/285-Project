@@ -8,9 +8,11 @@ namespace LearningStarter.Data
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
+
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
