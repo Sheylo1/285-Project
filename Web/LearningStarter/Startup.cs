@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using LearningStarter.Data;
 using LearningStarter.Entities;
@@ -92,7 +93,7 @@ namespace LearningStarter
         {
             dataContext.Database.EnsureDeleted();
             dataContext.Database.EnsureCreated();
-            
+
             app.UseHsts();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -132,23 +133,78 @@ namespace LearningStarter
                 {
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:3001");
                 }
+
             });
-
-            var numUsers = dataContext.Users.Count();
-
-            if (numUsers == 0)
+        SeedUsers(dataContext);
+            SeedEmployees(dataContext);
+        }
+        public void SeedUsers(DataContext dataContext)
             {
+                var numUsers = dataContext.Users.Count();
+
+                if (numUsers == 0)
+                {
                 var seededUser = new User
                 {
+                    CreatedAt = DateTimeOffset.Now,
                     FirstName = "Seeded",
                     LastName = "User",
                     Username = "admin",
-                    Password = "password"
+                    Password = "password",
+                    AccountBalance = 1250,
+                    PaymentsToEscrow = 15,
+                    Email = "JohnSmith@selu.edu",
+                    PhoneNumber = 225666666,
+                    DateOfBirth = "10-28-2002",
+                    BetHistory = "chart of all bets",
+                    Transactions = "chart of all transactions",
+                    Socials = "instagram or something, profile"
                 };
-                
                 dataContext.Users.Add(seededUser);
                 dataContext.SaveChanges();
+                }
             }
-        }
+        public void SeedEmployees(DataContext dataContext)
+        {
+            
+            if (!dataContext.Employees.Any())
+            {
+                var seededUser = new User
+                {
+                    CreatedAt = DateTimeOffset.Now,
+                    FirstName = "Seeded",
+                    LastName = "User",
+                    Username = "admin",
+                    Password = "password",
+                    AccountBalance = 1250,
+                    PaymentsToEscrow = 15,
+                    Email = "JohnSmith@selu.edu",
+                    PhoneNumber = 225666666,
+                    DateOfBirth = "10-28-2002",
+                    BetHistory ="chart of all bets",
+                    Transactions = "chart of all transactions",
+                    Socials = "instagram or something, profile"
+
+                };
+                dataContext.Users.Add(seededUser);
+
+                var seededEmployee = new Employee
+                {
+                    Positions = "CEO",
+                    Salary = 12000,
+                    PayRate = 12,
+                    Employed = true,
+                    User = seededUser
+                };
+
+
+                dataContext.Employees.Add(seededEmployee);
+                dataContext.SaveChanges();
+            }
+            }
+
+            
     }
+
+
 }

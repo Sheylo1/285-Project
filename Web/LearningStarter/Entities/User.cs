@@ -9,7 +9,8 @@ namespace LearningStarter.Entities
         [JsonIgnore] 
         public int Id { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
-        public DateTimeOffset ClosedAt { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTimeOffset DeletedDate { get; set; }
         public int AccountBalance { get; set; }
         public int PaymentsToEscrow { get; set; }
 
@@ -24,12 +25,15 @@ namespace LearningStarter.Entities
         public string BetHistory { get; set; }
         public string Transactions { get; set; }
         public string Socials { get; set; }
+
+        public List<Employee> Employees { get; set; } = new List<Employee>();
     }
 
     public class UserCreateDto
     {
         public DateTimeOffset CreatedAt { get; set; }
-        public DateTimeOffset ClosedAt { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTimeOffset DeletedDate { get; set; }
         public int AccountBalance { get; set; }
         public int PaymentsToEscrow { get; set; }
 
@@ -50,7 +54,8 @@ namespace LearningStarter.Entities
     {
         public int Id { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
-        public DateTimeOffset ClosedAt { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTimeOffset DeletedDate { get; set; }
         public int AccountBalance { get; set; }
         public int PaymentsToEscrow { get; set; }
 
@@ -71,7 +76,7 @@ namespace LearningStarter.Entities
     {
         public int Id { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
-        public DateTimeOffset ClosedAt { get; set; }
+        public bool IsDeleted { get; set; }
         public int AccountBalance { get; set; }
         public int PaymentsToEscrow { get; set; }
 

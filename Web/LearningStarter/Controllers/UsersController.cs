@@ -27,9 +27,20 @@ namespace LearningStarter.Controllers
                 .Select(x => new UserGetDto
                 {
                     Id = x.Id,
+                    CreatedAt = x.CreatedAt,
+                    IsDeleted = x.IsDeleted,
                     FirstName = x.FirstName,
                     LastName = x.LastName,
-                    Username = x.Username
+                    Username = x.Username,
+                    AccountBalance = x.AccountBalance,
+                    PaymentsToEscrow = x.PaymentsToEscrow,
+                    Email = x.Email,
+                    Password = x.Password,
+                    PhoneNumber = x.PhoneNumber,
+                    DateOfBirth = x.DateOfBirth,
+                    BetHistory = x.BetHistory,
+                    Transactions = x.Transactions,
+                    Socials = x.Socials
                 })
                 .ToList();
 
@@ -53,9 +64,19 @@ namespace LearningStarter.Controllers
             var userGetDto = new UserGetDto
             {
                 Id = user.Id,
+                CreatedAt = user.CreatedAt,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                Username = user.Username
+                Username = user.Username,
+                AccountBalance = user.AccountBalance,
+                PaymentsToEscrow = user.PaymentsToEscrow,
+                Email = user.Email,
+                Password = user.Password,
+                PhoneNumber = user.PhoneNumber,
+                DateOfBirth = user.DateOfBirth,
+                BetHistory = user.BetHistory,
+                Transactions = user.Transactions,
+                Socials = user.Socials
             };
 
             response.Data = userGetDto;
@@ -89,6 +110,31 @@ namespace LearningStarter.Controllers
                 response.AddError("password", "Password cannot be empty.");
             }
 
+            if (userCreateDto.Email == null || userCreateDto.Email == "")
+            {
+                response.AddError("email", "Email cannot be empty.");
+            }
+
+            if (userCreateDto.DateOfBirth == null || userCreateDto.DateOfBirth == "")
+            {
+                response.AddError("dateofbirth", "DateOfBirth cannot be empty.");
+            }
+
+            if (userCreateDto.BetHistory == null || userCreateDto.BetHistory == "")
+            {
+                response.AddError("bethistory", "BetHistory cannot be empty.");
+            }
+
+            if (userCreateDto.Transactions == null || userCreateDto.Transactions == "")
+            {
+                response.AddError("transactions", "Transactions cannot be empty.");
+            }
+
+            if (userCreateDto.Socials == null || userCreateDto.Socials == "")
+            {
+                response.AddError("socials", "Socials cannot be empty.");
+            }
+
             if (response.HasErrors)
             {
                 return BadRequest(response);
@@ -96,10 +142,19 @@ namespace LearningStarter.Controllers
 
             var userToCreate = new User
             {
+                CreatedAt = userCreateDto.CreatedAt,
                 FirstName = userCreateDto.FirstName,
                 LastName = userCreateDto.LastName,
                 Username = userCreateDto.Username,
+                AccountBalance = userCreateDto.AccountBalance,
+                PaymentsToEscrow = userCreateDto.PaymentsToEscrow,
+                Email = userCreateDto.Email,
                 Password = userCreateDto.Password,
+                PhoneNumber = userCreateDto.PhoneNumber,
+                DateOfBirth = userCreateDto.DateOfBirth,
+                BetHistory = userCreateDto.BetHistory,
+                Transactions = userCreateDto.Transactions,
+                Socials = userCreateDto.Socials
             };
 
             _context.Users.Add(userToCreate);
@@ -108,9 +163,19 @@ namespace LearningStarter.Controllers
             var userGetDto = new UserGetDto
             {
                 Id = userToCreate.Id,
+                CreatedAt = userToCreate.CreatedAt,
                 FirstName = userToCreate.FirstName,
                 LastName = userToCreate.LastName,
-                Username = userToCreate.Username
+                Username = userToCreate.Username,
+                AccountBalance = userToCreate.AccountBalance,
+                PaymentsToEscrow = userToCreate.PaymentsToEscrow,
+                Email = userToCreate.Email,
+                Password = userToCreate.Password,
+                PhoneNumber = userToCreate.PhoneNumber,
+                DateOfBirth = userToCreate.DateOfBirth,
+                BetHistory = userToCreate.BetHistory,
+                Transactions = userToCreate.Transactions,
+                Socials = userToCreate.Socials
             };
 
             response.Data = userGetDto;
@@ -139,24 +204,49 @@ namespace LearningStarter.Controllers
                 return NotFound(response);
             }
 
-            if (user.FirstName == null || user.FirstName == "")
+            if (userToEdit.FirstName == null || userToEdit.FirstName == "")
             {
                 response.AddError("firstName", "First name cannot be empty.");
             }
 
-            if (user.LastName == null || user.LastName == "")
+            if (userToEdit.LastName == null || userToEdit.LastName == "")
             {
-                response.AddError("lirstName", "Last name cannot be empty.");
+                response.AddError("lastName", "Last name cannot be empty.");
             }
 
-            if (user.Username == null || user.Username == "")
+            if (userToEdit.Username == null || userToEdit.Username == "")
             {
                 response.AddError("userName", "User name cannot be empty.");
             }
 
-            if (user.Password == null || user.Password == "")
+            if (userToEdit.Password == null || userToEdit.Password == "")
             {
                 response.AddError("password", "Password cannot be empty.");
+            }
+
+            if (userToEdit.Email == null || userToEdit.Email == "")
+            {
+                response.AddError("email", "Email cannot be empty.");
+            }
+
+            if (userToEdit.DateOfBirth == null || userToEdit.DateOfBirth == "")
+            {
+                response.AddError("dateofbirth", "DateOfBirth cannot be empty.");
+            }
+
+            if (userToEdit.BetHistory == null || userToEdit.BetHistory == "")
+            {
+                response.AddError("bethistory", "BetHistory cannot be empty.");
+            }
+
+            if (userToEdit.Transactions == null || userToEdit.Transactions == "")
+            {
+                response.AddError("transactions", "Transactions cannot be empty.");
+            }
+
+            if (userToEdit.Socials == null || userToEdit.Socials == "")
+            {
+                response.AddError("socials", "Socials cannot be empty.");
             }
 
             if (response.HasErrors)
@@ -168,6 +258,11 @@ namespace LearningStarter.Controllers
             userToEdit.LastName = user.LastName;
             userToEdit.Username = user.Username;
             userToEdit.Password = user.Password;
+            userToEdit.Email = user.Email;
+            userToEdit.DateOfBirth = user.DateOfBirth;
+            userToEdit.BetHistory = user.BetHistory;
+            userToEdit.Transactions = user.Transactions;
+            userToEdit.Socials = user.Socials;
 
             _context.SaveChanges();
 
@@ -176,7 +271,13 @@ namespace LearningStarter.Controllers
                 Id = userToEdit.Id,
                 FirstName = userToEdit.FirstName,
                 LastName = userToEdit.LastName,
-                Username = userToEdit.Username
+                Username = userToEdit.Username,
+                Email = userToEdit.Email,
+                DateOfBirth = userToEdit.DateOfBirth,
+                BetHistory = userToEdit.BetHistory,
+                Transactions = userToEdit.Transactions,
+                Socials = user.Socials
+
             };
 
             response.Data = userGetDto;
