@@ -35,7 +35,7 @@
         public decimal Amount { get; set; }
     }
 
-    public class TransactionUpdateDto
+    public class TransactionUsersUpdateDto
     {
         public int TransactionsId { get; set; }
 
@@ -44,7 +44,7 @@
         public decimal Amount { get; set; }
     }
 
-    public class TransactionListingDto
+    public class TransactionUsersListingDto
     {
         public int TransactionsId { get; set; }
 
