@@ -26,10 +26,8 @@ namespace LearningStarter.Controllers
                 .Select(employee => new EmployeeGetDto
                 {
                     Id = employee.Id,
-                    PayRate = employee.PayRate,
                     Salary = employee.Salary,
                     UserId = employee.UserId,
-                    Positions = employee.Positions,
                     Employed = employee.Employed
                 })
                 .ToList();
@@ -48,10 +46,8 @@ namespace LearningStarter.Controllers
                 .Select(employee => new EmployeeGetDto
                 {
                     Id = employee.Id,
-                    PayRate = employee.PayRate,
                     Salary = employee.Salary,
                     UserId = employee.UserId,
-                    Positions = employee.Positions,
                     Employed = employee.Employed
                 })
                 .FirstOrDefault(employee => employee.Id == id);
@@ -71,10 +67,6 @@ namespace LearningStarter.Controllers
         {
             var response = new Response();
 
-            if (employeeCreateDto.PayRate <= 0)
-            {
-                response.AddError("payrate", "PayRate cannot be negative.");
-            }
             if (employeeCreateDto.Salary <= 0)
             {
                 response.AddError("salary", "Salary cannot be negative.");
@@ -82,11 +74,6 @@ namespace LearningStarter.Controllers
             if (employeeCreateDto.UserId <= 0)
             {
                 response.AddError("userid", "There must be a UserId.");
-            }
-
-            if (employeeCreateDto.Positions == null || employeeCreateDto.Positions == "")
-            {
-                response.AddError("positions", "Positions may not be empty.");
             }
 
 
@@ -97,10 +84,8 @@ namespace LearningStarter.Controllers
 
             var employeeToAdd = new Employee
             {
-                PayRate = employeeCreateDto.PayRate,
                 Salary = employeeCreateDto.Salary,
                 UserId = employeeCreateDto.UserId,
-                Positions = employeeCreateDto.Positions,
                 Employed = employeeCreateDto.Employed
             };
 
@@ -111,9 +96,7 @@ namespace LearningStarter.Controllers
             {
                 Id = employeeToAdd.Id,
                 UserId = employeeToAdd.UserId,
-                Positions = employeeToAdd.Positions,
                 Salary = employeeToAdd.Salary,
-                PayRate = employeeToAdd.PayRate,
                 Employed = employeeToAdd.Employed
             };
 
@@ -137,10 +120,7 @@ namespace LearningStarter.Controllers
             {
                 response.AddError("id", "Employee not found");
             }
-            if (employeeToUpdate.PayRate <= 0)
-            {
-                response.AddError("payrate", "PayRate cannot be negative.");
-            }
+
             if (employeeToUpdate.Salary <= 0)
             {
                 response.AddError("salary", "Salary cannot be negative.");
@@ -150,20 +130,15 @@ namespace LearningStarter.Controllers
                 response.AddError("userid", "There must be a UserId.");
             }
 
-            if (employeeToUpdate.Positions == null || employeeToUpdate.Positions == "")
-            {
-                response.AddError("positions", "Positions may not be empty.");
-            }
+
 
             if (response.HasErrors)
             {
                 return BadRequest(response);
             }
 
-            employeeToUpdate.PayRate = employeeUpdateDto.PayRate;
                 employeeToUpdate.Salary = employeeUpdateDto.Salary;
                 employeeToUpdate.UserId = employeeUpdateDto.UserId;
-                employeeToUpdate.Positions = employeeUpdateDto.Positions;
                 employeeToUpdate.Employed = employeeUpdateDto.Employed;
 
             _dataContext.SaveChanges();
@@ -171,10 +146,8 @@ namespace LearningStarter.Controllers
             var employeeToReturn = new EmployeeGetDto
             {
                 Id = employeeToUpdate.Id,
-                PayRate = employeeToUpdate.PayRate,
                 Salary = employeeToUpdate.Salary,
                 UserId = employeeToUpdate.UserId,
-                Positions = employeeToUpdate.Positions,
                 Employed = employeeToUpdate.Employed
 
             };
