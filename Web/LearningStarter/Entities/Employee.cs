@@ -7,10 +7,9 @@ namespace LearningStarter.Entities
     {
        public int Id { get; set; }
        public int UserId { get; set; }
-       public string Positions { get; set; }
+       public string PositionsId { get; set; }
 
         public decimal Salary { get; set; }
-        public decimal PayRate { get; set; }
         public bool Employed { get; set; }
 
         public User User { get; set; }
@@ -20,44 +19,50 @@ namespace LearningStarter.Entities
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public string Positions { get; set; }
+        public string PositionsId { get; set; }
 
         public decimal Salary { get; set; }
-        public decimal PayRate { get; set; }
         public bool Employed { get; set; }
+
+        public User User { get; set; }
 
     }
 
     public class EmployeeCreateDto
     {
+        public int Id { get; set; }
         public int UserId { get; set; }
-        public string Positions { get; set; }
+        public string PositionsId { get; set; }
 
         public decimal Salary { get; set; }
-       public decimal PayRate { get; set; }
         public bool Employed { get; set; }
+
+        public User User { get; set; }
 
     }
 
     public class EmployeeUpdateDto
     {
-        public int UserId{get; set;}
-        public string Positions{ get; set; }       
-        public decimal Salary{get; set; }
-        public decimal PayRate{get; set;}
-        public bool Employed { get; set;}
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public string PositionsId { get; set; }
+
+        public decimal Salary { get; set; }
+        public bool Employed { get; set; }
+
+        public User User { get; set; }
 
 
 
     }
     public class EmployeeListingDto
     {
-            public int Id { get; set; }
-            public int UserId { get; set; }
-            public string Positions { get; set; }
+        public int UserId { get; set; }
+        public string PositionsId { get; set; }
 
         public decimal Salary { get; set; }
-        public decimal PayRate { get; set; }
-            public bool Employed { get; set; }
+        public bool Employed { get; set; }
+
+        public User User { get; set; }
     }
 }

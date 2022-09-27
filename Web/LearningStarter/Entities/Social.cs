@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using LearningStarter.Controllers;
+using Microsoft.Extensions.Hosting;
 using System.Collections.Generic;
 
 namespace LearningStarter.Entities
@@ -11,6 +12,7 @@ namespace LearningStarter.Entities
         public int Notifications { get; set; }
         public int Reminders { get; set; }
 
+        public List<User> Users = new List<User>();
 
     }
     public class SocialGetDto
