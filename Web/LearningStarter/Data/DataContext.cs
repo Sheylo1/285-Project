@@ -10,7 +10,11 @@ namespace LearningStarter.Data
         {
         }
 
+
         public DbSet<User> Users { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<HouseSystem> HouseSystems { get; set; }
+        public DbSet<Position> Positions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
