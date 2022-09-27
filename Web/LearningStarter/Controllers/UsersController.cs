@@ -26,7 +26,6 @@ namespace LearningStarter.Controllers
                 .Users
                 .Select(x => new UserGetDto
                 {
-                    Id = x.Id,
                     CreatedDate = x.CreatedDate,
                     ClosedDate = x.ClosedDate,
                     FirstName = x.FirstName,
@@ -59,7 +58,6 @@ namespace LearningStarter.Controllers
 
             var userGetDto = new UserGetDto
             {
-                Id = user.Id,
                 CreatedDate = user.CreatedDate,
                 ClosedDate = user.ClosedDate,
                 FirstName = user.FirstName,
@@ -132,7 +130,6 @@ namespace LearningStarter.Controllers
 
             var userGetDto = new UserGetDto
             {
-                Id = userToCreate.Id,
                 CreatedDate = userToCreate.CreatedDate,
                 ClosedDate = userToCreate.ClosedDate,
                 FirstName = userToCreate.FirstName,
@@ -142,7 +139,7 @@ namespace LearningStarter.Controllers
                 Email = userToCreate.Email,
                 Password = userToCreate.Password,
                 PhoneNumber = userToCreate.PhoneNumber,
-                DateOfBirth = userToCreate.DateOfBirth,
+                DateOfBirth = userToCreate.DateOfBirth
             };
 
             response.Data = userGetDto;
@@ -200,23 +197,27 @@ namespace LearningStarter.Controllers
             {
                 return BadRequest(response);
             }
-
+            userToEdit.CreatedDate = user.CreatedDate;
+            userToEdit.ClosedDate = user.ClosedDate;
             userToEdit.FirstName = user.FirstName;
             userToEdit.LastName = user.LastName;
             userToEdit.Username = user.Username;
+            userToEdit.AccountBalance = user.AccountBalance;
             userToEdit.Password = user.Password;
             userToEdit.Email = user.Email;
             userToEdit.DateOfBirth = user.DateOfBirth;
-
 
             _context.SaveChanges();
 
             var userGetDto = new UserGetDto
             {
-                Id = userToEdit.Id,
+                CreatedDate = userToEdit.CreatedDate,
+                ClosedDate = userToEdit.ClosedDate,
                 FirstName = userToEdit.FirstName,
                 LastName = userToEdit.LastName,
                 Username = userToEdit.Username,
+                AccountBalance = userToEdit.AccountBalance,
+                Password = userToEdit.Password,
                 Email = userToEdit.Email,
                 DateOfBirth = userToEdit.DateOfBirth,
 

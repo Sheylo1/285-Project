@@ -9,6 +9,7 @@ namespace LearningStarter.Entities
        public int UserId { get; set; }
        public int PositionsId { get; set; }
 
+
         public decimal Salary { get; set; }
         public bool Employed { get; set; }
 
@@ -28,7 +29,6 @@ namespace LearningStarter.Entities
 
     public class EmployeeCreateDto
     {
-        public int Id { get; set; }
         public int UserId { get; set; }
         public int PositionsId { get; set; }
 
@@ -40,7 +40,6 @@ namespace LearningStarter.Entities
 
     public class EmployeeUpdateDto
     {
-        public int Id { get; set; }
         public int UserId { get; set; }
         public int PositionsId { get; set; }
 

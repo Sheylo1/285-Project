@@ -13,7 +13,9 @@ namespace LearningStarter.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Employee> Employees { get; set; }
-
+        public DbSet<BetTransaction> BetTransactions { get; set; }
+        public DbSet<TransactionsUser> TransactionssUsers { get; set; }
+        public DbSet<BetCategory> BetCategories { get; set; }
         public DbSet<Social> Socials { get; set; }
         public DbSet<Comment> Comments { get; set; }
 

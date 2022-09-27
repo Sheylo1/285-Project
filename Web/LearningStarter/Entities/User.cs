@@ -42,9 +42,7 @@ namespace LearningStarter.Entities
     }
 
     public class UserUpdateDto
-    {
-        public int Id { get; set; }
-        public DateTimeOffset CreatedDate { get; set; }
+    {        public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public decimal AccountBalance { get; set; }
         public string FirstName { get; set; }
@@ -58,9 +56,7 @@ namespace LearningStarter.Entities
     }
 
     public class UserGetDto
-    {
-        public int Id { get; set; }
-        public DateTimeOffset CreatedDate { get; set; }
+    {        public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public decimal AccountBalance { get; set; }
         public string FirstName { get; set; }
