@@ -18,7 +18,7 @@ namespace LearningStarter.Entities
 
         public decimal Amount { get; set; }
 
-        public varchar Result { get; set; }
+        public string Result { get; set; }
 
         public int HouseSystemsId { get; set; }
         public HouseSystem HouseSystem { get; set; }
@@ -47,7 +47,7 @@ namespace LearningStarter.Entities
 
         public decimal Amount { get; set; }
 
-        public varchar Result { get; set; }
+        public string Result { get; set; }
 
         public int HouseSystemsId { get; set; }
 
@@ -69,7 +69,7 @@ namespace LearningStarter.Entities
 
         public decimal Amount { get; set; }
 
-        public varchar Result { get; set; }
+        public string Result { get; set; }
 
         public int HouseSystemsId { get; set; }
 
@@ -90,7 +90,7 @@ namespace LearningStarter.Entities
 
         public decimal Amount { get; set; }
 
-        public varchar Result { get; set; }
+        public string Result { get; set; }
 
         public int HouseSystemsId { get; set; }
 
@@ -111,7 +111,7 @@ namespace LearningStarter.Entities
 
         public decimal Amount { get; set; }
 
-        public varchar Result { get; set; }
+        public string Result { get; set; }
 
         public int HouseSystemsId { get; set; }
 

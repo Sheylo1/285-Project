@@ -11,6 +11,9 @@ namespace LearningStarter.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<BetCategory> BetCategories { get; set; }
+        public DbSet<BetTransaction> BetTransactions { get; set; }
+        public DbSet<TransactionsUser> TransactionsUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
