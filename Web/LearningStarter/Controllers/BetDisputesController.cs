@@ -28,10 +28,10 @@ namespace LearningStarter.Controllers
                     Id = BetDisputes.Id,
                     BetId = BetDisputes.BetId,
                     Dispute = BetDisputes.Dispute,
-                    CreatedAt = BetDisputes.CreatedAt,
-                    ClosedAt = BetDisputes.ClosedAt,
+                    CreatedDate = BetDisputes.CreatedDate,
+                    ClosedDate = BetDisputes.ClosedDate,
                     EmployeeId = BetDisputes.EmployeeId,
-                    DisputeSolved = BetDisputes.DisputeSolved,
+                    IssueSolvedDate = BetDisputes.IssueSolvedDate,
 
                 })
                 .ToList();
