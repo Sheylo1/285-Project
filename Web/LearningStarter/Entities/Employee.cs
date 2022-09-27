@@ -7,7 +7,7 @@ namespace LearningStarter.Entities
     {
        public int Id { get; set; }
        public int UserId { get; set; }
-       public string PositionsId { get; set; }
+       public int PositionsId { get; set; }
 
         public decimal Salary { get; set; }
         public bool Employed { get; set; }
@@ -19,12 +19,10 @@ namespace LearningStarter.Entities
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public string PositionsId { get; set; }
+        public int PositionsId { get; set; }
 
         public decimal Salary { get; set; }
         public bool Employed { get; set; }
-
-        public User User { get; set; }
 
     }
 
@@ -32,12 +30,11 @@ namespace LearningStarter.Entities
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public string PositionsId { get; set; }
+        public int PositionsId { get; set; }
 
         public decimal Salary { get; set; }
         public bool Employed { get; set; }
 
-        public User User { get; set; }
 
     }
 
@@ -45,24 +42,18 @@ namespace LearningStarter.Entities
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public string PositionsId { get; set; }
+        public int PositionsId { get; set; }
 
         public decimal Salary { get; set; }
         public bool Employed { get; set; }
-
-        public User User { get; set; }
-
-
-
     }
     public class EmployeeListingDto
     {
         public int UserId { get; set; }
-        public string PositionsId { get; set; }
+        public int PositionsId { get; set; }
 
         public decimal Salary { get; set; }
         public bool Employed { get; set; }
 
-        public User User { get; set; }
     }
 }

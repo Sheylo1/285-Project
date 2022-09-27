@@ -39,7 +39,6 @@ namespace LearningStarter.Entities
         public string PhoneNumber { get; set; }
         public DateTimeOffset DateOfBirth { get; set; }
         public string SocialId { get; set; }
-        public Social Social { get; set; }
     }
 
     public class UserUpdateDto
@@ -56,7 +55,6 @@ namespace LearningStarter.Entities
         public string PhoneNumber { get; set; }
         public DateTimeOffset DateOfBirth { get; set; }
         public string SocialId { get; set; }
-        public Social Social { get; set; }
     }
 
     public class UserGetDto
@@ -73,7 +71,6 @@ namespace LearningStarter.Entities
         public string PhoneNumber { get; set; }
         public DateTimeOffset DateOfBirth { get; set; }
         public string SocialId { get; set; }
-        public Social Social { get; set; }
     }
 
     public class UserListingDto
@@ -89,6 +86,5 @@ namespace LearningStarter.Entities
         public string PhoneNumber { get; set; }
         public DateTimeOffset DateOfBirth { get; set; }
         public string SocialId { get; set; }
-        public Social Social { get; set; }
     }
 }
