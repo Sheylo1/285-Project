@@ -16,8 +16,8 @@ namespace LearningStarter.Entities
         public Boolean BetDisputeCall { get; set; }
         public int EscrowId { get; set; }
         public Escrow Escrow { get; set; }
-        public List<BetTransactions> BetTransactions { get; set; } = new List<BetTransactions>();
-        public List<BetDisputes> BetDisputes { get; set; } = new List<BetDisputes>();
+        public List<BetTransaction> BetTransactions { get; set; } = new List<BetTransaction>();
+        public List<BetDispute> BetDisputes { get; set; } = new List<BetDispute>();
     }
     
     public class BetsGetDto
