@@ -59,7 +59,6 @@ namespace LearningStarter.Controllers
 
             var userGetDto = new UserGetDto
             {
-                Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Username = user.Username

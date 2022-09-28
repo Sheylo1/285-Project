@@ -10,7 +10,7 @@ namespace LearningStarter.Entities
         public int Id { get; set; }
 
         public int BetId { get; set; } 
-        public Bet Bet { get; set; }
+        public Bets Bet { get; set; }
 
         public DateTimeOffset CreatedDate { get; set; }
 

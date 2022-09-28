@@ -12,7 +12,6 @@ namespace LearningStarter.Common
         {
             var userDto = new UserGetDto
             {
-                Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Username = user.Username,

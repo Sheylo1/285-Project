@@ -8,7 +8,7 @@ namespace LearningStarter.Entities
 
         public string Name { get; set; }
 
-        public List<Bet> Bets { get; set; } = new List<Bet>();
+        public List<Bets> Bets { get; set; } = new List<Bets>();
     }
 
     public class BetCategoryGetDto
