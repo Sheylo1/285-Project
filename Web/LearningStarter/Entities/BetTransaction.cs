@@ -10,7 +10,7 @@ namespace LearningStarter.Entities
         public int Id { get; set; }
 
         public int BetId { get; set; } 
-        public Bets Bet { get; set; }
+        public Bet Bet { get; set; }
 
         public DateTimeOffset CreatedDate { get; set; }
 
@@ -20,16 +20,16 @@ namespace LearningStarter.Entities
 
         public string Result { get; set; }
 
-        public int HouseSystemsId { get; set; }
+        public int HouseSystemId { get; set; }
         public HouseSystem HouseSystem { get; set; }
         
-        public int UsersId { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
 
-        public int EmployeesId { get; set; }
+        public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
 
-        public int TransactionsId { get; set; }
+        public int TransactionId { get; set; }
         public Transaction Transaction { get; set; }
 
 
@@ -49,13 +49,13 @@ namespace LearningStarter.Entities
 
         public string Result { get; set; }
 
-        public int HouseSystemsId { get; set; }
+        public int HouseSystemId { get; set; }
 
-        public int UsersId { get; set; }
+        public int UserId { get; set; }
 
-        public int EmployeesId { get; set; }
+        public int EmployeeId { get; set; }
 
-        public int TransactionsId { get; set; }
+        public int TransactionId { get; set; }
 
     }
 
@@ -71,13 +71,13 @@ namespace LearningStarter.Entities
 
         public string Result { get; set; }
 
-        public int HouseSystemsId { get; set; }
+        public int HouseSystemId { get; set; }
 
-        public int UsersId { get; set; }
+        public int UserId { get; set; }
 
-        public int EmployeesId { get; set; }
+        public int EmployeeId { get; set; }
 
-        public int TransactionsId { get; set; }
+        public int TransactionId { get; set; }
     }
 
     public class BetTransactionUpdateDto
@@ -92,13 +92,13 @@ namespace LearningStarter.Entities
 
         public string Result { get; set; }
 
-        public int HouseSystemsId { get; set; }
+        public int HouseSystemId { get; set; }
 
-        public int UsersId { get; set; }
+        public int UserId { get; set; }
 
-        public int EmployeesId { get; set; }
+        public int EmployeeId { get; set; }
 
-        public int TransactionsId { get; set; }
+        public int TransactionId { get; set; }
     }
 
     public class BetTransactionListingDto
@@ -113,12 +113,12 @@ namespace LearningStarter.Entities
 
         public string Result { get; set; }
 
-        public int HouseSystemsId { get; set; }
+        public int HouseSystemId { get; set; }
 
-        public int UsersId { get; set; }
+        public int UserId { get; set; }
 
-        public int EmployeesId { get; set; }
+        public int EmployeeId { get; set; }
 
-        public int TransactionsId { get; set; }
+        public int TransactionId { get; set; }
     }
 }

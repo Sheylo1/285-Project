@@ -11,8 +11,7 @@ namespace LearningStarter.Entities
         public Post Post { get; set; }
         public int Notifications { get; set; }
         public int Reminders { get; set; }
-
-        public List<User> Users = new List<User>();
+        public List<User> Users { get; set; } = new List<User>();
 
     }
     public class SocialGetDto

@@ -7,21 +7,18 @@ namespace LearningStarter.Entities
     public class Transaction
     {
         public int Id { get; set; }
-
-        public int UserId { get; set; }
-        public User User { get; set; }
         public decimal Amount { get; set; }
         public string PaymentType { get; set; }
 
         public DateTimeOffset CreatedAt { get; set; }
 
         public List<TransactionsUser> TransactionsUsers { get; set; } = new List<TransactionsUser>();
+        public List<BetTransaction> BetTransactions { get; set; } = new List<BetTransaction>(); 
 
 
     }
   public class TransactionGetDto{
         public int Id { get; set; }
-        public int UserId { get; set; }
         public decimal Amount { get; set; }
         public string PaymentType { get; set; }
 
@@ -30,7 +27,6 @@ namespace LearningStarter.Entities
     }
     public class TransactionCreateDto
 {
-        public int UserId { get; set; }
         public decimal Amount { get; set; }
         public string PaymentType { get; set; }
 
@@ -41,7 +37,6 @@ namespace LearningStarter.Entities
 
     public class TransactionUpdateDto
 {
-        public int UserId { get; set; }
         public decimal Amount { get; set; }
         public string PaymentType { get; set; }
 
@@ -50,7 +45,6 @@ namespace LearningStarter.Entities
     }
     public class TransactionListingDto
 {
-        public int UserId { get; set; }
         public decimal Amount { get; set; }
         public string PaymentType { get; set; }
 

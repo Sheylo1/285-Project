@@ -28,7 +28,7 @@ namespace LearningStarter.Controllers
                     Id = employee.Id,
                     Salary = employee.Salary,
                     UserId = employee.UserId,
-                    PositionsId = employee.PositionsId,
+                    PositionId = employee.PositionId,
                     Employed = employee.Employed
                 })
                 .ToList();
@@ -49,7 +49,7 @@ namespace LearningStarter.Controllers
                     Id = employee.Id,
                     Salary = employee.Salary,
                     UserId = employee.UserId,
-                    PositionsId = employee.PositionsId,
+                    PositionId = employee.PositionId,
                     Employed = employee.Employed
                 })
                 .FirstOrDefault(employee => employee.Id == id);
@@ -77,7 +77,7 @@ namespace LearningStarter.Controllers
             {
                 response.AddError("userid", "There must be a UserId.");
             }
-            if(employeeCreateDto.PositionsId <= 0)
+            if(employeeCreateDto.PositionId <= 0)
             {
                 response.AddError("positionsid", "There must be a PositionsId");
             }
@@ -92,7 +92,7 @@ namespace LearningStarter.Controllers
             {
                 Salary = employeeCreateDto.Salary,
                 UserId = employeeCreateDto.UserId,
-                PositionsId = employeeCreateDto.PositionsId,
+                PositionId = employeeCreateDto.PositionId,
                 Employed = employeeCreateDto.Employed
             };
 
@@ -103,7 +103,7 @@ namespace LearningStarter.Controllers
             {
                 Id = employeeToAdd.Id,
                 UserId = employeeToAdd.UserId,
-                PositionsId = employeeToAdd.PositionsId,
+                PositionId = employeeToAdd.PositionId,
                 Salary = employeeToAdd.Salary,
                 Employed = employeeToAdd.Employed
             };
@@ -138,7 +138,7 @@ namespace LearningStarter.Controllers
                 response.AddError("userid", "There must be a UserId.");
             }
 
-            if(employeeToUpdate.PositionsId <= 0)
+            if(employeeToUpdate.PositionId <= 0)
             {
                 response.AddError("positionsid", "There must be a PositionsId");
             }
@@ -152,7 +152,7 @@ namespace LearningStarter.Controllers
                 employeeToUpdate.Salary = employeeUpdateDto.Salary;
                 employeeToUpdate.UserId = employeeUpdateDto.UserId;
                 employeeToUpdate.Employed = employeeUpdateDto.Employed;
-            employeeToUpdate.PositionsId = employeeToUpdate.PositionsId;
+            employeeToUpdate.PositionId = employeeToUpdate.PositionId;
 
             _dataContext.SaveChanges();
 
@@ -161,7 +161,7 @@ namespace LearningStarter.Controllers
                 Id = employeeToUpdate.Id,
                 Salary = employeeToUpdate.Salary,
                 UserId = employeeToUpdate.UserId,
-                PositionsId = employeeToUpdate.PositionsId,
+                PositionId = employeeToUpdate.PositionId,
                 Employed = employeeToUpdate.Employed
 
             };

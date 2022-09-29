@@ -3,24 +3,24 @@ using System.Collections.Generic;
 
 namespace LearningStarter.Entities
 {
-    public class Bets
+    public class Bet
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int BetCatagoriesId { get; set; }
-        public BetCategory BetCatagories { get; set; }
+        public int BetCategoryId { get; set; }
+        public BetCategory BetCategory { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public int CommentId { get; set; }
         public Comment Comment { get; set; }
         public Boolean BetDisputeCall { get; set; }
-        public int EscrowId { get; set; }
-        public EscrowSystems Escrow { get; set; }
+        public int EscrowSystemId { get; set; }
+        public EscrowSystem EscrowSystem { get; set; }
         public List<BetTransaction> BetTransactions { get; set; } = new List<BetTransaction>();
-        public List<BetDisputes> BetDisputes { get; set; } = new List<BetDisputes>();
+        public List<BetDispute> BetDisputes { get; set; } = new List<BetDispute>();
     }
     
-    public class BetsGetDto
+    public class BetGetDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -33,7 +33,7 @@ namespace LearningStarter.Entities
         
     }
 
-    public class BetsCreateDto
+    public class BetCreateDto
     {
         public string Name { get; set; }
         public int BetCatagoriesId { get; set; }
@@ -45,7 +45,7 @@ namespace LearningStarter.Entities
         
     }
 
-    public class BetsUpdateDto
+    public class BetUpdateDto
     {
         public string Name { get; set; }
         public int BetCatagoriesId { get; set; }
@@ -57,7 +57,7 @@ namespace LearningStarter.Entities
         
     }
 
-    public class BetsListingDto
+    public class BetListingDto
     {
         public string Name { get; set; }
         public int BetCatagoriesId { get; set; }

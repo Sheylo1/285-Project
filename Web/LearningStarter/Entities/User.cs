@@ -24,7 +24,7 @@ namespace LearningStarter.Entities
 
         public List<Employee> Employees { get; set; } = new List<Employee>();
         public List<TransactionsUser> TransactionsUsers { get; set; } = new List<TransactionsUser>();
-        public List<BetTransaction> BetTransactions = new List<BetTransaction>();
+        public List<BetTransaction> BetTransactions { get; set; } = new List<BetTransaction>();
 
     }
 
