@@ -137,11 +137,29 @@ namespace LearningStarter
 
             });
             SeedUsers(dataContext);
+            SeedPostions(dataContext);
             SeedEmployees(dataContext);
             SeedSocials(dataContext);
             SeedPosts(dataContext);
             SeedComments(dataContext);
         }
+
+        private void SeedPostions(DataContext dataContext)
+        {
+            if (!dataContext.Positions.Any())
+            {
+
+                var seededPosition = new Position
+                {
+                    Salary = 12000,
+                    Name = "Adminsitrator"
+                };
+
+                dataContext.Positions.Add(seededPosition);
+                dataContext.SaveChanges();
+            }
+        }
+
         public void SeedUsers(DataContext dataContext)
         {
             var numUsers = dataContext.Users.Count();
@@ -192,26 +210,14 @@ namespace LearningStarter
 
             if (!dataContext.Employees.Any())
             {
-                var seededUser = new User
-                {
-                    FirstName = "Seeded",
-                    LastName = "User",
-                    Username = "admin",
-                    Password = "password",
-                    AccountBalance = 1250,
-                    Email = "JohnSmith@selu.edu",
-                    PhoneNumber = "225-666-666",
-                    DateOfBirth = DateTimeOffset.Now,
-                    SocialId = 1
-
-                };
-                dataContext.Users.Add(seededUser);
-
+                var position = dataContext.Positions.First();
+                var user = dataContext.Users.First();
                 var seededEmployee = new Employee
                 {
                     Salary = 12000,
                     Employed = true,
-                    User = seededUser
+                    User = user,
+                    Position = position
                 };
 
 
