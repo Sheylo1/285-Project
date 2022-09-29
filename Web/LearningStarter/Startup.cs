@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using LearningStarter.Data;
 using LearningStarter.Entities;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -92,7 +94,7 @@ namespace LearningStarter
         {
             dataContext.Database.EnsureDeleted();
             dataContext.Database.EnsureCreated();
-            
+
             app.UseHsts();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -132,23 +134,165 @@ namespace LearningStarter
                 {
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:3001");
                 }
-            });
 
+            });
+            SeedUsers(dataContext);
+            SeedPostions(dataContext);
+            SeedEmployees(dataContext);
+            SeedSocials(dataContext);
+            SeedPosts(dataContext);
+            SeedComments(dataContext);
+        }
+
+        private void SeedPostions(DataContext dataContext)
+        {
+            if (!dataContext.Positions.Any())
+            {
+
+                var seededPosition = new Position
+                {
+                    Salary = 12000,
+                    Name = "Adminsitrator"
+                };
+
+                dataContext.Positions.Add(seededPosition);
+                dataContext.SaveChanges();
+            }
+        }
+
+        public void SeedUsers(DataContext dataContext)
+        {
             var numUsers = dataContext.Users.Count();
 
             if (numUsers == 0)
             {
+                var seededSocial = new Social
+                {
+                    Notifications = 2,
+                    Reminders = 1,
+                    PostId = 1
+
+                };
+                dataContext.Socials.Add(seededSocial);
+
+                var seededPosts = new Post
+                {
+                    CreatedAt = DateTimeOffset.Now,
+                    CommentId = 1
+                };
+                dataContext.Posts.Add(seededPosts);
+
+                var seededComments = new Comment
+                {
+                    CreatedAt = DateTimeOffset.Now,
+                    CommentText = "Here's a text"
+                };
+                dataContext.Comments.Add(seededComments);
+
                 var seededUser = new User
                 {
                     FirstName = "Seeded",
                     LastName = "User",
                     Username = "admin",
-                    Password = "password"
+                    Password = "password",
+                    AccountBalance = 1250,
+                    Email = "JohnSmith@selu.edu",
+                    PhoneNumber = "225-666-666",
+                    DateOfBirth = DateTimeOffset.Now,
+                    SocialId = 1
                 };
-                
                 dataContext.Users.Add(seededUser);
                 dataContext.SaveChanges();
             }
         }
+        public void SeedEmployees(DataContext dataContext)
+        {
+
+            if (!dataContext.Employees.Any())
+            {
+                var position = dataContext.Positions.First();
+                var user = dataContext.Users.First();
+                var seededEmployee = new Employee
+                {
+                    Salary = 12000,
+                    Employed = true,
+                    User = user,
+                    Position = position
+                };
+
+
+                dataContext.Employees.Add(seededEmployee);
+                dataContext.SaveChanges();
+            }
+        }
+
+        public void SeedSocials(DataContext dataContext)
+        {
+            if (!dataContext.Socials.Any())
+            {
+                var seededPosts = new Post
+                {
+                    CreatedAt = DateTimeOffset.Now,
+                    CommentId = 1
+                };
+                dataContext.Posts.Add(seededPosts);
+
+                var seededComments = new Comment
+                {
+                    CreatedAt = DateTimeOffset.Now,
+                    CommentText = "Here's a text"
+                };
+                dataContext.Comments.Add(seededComments);
+
+                var seededSocial = new Social
+                {
+                    Notifications = 2,
+                    Reminders = 1,
+                    PostId = 1
+
+                };
+                dataContext.Socials.Add(seededSocial);
+                dataContext.SaveChanges();
+            }
+
+
+        }
+
+        public void SeedPosts(DataContext dataContext)
+        {
+            if (!dataContext.Posts.Any())
+            {
+                var seededComments = new Comment
+                {
+                    CreatedAt = DateTimeOffset.Now,
+                    CommentText = "Here's a text"
+                };
+                dataContext.Comments.Add(seededComments);
+
+                var seededPosts = new Post
+                {
+                    CreatedAt = DateTimeOffset.Now,
+                    CommentId = 1
+                };
+                dataContext.Posts.Add(seededPosts);
+                dataContext.SaveChanges();
+            }
+        }
+
+        public void SeedComments(DataContext dataContext)
+        {
+            if (!dataContext.Comments.Any())
+            {
+                var seededComments = new Comment
+                {
+                    CreatedAt = DateTimeOffset.Now,
+                    CommentText = "Here's a text"
+                };
+                dataContext.Comments.Add(seededComments);
+                dataContext.SaveChanges();
+            }
+        }
+
+
     }
 }

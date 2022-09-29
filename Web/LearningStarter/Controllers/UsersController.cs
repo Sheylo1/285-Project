@@ -26,10 +26,16 @@ namespace LearningStarter.Controllers
                 .Users
                 .Select(x => new UserGetDto
                 {
-                    Id = x.Id,
+                    CreatedDate = x.CreatedDate,
+                    ClosedDate = x.ClosedDate,
                     FirstName = x.FirstName,
                     LastName = x.LastName,
-                    Username = x.Username
+                    Username = x.Username,
+                    AccountBalance = x.AccountBalance,
+                    Email = x.Email,
+                    Password = x.Password,
+                    PhoneNumber = x.PhoneNumber,
+                    DateOfBirth = x.DateOfBirth,
                 })
                 .ToList();
 
@@ -52,10 +58,16 @@ namespace LearningStarter.Controllers
 
             var userGetDto = new UserGetDto
             {
-                Id = user.Id,
+                CreatedDate = user.CreatedDate,
+                ClosedDate = user.ClosedDate,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                Username = user.Username
+                Username = user.Username,
+                AccountBalance = user.AccountBalance,
+                Email = user.Email,
+                Password = user.Password,
+                PhoneNumber = user.PhoneNumber,
+                DateOfBirth = user.DateOfBirth,
             };
 
             response.Data = userGetDto;
@@ -89,6 +101,11 @@ namespace LearningStarter.Controllers
                 response.AddError("password", "Password cannot be empty.");
             }
 
+            if (userCreateDto.Email == null || userCreateDto.Email == "")
+            {
+                response.AddError("email", "Email cannot be empty.");
+            }
+
             if (response.HasErrors)
             {
                 return BadRequest(response);
@@ -96,10 +113,16 @@ namespace LearningStarter.Controllers
 
             var userToCreate = new User
             {
+                CreatedDate = userCreateDto.CreatedDate,
+                ClosedDate = userCreateDto.ClosedDate,
                 FirstName = userCreateDto.FirstName,
                 LastName = userCreateDto.LastName,
                 Username = userCreateDto.Username,
+                AccountBalance = userCreateDto.AccountBalance,
+                Email = userCreateDto.Email,
                 Password = userCreateDto.Password,
+                PhoneNumber = userCreateDto.PhoneNumber,
+                DateOfBirth = userCreateDto.DateOfBirth,
             };
 
             _context.Users.Add(userToCreate);
@@ -107,10 +130,16 @@ namespace LearningStarter.Controllers
 
             var userGetDto = new UserGetDto
             {
-                Id = userToCreate.Id,
+                CreatedDate = userToCreate.CreatedDate,
+                ClosedDate = userToCreate.ClosedDate,
                 FirstName = userToCreate.FirstName,
                 LastName = userToCreate.LastName,
-                Username = userToCreate.Username
+                Username = userToCreate.Username,
+                AccountBalance = userToCreate.AccountBalance,
+                Email = userToCreate.Email,
+                Password = userToCreate.Password,
+                PhoneNumber = userToCreate.PhoneNumber,
+                DateOfBirth = userToCreate.DateOfBirth
             };
 
             response.Data = userGetDto;
@@ -139,44 +168,59 @@ namespace LearningStarter.Controllers
                 return NotFound(response);
             }
 
-            if (user.FirstName == null || user.FirstName == "")
+            if (userToEdit.FirstName == null || userToEdit.FirstName == "")
             {
                 response.AddError("firstName", "First name cannot be empty.");
             }
 
-            if (user.LastName == null || user.LastName == "")
+            if (userToEdit.LastName == null || userToEdit.LastName == "")
             {
-                response.AddError("lirstName", "Last name cannot be empty.");
+                response.AddError("lastName", "Last name cannot be empty.");
             }
 
-            if (user.Username == null || user.Username == "")
+            if (userToEdit.Username == null || userToEdit.Username == "")
             {
                 response.AddError("userName", "User name cannot be empty.");
             }
 
-            if (user.Password == null || user.Password == "")
+            if (userToEdit.Password == null || userToEdit.Password == "")
             {
                 response.AddError("password", "Password cannot be empty.");
+            }
+
+            if (userToEdit.Email == null || userToEdit.Email == "")
+            {
+                response.AddError("email", "Email cannot be empty.");
             }
 
             if (response.HasErrors)
             {
                 return BadRequest(response);
             }
-
+            userToEdit.CreatedDate = user.CreatedDate;
+            userToEdit.ClosedDate = user.ClosedDate;
             userToEdit.FirstName = user.FirstName;
             userToEdit.LastName = user.LastName;
             userToEdit.Username = user.Username;
+            userToEdit.AccountBalance = user.AccountBalance;
             userToEdit.Password = user.Password;
+            userToEdit.Email = user.Email;
+            userToEdit.DateOfBirth = user.DateOfBirth;
 
             _context.SaveChanges();
 
             var userGetDto = new UserGetDto
             {
-                Id = userToEdit.Id,
+                CreatedDate = userToEdit.CreatedDate,
+                ClosedDate = userToEdit.ClosedDate,
                 FirstName = userToEdit.FirstName,
                 LastName = userToEdit.LastName,
-                Username = userToEdit.Username
+                Username = userToEdit.Username,
+                AccountBalance = userToEdit.AccountBalance,
+                Password = userToEdit.Password,
+                Email = userToEdit.Email,
+                DateOfBirth = userToEdit.DateOfBirth,
+
             };
 
             response.Data = userGetDto;
