@@ -142,6 +142,25 @@ namespace LearningStarter
             SeedSocials(dataContext);
             SeedPosts(dataContext);
             SeedComments(dataContext);
+            SeedEscrowSystems(dataContext);
+        }
+
+        private void SeedEscrowSystems(DataContext dataContext) 
+        {
+            if (!dataContext.EscrowSystems.Any())
+            {
+                var SeededEscrowSystem = new EscrowSystem
+                {
+                    PaymentType = "Credit",
+                    CreatedDate = DateTimeOffset.Now,
+
+                };
+
+                dataContext.EscrowSystems.Add(SeededEscrowSystem);
+                dataContext.SaveChanges();
+            }
+
+
         }
 
         private void SeedPostions(DataContext dataContext)
