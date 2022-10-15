@@ -143,6 +143,7 @@ namespace LearningStarter
             SeedPosts(dataContext);
             SeedComments(dataContext);
             SeedBetCategories(dataContext);
+            SeedTransactionUsers(dataContext);
         }
 
         private void SeedPostions(DataContext dataContext)
@@ -307,7 +308,43 @@ namespace LearningStarter
             }
         }
 
+        public void SeedTransactionUsers(DataContext dataContext)
+        {
+            if (!dataContext.TransactionsUsers.Any())
+            {
+                var seededTransactionUsers = new TransactionsUser()
+                {
+                    Amount = 500,
+                    TransactionsId = 1,
+                    UserId = 1
+                };
+                dataContext.TransactionsUsers.Add(seededTransactionUsers);
 
+                var seededTransaction = new Transaction()
+                {
+                    Amount = 500,
+                    PaymentType = "Credit",
+                    CreatedAt = DateTimeOffset.Now,
+                };
+                dataContext.Transactions.Add(seededTransaction);
+
+                var seededUsers = new User()
+                {
+                    FirstName = "Seeded",
+                    LastName = "User",
+                    Username = "admin",
+                    Password = "password",
+                    AccountBalance = 1250,
+                    Email = "JohnSmith@selu.edu",
+                    PhoneNumber = "225-666-666",
+                    DateOfBirth = DateTimeOffset.Now,
+                    SocialId = 1
+                };
+                dataContext.Users.Add(seededUsers);
+
+                dataContext.SaveChanges();
+            }
+        }
 
     }
 }
