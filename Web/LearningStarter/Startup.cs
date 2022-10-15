@@ -142,6 +142,7 @@ namespace LearningStarter
             SeedSocials(dataContext);
             SeedPosts(dataContext);
             SeedComments(dataContext);
+            SeedBetCategories(dataContext);
         }
 
         private void SeedPostions(DataContext dataContext)
@@ -292,6 +293,20 @@ namespace LearningStarter
                 dataContext.SaveChanges();
             }
         }
+       
+        public void SeedBetCategories(DataContext dataContext)
+        {
+            if (!dataContext.BetCategories.Any())
+            {
+                var seededBetCategories = new BetCategory()
+                {
+                    Name = "Sports"
+                };
+                dataContext.BetCategories.Add(seededBetCategories);
+                dataContext.SaveChanges();
+            }
+        }
+
 
 
     }
