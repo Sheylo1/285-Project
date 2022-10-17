@@ -30,7 +30,6 @@ namespace LearningStarter.Entities
 
     public class UserCreateDto
     {
-        public int Id { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public decimal AccountBalance { get; set; }
@@ -60,7 +59,9 @@ namespace LearningStarter.Entities
     }
 
     public class UserGetDto
-    {        
+    {
+        public int Id { get; set; }
+
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public decimal AccountBalance { get; set; }
