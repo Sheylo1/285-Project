@@ -144,6 +144,7 @@ namespace LearningStarter
             SeedComments(dataContext);
             SeedBetCategories(dataContext);
             SeedTransactionUsers(dataContext);
+            SeedBetTransactions(dataContext);
         }
 
         private void SeedPostions(DataContext dataContext)
@@ -341,10 +342,79 @@ namespace LearningStarter
                     SocialId = 1
                 };
                 dataContext.Users.Add(seededUsers);
+                dataContext.SaveChanges();
+
+
+            }
+        }
+
+
+        public void SeedBetTransactions(DataContext dataContext)
+        {
+            if (!dataContext.BetTransactions.Any())
+            {
+                var seededBetTransactions = new BetTransaction()
+                {
+                    BetId = 1,
+                    CreatedDate = DateTimeOffset.Now,
+                    FinishedAt = DateTimeOffset.Now,
+                    Amount = 100,
+                    Result = "Fail",
+                    HouseSystemId = 1,
+                    UserId = 1,
+                    EmployeeId = 1,
+                    TransactionId = 1,
+                };
+                dataContext.BetTransactions.Add(seededBetTransactions);
+
+                var seededBets = new Bet()
+                {
+                    Name = "John",
+                    BetCategoryId = 1,
+                    CreatedDate = DateTimeOffset.Now,
+                    ClosedDate = DateTimeOffset.Now,
+                    CommentId = 1,
+                    BetDisputeCall = false,
+                    EscrowSystemId = 1,
+
+                };
+                dataContext.Bets.Add(seededBets);
+
+                var seededHouseSystems = new HouseSystem()
+                {
+                    Payout = 20,
+                    BetPercentage = 3,
+                };
+                dataContext.HouseSystems.Add(seededHouseSystems);
+
+                var seededUsers = new User()
+                {
+                    FirstName = "Seeded",
+                    LastName = "User",
+                    Username = "admin",
+                    Password = "password",
+                    AccountBalance = 1250,
+                    Email = "JohnSmith@selu.edu",
+                    PhoneNumber = "225-666-666",
+                    DateOfBirth = DateTimeOffset.Now,
+                    SocialId = 1
+                };
+                dataContext.Users.Add(seededUsers);
+
+                var position = dataContext.Positions.First();
+                var user = dataContext.Users.First();
+                var seededEmployee = new Employee
+                {
+                    Salary = 12000,
+                    Employed = true,
+                    User = user,
+                    Position = position
+                };
+                dataContext.Employees.Add(seededEmployee);
+
 
                 dataContext.SaveChanges();
             }
         }
-
     }
 }
