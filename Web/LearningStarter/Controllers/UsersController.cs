@@ -26,7 +26,6 @@ namespace LearningStarter.Controllers
                 .Users
                 .Select(x => new UserGetDto
                 {
-                    Id = x.Id,
                     CreatedDate = x.CreatedDate,
                     ClosedDate = x.ClosedDate,
                     FirstName = x.FirstName,
@@ -37,7 +36,6 @@ namespace LearningStarter.Controllers
                     Password = x.Password,
                     PhoneNumber = x.PhoneNumber,
                     DateOfBirth = x.DateOfBirth,
-                    SocialId = x.SocialId,
                 })
                 .ToList();
 
@@ -60,7 +58,6 @@ namespace LearningStarter.Controllers
 
             var userGetDto = new UserGetDto
             {
-                Id = user.Id,
                 CreatedDate = user.CreatedDate,
                 ClosedDate = user.ClosedDate,
                 FirstName = user.FirstName,
@@ -71,7 +68,6 @@ namespace LearningStarter.Controllers
                 Password = user.Password,
                 PhoneNumber = user.PhoneNumber,
                 DateOfBirth = user.DateOfBirth,
-                SocialId = user.SocialId,
             };
 
             response.Data = userGetDto;
@@ -127,7 +123,6 @@ namespace LearningStarter.Controllers
                 Password = userCreateDto.Password,
                 PhoneNumber = userCreateDto.PhoneNumber,
                 DateOfBirth = userCreateDto.DateOfBirth,
-                SocialId = userCreateDto.SocialId,
             };
 
             _context.Users.Add(userToCreate);
@@ -135,7 +130,6 @@ namespace LearningStarter.Controllers
 
             var userGetDto = new UserGetDto
             {
-                Id = userToCreate.Id,
                 CreatedDate = userToCreate.CreatedDate,
                 ClosedDate = userToCreate.ClosedDate,
                 FirstName = userToCreate.FirstName,
@@ -145,8 +139,7 @@ namespace LearningStarter.Controllers
                 Email = userToCreate.Email,
                 Password = userToCreate.Password,
                 PhoneNumber = userToCreate.PhoneNumber,
-                DateOfBirth = userToCreate.DateOfBirth,
-                SocialId= userToCreate.SocialId
+                DateOfBirth = userToCreate.DateOfBirth
             };
 
             response.Data = userGetDto;
@@ -213,7 +206,6 @@ namespace LearningStarter.Controllers
             userToEdit.Password = user.Password;
             userToEdit.Email = user.Email;
             userToEdit.DateOfBirth = user.DateOfBirth;
-            userToEdit.SocialId = user.SocialId;
 
             _context.SaveChanges();
 
@@ -228,7 +220,6 @@ namespace LearningStarter.Controllers
                 Password = userToEdit.Password,
                 Email = userToEdit.Email,
                 DateOfBirth = userToEdit.DateOfBirth,
-                SocialId = userToEdit.SocialId,
 
             };
 
