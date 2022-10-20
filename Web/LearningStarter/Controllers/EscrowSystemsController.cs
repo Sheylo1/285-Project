@@ -8,10 +8,10 @@ namespace LearningStarter.Controllers
 
     [ApiController]
     [Route("api/escrowsystem")]
-    public class EscrowSystemController : ControllerBase
+    public class EscrowSystemsController : ControllerBase
     {
         private readonly DataContext _dataContext;
-        public EscrowSystemController(DataContext dataContext)
+        public EscrowSystemsController(DataContext dataContext)
         {
             _dataContext = dataContext;
 
@@ -95,8 +95,8 @@ namespace LearningStarter.Controllers
                 Id = escrowSystemToAdd.Id,
                 CreatedDate = escrowSystemToAdd.CreatedDate,
                 DispersalCompletionDate= escrowSystemToAdd.DispersalCompletionDate,
-                EscrowPayout = escrowSystemToAdd.EscrowPayout
-
+                EscrowPayout = escrowSystemToAdd.EscrowPayout,
+                PaymentType = escrowSystemToAdd.PaymentType
             };
 
             response.Data = escrowSystemToReturn;
@@ -125,6 +125,7 @@ namespace LearningStarter.Controllers
 
             var escrowSystemToReturn = new EscrowSystemGetDto
             {
+                PaymentType = escrowSystemToUpdate.PaymentType,
                 Id = escrowSystemToUpdate.Id,
                 CreatedDate = escrowSystemToUpdate.CreatedDate,
                 DispersalCompletionDate = escrowSystemToUpdate.DispersalCompletionDate,
@@ -155,8 +156,6 @@ namespace LearningStarter.Controllers
 
             response.Data = true;
             return Ok(response);
-
         }
-
     }
 }
