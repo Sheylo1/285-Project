@@ -48,8 +48,30 @@ namespace LearningStarter.Controllers
             var response = new Response();
 
             var betToReturn = _dataContext
+                .Bets
+                .Select(bet => new BetGetDto
+                {
+                    Id = bet.Id,
+                    Name = bet.Name,
+                    BetCategoryId = bet.BetCategoryId,
+                    CreatedDate = bet.CreatedDate,
+                    ClosedDate = bet.ClosedDate,
+                    CommentId = bet.CommentId,
+                    BetDisputeCall = bet.BetDisputeCall,
+                    EscrowSystemId = bet.EscrowSystemId
+
+                })
+                .FirstOrDefault(bet => bet.Id == id);
+
+            if (betToReturn == null)
+            {
+                response.AddError("id", "Bet was not found");
+            }
+            response.Data = betToReturn;
+            return Ok(response);
+            }
                 
-        } 
+        
 
         [HttpPost]
         public IActionResult Create([FromBody] BetCreateDto betCreateDto)
@@ -83,6 +105,7 @@ namespace LearningStarter.Controllers
             var betToReturn = new BetGetDto
             {
                 Id = betToAdd.Id,
+                Name = betToAdd.Name,
                 BetCategoryId = betToAdd.BetCategoryId,
                 CreatedDate = betToAdd.CreatedDate,
                 ClosedDate = betToAdd.ClosedDate,
