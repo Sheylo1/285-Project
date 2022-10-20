@@ -145,7 +145,8 @@ namespace LearningStarter
             SeedEscrowSystems(dataContext);
             SeedBetCategory(dataContext);
             SeedBet(dataContext);
-            //SeedBetDisputes(dataContext);
+            SeedBetDisputes(dataContext);
+           
             
         }
 
@@ -170,12 +171,11 @@ namespace LearningStarter
                 var seededBet = new Bet
                 {
                     Name = "Bet",
-                    BetCategoryId = 1,
+                    BetCategoryId = dataContext.BetCategories.First().Id,
                     CreatedDate = DateTime.Now,
-                    CommentId = 1,
+                    CommentId = dataContext.Comments.First().Id,
                     EscrowSystemId = dataContext.EscrowSystems.First().Id,
                     BetDisputeCall = false,
-
                 };
 
                 dataContext.Bets.Add(seededBet);
@@ -185,20 +185,18 @@ namespace LearningStarter
             
 
  
-        /*public void SeedBetDisputes(DataContext dataContext)
+        public void SeedBetDisputes(DataContext dataContext)
         {
 
             if (!dataContext.BetDisputes.Any())
             {
                 var seededBetDispute = new BetDispute
                 {
-
-                    BetId = 1,
+                    BetId = dataContext.Bets.First().Id,
                     Issue = "Disputed",
                     CreatedDate = DateTime.Now,
                     ClosedDate = DateTime.Now,
                     EmployeeId = 1,
-                    
                 };
 
                 dataContext.BetDisputes.Add(seededBetDispute);
@@ -206,7 +204,7 @@ namespace LearningStarter
             }
             
             
-        }*/
+        }
         public void SeedEscrowSystems(DataContext dataContext) 
         {
             if (!dataContext.EscrowSystems.Any())

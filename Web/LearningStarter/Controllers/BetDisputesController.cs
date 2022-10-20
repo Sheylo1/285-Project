@@ -37,6 +37,32 @@ namespace LearningStarter.Controllers
             return Ok(response);
         }
 
+        [HttpGet("{id}")]
+        
+        public IActionResult GetById([FromRoute] int id)
+        {
+            var response = new Response();
+
+            var betDisputeToReturn = _dataContext
+                .BetDisputes
+                .Select(betDispute => new BetDisputeGetDto
+                {
+                    Id = betDispute.Id,
+                    Issue = betDispute.Issue,
+                    CreatedDate = betDispute.CreatedDate,
+                    ClosedDate = betDispute.ClosedDate,
+                    EmployeeId = betDispute.EmployeeId,
+                })
+                .FirstOrDefault(betDispute => betDispute.Id == id);
+
+            if (betDisputeToReturn == null)
+            {
+                response.AddError("id", "Bet dispute not found.");
+            }
+            response.Data = betDisputeToReturn;
+            return Ok(response);
+        }
+
         [HttpPost]
 
         public IActionResult Create([FromBody] BetDisputeCreateDto betDisputeCreateDto)
@@ -111,6 +137,28 @@ namespace LearningStarter.Controllers
             };
 
             response.Data = betDisputeToReturn;
+            return Ok(response);
+        }
+
+        [HttpDelete("{id}")]
+        
+        public IActionResult Delete([FromRoute] int id)
+        {
+            var response = new Response();
+
+            var betDisputeToDelete = _dataContext
+                .BetDisputes
+                .FirstOrDefault(betDispute => betDispute.Id == id);
+
+            if (betDisputeToDelete == null)
+            {
+                response.AddError("id", "Bet dispute cannot be found.");
+                return BadRequest(response);
+            }
+            _dataContext.Remove(betDisputeToDelete);
+            _dataContext.SaveChanges();
+
+            response.Data = true;
             return Ok(response);
         }
     }
