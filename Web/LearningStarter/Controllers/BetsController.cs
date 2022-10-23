@@ -143,6 +143,7 @@ namespace LearningStarter.Controllers
             var betToReturn = new BetGetDto
             {
                 BetCategoryId = betToUpdate.BetCategoryId,
+                Name = betToUpdate.Name,
                 CreatedDate = betToUpdate.CreatedDate,
                 ClosedDate = betToUpdate.ClosedDate,
                 CommentId = betToUpdate.CommentId,
