@@ -170,7 +170,7 @@ namespace LearningStarter
                 {
                     Notifications = 2,
                     Reminders = 1,
-                    PostId = 1
+                    PostId = 1,
 
                 };
                 dataContext.Socials.Add(seededSocial);
@@ -178,7 +178,7 @@ namespace LearningStarter
                 var seededPosts = new Post
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentId = 1
+                    CommentId = 1,
                 };
                 dataContext.Posts.Add(seededPosts);
 
@@ -199,7 +199,7 @@ namespace LearningStarter
                     Email = "JohnSmith@selu.edu",
                     PhoneNumber = "225-666-666",
                     DateOfBirth = DateTimeOffset.Now,
-                    SocialId = 1
+                    SocialId = 1,
                 };
                 dataContext.Users.Add(seededUser);
                 dataContext.SaveChanges();
@@ -233,7 +233,7 @@ namespace LearningStarter
                 var seededPosts = new Post
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentId = 1
+                    CommentId = dataContext.Comments.FirstOrDefault().Id,
                 };
                 dataContext.Posts.Add(seededPosts);
 
@@ -248,7 +248,7 @@ namespace LearningStarter
                 {
                     Notifications = 2,
                     Reminders = 1,
-                    PostId = 1
+                    PostId = dataContext.Posts.FirstOrDefault().Id,
 
                 };
                 dataContext.Socials.Add(seededSocial);
@@ -272,7 +272,7 @@ namespace LearningStarter
                 var seededPosts = new Post
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentId = 1
+                    CommentId = dataContext.Comments.FirstOrDefault().Id,
                 };
                 dataContext.Posts.Add(seededPosts);
                 dataContext.SaveChanges();
