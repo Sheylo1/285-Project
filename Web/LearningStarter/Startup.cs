@@ -171,10 +171,10 @@ namespace LearningStarter
                 var seededBet = new Bet
                 {
                     Name = "Bet",
-                    BetCategoryId = dataContext.BetCategories.First().Id,
+                    BetCategoryId = dataContext.BetCategories.FirstOrDefault().Id,
                     CreatedDate = DateTime.Now,
-                    CommentId = dataContext.Comments.First().Id,
-                    EscrowSystemId = dataContext.EscrowSystems.First().Id,
+                    CommentId = dataContext.Comments.FirstOrDefault().Id,
+                    EscrowSystemId = dataContext.EscrowSystems.FirstOrDefault().Id,
                     BetDisputeCall = false,
                 };
 
@@ -192,7 +192,7 @@ namespace LearningStarter
             {
                 var seededBetDispute = new BetDispute
                 {
-                    BetId = dataContext.Bets.First().Id,
+                    BetId = dataContext.Bets.FirstOrDefault().Id,
                     Issue = "Disputed",
                     CreatedDate = DateTime.Now,
                     ClosedDate = DateTime.Now,
