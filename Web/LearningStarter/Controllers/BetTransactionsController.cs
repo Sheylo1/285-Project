@@ -132,7 +132,16 @@ namespace LearningStarter.Controllers
                 return BadRequest(response);
             }
 
+            betTransactionToUpdate.BetId = betTransactionUpdateDto.BetId;
+            betTransactionToUpdate.CreatedDate = betTransactionUpdateDto.CreatedDate;
+            betTransactionToUpdate.FinishedAt = betTransactionUpdateDto.FinishedAt;
             betTransactionToUpdate.Amount = betTransactionUpdateDto.Amount;
+            betTransactionToUpdate.Result = betTransactionUpdateDto.Result;
+            betTransactionToUpdate.HouseSystemId = betTransactionUpdateDto.HouseSystemId;
+            betTransactionToUpdate.UserId = betTransactionUpdateDto.UserId;
+            betTransactionToUpdate.EmployeeId = betTransactionUpdateDto.EmployeeId;
+            betTransactionToUpdate.TransactionId = betTransactionUpdateDto.TransactionId;
+
             _dataContext.SaveChanges();
 
             var betTransactionToReturn = new BetTransactionGetDto
