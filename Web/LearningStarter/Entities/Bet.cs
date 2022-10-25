@@ -24,31 +24,31 @@ namespace LearningStarter.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int BetCatagoriesId { get; set; }
+        public int BetCategoryId { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public int CommentId { get; set; }
         public bool BetDisputeCall { get; set; }
-        public int EscrowId { get; set; }
+        public int EscrowSystemId { get; set; }
         
     }
 
     public class BetCreateDto
     {
         public string Name { get; set; }
-        public int BetCatagoriesId { get; set; }
+        public int BetCategoryId { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public int CommentId { get; set; }
         public bool BetDisputeCall { get; set; }
-        public int EscrowId { get; set; }
+        public int EscrowSystemId { get; set; }
         
     }
 
     public class BetUpdateDto
     {
         public string Name { get; set; }
-        public int BetCatagoriesId { get; set; }
+        public int BetCategoryId { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public int CommentId { get; set; }
@@ -60,7 +60,7 @@ namespace LearningStarter.Entities
     public class BetListingDto
     {
         public string Name { get; set; }
-        public int BetCatagoriesId { get; set; }
+        public int BetCategoryId { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public int CommentId { get; set; }

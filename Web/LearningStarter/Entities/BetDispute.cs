@@ -10,10 +10,9 @@ namespace LearningStarter.Entities
         public string Issue { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
-
         public int EmployeeId { get; set; }
         public Employee Employee { get; set; } 
-        public string IssueSolvedDate { get; set; }
+       
 
     }
     public class BetDisputeGetDto
@@ -24,7 +23,7 @@ namespace LearningStarter.Entities
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public int EmployeeId { get; set; }
-        public string IssueSolvedDate { get; set; }
+       
     }
 
     public class BetDisputeCreateDto
@@ -34,7 +33,7 @@ namespace LearningStarter.Entities
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public int EmployeeId { get; set; }
-        public string IssueSolvedDate { get; set; }
+      
     }
 
     public class BetDisputeUpdateDto
@@ -44,7 +43,7 @@ namespace LearningStarter.Entities
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public int EmployeeId { get; set; }
-        public string IssueSolvedDate { get; set; }
+      
     }
     public class BetDisputeListingDto
     {
@@ -53,6 +52,6 @@ namespace LearningStarter.Entities
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public int EmployeeId { get; set; }
-        public string IssueSolvedDate { get; set; }
+       
     }
 }

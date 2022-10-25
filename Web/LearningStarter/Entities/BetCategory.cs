@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LearningStarter.Entities
 {
@@ -9,6 +10,11 @@ namespace LearningStarter.Entities
         public string Name { get; set; }
 
         public List<Bet> Bets { get; set; } = new List<Bet>();
+
+        public static implicit operator int(BetCategory v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class BetCategoryGetDto

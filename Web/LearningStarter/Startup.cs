@@ -142,6 +142,85 @@ namespace LearningStarter
             SeedSocials(dataContext);
             SeedPosts(dataContext);
             SeedComments(dataContext);
+            SeedEscrowSystems(dataContext);
+            SeedBetCategory(dataContext);
+            SeedBet(dataContext);
+            SeedBetDisputes(dataContext);
+           
+            
+        }
+
+        private void SeedBetCategory(DataContext dataContext)
+        {
+            if (!dataContext.BetCategories.Any())
+            {
+                var seededBetCategory = new BetCategory
+                {
+                    Name = "Bet Name",
+                };
+
+                dataContext.BetCategories.Add(seededBetCategory);
+                dataContext.SaveChanges();
+            }
+        }
+
+        public void SeedBet(DataContext dataContext)
+        {
+            if (!dataContext.Bets.Any())
+            { 
+                var seededBet = new Bet
+                {
+                    Name = "Bet",
+                    BetCategoryId = dataContext.BetCategories.FirstOrDefault().Id,
+                    CreatedDate = DateTime.Now,
+                    CommentId = dataContext.Comments.FirstOrDefault().Id,
+                    EscrowSystemId = dataContext.EscrowSystems.FirstOrDefault().Id,
+                    BetDisputeCall = false,
+                };
+
+                dataContext.Bets.Add(seededBet);
+                dataContext.SaveChanges();
+            }
+        }
+            
+
+ 
+        public void SeedBetDisputes(DataContext dataContext)
+        {
+
+            if (!dataContext.BetDisputes.Any())
+            {
+                var seededBetDispute = new BetDispute
+                {
+                    BetId = dataContext.Bets.FirstOrDefault().Id,
+                    Issue = "Disputed",
+                    CreatedDate = DateTime.Now,
+                    ClosedDate = DateTime.Now,
+                    EmployeeId = 1,
+                };
+
+                dataContext.BetDisputes.Add(seededBetDispute);
+                dataContext.SaveChanges();
+            }
+            
+            
+        }
+        public void SeedEscrowSystems(DataContext dataContext) 
+        {
+            if (!dataContext.EscrowSystems.Any())
+            {
+                var seededEscrowSystem = new EscrowSystem
+                {
+                    PaymentType = " ",
+                    CreatedDate = DateTimeOffset.Now,
+
+                };
+
+                dataContext.EscrowSystems.Add(seededEscrowSystem);
+                dataContext.SaveChanges();
+            }
+
+
         }
 
         private void SeedPostions(DataContext dataContext)
@@ -207,7 +286,6 @@ namespace LearningStarter
         }
         public void SeedEmployees(DataContext dataContext)
         {
-
             if (!dataContext.Employees.Any())
             {
                 var position = dataContext.Positions.First();
@@ -219,7 +297,6 @@ namespace LearningStarter
                     User = user,
                     Position = position
                 };
-
 
                 dataContext.Employees.Add(seededEmployee);
                 dataContext.SaveChanges();
