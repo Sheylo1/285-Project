@@ -318,33 +318,12 @@ namespace LearningStarter
             if (!dataContext.TransactionsUsers.Any())
             {
 
-                var seededTransaction = new Transaction()
-                {
-                    Amount = 500,
-                    PaymentType = "Credit",
-                    CreatedAt = DateTimeOffset.Now,
-                };
-                dataContext.Transactions.Add(seededTransaction);
-
-                var seededUsers = new User()
-                {
-                    FirstName = "Seeded",
-                    LastName = "User",
-                    Username = "admin",
-                    Password = "password",
-                    AccountBalance = 1250,
-                    Email = "JohnSmith@selu.edu",
-                    PhoneNumber = "225-666-666",
-                    DateOfBirth = DateTimeOffset.Now,
-                    SocialId = 1
-                };
-                dataContext.Users.Add(seededUsers);
 
                 var seededTransactionUsers = new TransactionsUser()
                 {
                     Amount = 500,
-                    TransactionsId = dataContext.Transactions.First().Id,
-                    UserId = dataContext.Users.First().Id,
+                    TransactionsId = dataContext.Transactions.FirstOrDefault().Id,
+                    UserId = dataContext.Users.FirstOrDefault().Id,
                 };
                 dataContext.TransactionsUsers.Add(seededTransactionUsers);
                 dataContext.SaveChanges();
@@ -408,30 +387,6 @@ namespace LearningStarter
             {
 
 
-                var seededBetCategories = new BetCategory()
-                {
-                    Name = "Sports"
-                };
-                dataContext.BetCategories.Add(seededBetCategories);
-
-                var seededComments = new Comment
-                {
-                    CreatedAt = DateTimeOffset.Now,
-                    CommentText = "Here's a text"
-                };
-                dataContext.Comments.Add(seededComments);
-
-                var seededEscroSystems = new EscrowSystem()
-                {
-                    PaymentType = "Debit",
-                    CreatedDate = DateTimeOffset.Now,
-                    ClosedDate = DateTimeOffset.Now,
-                    DispersalCompletionDate = DateTimeOffset.Now,
-                    EscrowPayout = 20
-
-                };
-                dataContext.EscrowSystems.Add(seededEscroSystems);
-
                 var seededBets = new Bet()
                 {
                     Name = "Bet",
@@ -455,50 +410,6 @@ namespace LearningStarter
 
             if (!dataContext.BetTransactions.Any())
             {
-                var seededBets = new Bet()
-                {
-                    Name = "Bet",
-                    BetCategoryId = dataContext.BetCategories.First().Id,
-                    CreatedDate = DateTimeOffset.Now,
-                    ClosedDate = DateTimeOffset.Now,
-                    CommentId = dataContext.Comments.First().Id,
-                    BetDisputeCall = false,
-                    EscrowSystemId = dataContext.EscrowSystems.First().Id
-
-                };
-                dataContext.Bets.Add(seededBets);
-
-                var seededHouseSystems = new HouseSystem()
-                {
-                    Payout = 20,
-                    BetPercentage = 3,
-                };
-                dataContext.HouseSystems.Add(seededHouseSystems);
-
-                var seededUser = new User
-                {
-                    FirstName = "Seeded",
-                    LastName = "User",
-                    Username = "admin",
-                    Password = "password",
-                    AccountBalance = 1250,
-                    Email = "JohnSmith@selu.edu",
-                    PhoneNumber = "225-666-666",
-                    DateOfBirth = DateTimeOffset.Now,
-                    SocialId = 1
-                };
-                dataContext.Users.Add(seededUser);
-
-                var position = dataContext.Positions.First();
-                var user = dataContext.Users.First();
-                var seededEmployee = new Employee
-                {
-                    Salary = 12000,
-                    Employed = true,
-                    User = user,
-                    Position = position
-                };
-                dataContext.Employees.Add(seededEmployee);
 
                 var seededBetTransactions = new BetTransaction()
                 {
