@@ -43,7 +43,9 @@ namespace LearningStarter.Controllers
 
             var transactionUserToAdd = new TransactionsUser
             {
-               Amount = transactionUserCreateDto.Amount
+               Amount = transactionUserCreateDto.Amount,
+               TransactionsId = transactionUserCreateDto.TransactionsId,
+               UserId = transactionUserCreateDto.UserId,
             };
 
             _dataContext.TransactionsUsers.Add(transactionUserToAdd);
