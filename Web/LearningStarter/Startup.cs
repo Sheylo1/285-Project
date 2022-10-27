@@ -177,7 +177,7 @@ namespace LearningStarter
                 {
                     Notifications = 2,
                     Reminders = 1,
-                    PostId = 1
+                    PostId = dataContext.Socials.FirstOrDefault().Id,
 
                 };
                 dataContext.Socials.Add(seededSocial);
@@ -185,7 +185,7 @@ namespace LearningStarter
                 var seededPosts = new Post
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentId = 1
+                    CommentId = dataContext.Posts.FirstOrDefault().Id,
                 };
                 dataContext.Posts.Add(seededPosts);
 
@@ -206,7 +206,7 @@ namespace LearningStarter
                     Email = "JohnSmith@selu.edu",
                     PhoneNumber = "225-666-666",
                     DateOfBirth = DateTimeOffset.Now,
-                    SocialId = 1
+                    SocialId = dataContext.Users.FirstOrDefault().Id,
                 };
                 dataContext.Users.Add(seededUser);
                 dataContext.SaveChanges();
@@ -217,8 +217,8 @@ namespace LearningStarter
 
             if (!dataContext.Employees.Any())
             {
-                var position = dataContext.Positions.First();
-                var user = dataContext.Users.First();
+                var position = dataContext.Positions.FirstOrDefault();
+                var user = dataContext.Users.FirstOrDefault();
                 var seededEmployee = new Employee
                 {
                     Salary = 12000,
@@ -240,7 +240,7 @@ namespace LearningStarter
                 var seededPosts = new Post
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentId = 1
+                    CommentId = dataContext.Posts.FirstOrDefault().Id,
                 };
                 dataContext.Posts.Add(seededPosts);
 
@@ -255,7 +255,7 @@ namespace LearningStarter
                 {
                     Notifications = 2,
                     Reminders = 1,
-                    PostId = 1
+                    PostId = dataContext.Socials.FirstOrDefault().Id,
 
                 };
                 dataContext.Socials.Add(seededSocial);
@@ -279,7 +279,7 @@ namespace LearningStarter
                 var seededPosts = new Post
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentId = 1
+                    CommentId = dataContext.Posts.FirstOrDefault().Id,
                 };
                 dataContext.Posts.Add(seededPosts);
                 dataContext.SaveChanges();
@@ -390,12 +390,12 @@ namespace LearningStarter
                 var seededBets = new Bet()
                 {
                     Name = "Bet",
-                    BetCategoryId = dataContext.BetCategories.First().Id,
+                    BetCategoryId = dataContext.BetCategories.FirstOrDefault().Id,
                     CreatedDate = DateTimeOffset.Now,
                     ClosedDate = DateTimeOffset.Now,
-                    CommentId = dataContext.Comments.First().Id,
+                    CommentId = dataContext.Comments.FirstOrDefault().Id,
                     BetDisputeCall = false,
-                    EscrowSystemId = dataContext.EscrowSystems.First().Id
+                    EscrowSystemId = dataContext.EscrowSystems.FirstOrDefault().Id
 
                 };
                 dataContext.Bets.Add(seededBets);
@@ -413,15 +413,15 @@ namespace LearningStarter
 
                 var seededBetTransactions = new BetTransaction()
                 {
-                    BetId = dataContext.Bets.First().Id,
+                    BetId = dataContext.Bets.FirstOrDefault().Id,
                     CreatedDate = DateTimeOffset.Now,
                     FinishedAt = DateTimeOffset.Now,
                     Amount = 100,
                     Result = "Fail",
-                    HouseSystemId = dataContext.HouseSystems.First().Id,
-                    UserId = dataContext.Users.First().Id,
-                    EmployeeId = dataContext.Employees.First().Id,
-                    TransactionId = dataContext.Transactions.First().Id
+                    HouseSystemId = dataContext.HouseSystems.FirstOrDefault().Id,
+                    UserId = dataContext.Users.FirstOrDefault().Id,
+                    EmployeeId = dataContext.Employees.FirstOrDefault().Id,
+                    TransactionId = dataContext.Transactions.FirstOrDefault().Id
                 };
                 dataContext.BetTransactions.Add(seededBetTransactions);
 
