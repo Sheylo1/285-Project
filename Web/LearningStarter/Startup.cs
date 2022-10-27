@@ -177,7 +177,7 @@ namespace LearningStarter
                 {
                     Notifications = 2,
                     Reminders = 1,
-                    PostId = dataContext.Socials.FirstOrDefault().Id,
+                    PostId = 1,
 
                 };
                 dataContext.Socials.Add(seededSocial);
@@ -185,7 +185,7 @@ namespace LearningStarter
                 var seededPosts = new Post
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentId = dataContext.Posts.FirstOrDefault().Id,
+                    CommentId = 1,
                 };
                 dataContext.Posts.Add(seededPosts);
 
@@ -206,7 +206,7 @@ namespace LearningStarter
                     Email = "JohnSmith@selu.edu",
                     PhoneNumber = "225-666-666",
                     DateOfBirth = DateTimeOffset.Now,
-                    SocialId = dataContext.Users.FirstOrDefault().Id,
+                    SocialId = 1,
                 };
                 dataContext.Users.Add(seededUser);
                 dataContext.SaveChanges();

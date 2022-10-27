@@ -59,7 +59,7 @@ namespace LearningStarter.Entities
 
     }
 
-    public class BetTransactionsCreateDto
+    public class BetTransactionCreateDto
     {
         public int BetId { get; set; }
 

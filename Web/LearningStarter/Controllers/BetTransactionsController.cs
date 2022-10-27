@@ -46,7 +46,7 @@ namespace LearningStarter.Controllers
 
         
         [HttpPost]
-        public IActionResult Create([FromBody] BetTransactionsCreateDto betTransactionCreateDto)
+        public IActionResult Create([FromBody] BetTransactionCreateDto betTransactionCreateDto)
         {
             var response = new Response();
 
