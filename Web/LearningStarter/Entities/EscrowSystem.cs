@@ -12,9 +12,6 @@ namespace LearningStarter.Entities
         public DateTimeOffset DispersalCompletionDate { get; set; }
         public decimal EscrowPayout { get; set; }
         public List<Bet> Bets { get; set; } = new List<Bet>();
-
-
-
     }
 
     public class EscrowSystemGetDto
