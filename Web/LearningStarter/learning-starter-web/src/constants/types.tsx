@@ -21,3 +21,14 @@ export type UserDto = {
   lastName: string;
   userName: string;
 };
+
+export type BetGetDto = {
+  id: number;
+  name: string;
+  betCatagoryId: number;
+  createdDate: string;
+  closedDate: string;
+  commentId: number;
+  betDisputeCall: boolean;
+  escrowSystemId: number;
+};

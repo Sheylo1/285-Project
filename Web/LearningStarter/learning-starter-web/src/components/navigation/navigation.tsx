@@ -39,6 +39,14 @@ const DesktopNavigation = () => {
         },
       },
       {
+        text: "Bets",
+        hide: false,
+        nav: {
+          to: routes.bet,
+        },
+        
+      },
+      {
         text: "User",
         icon: "user",
         hide: false,
