@@ -21,3 +21,23 @@ export type UserDto = {
   lastName: string;
   userName: string;
 };
+export type EmployeeCreateDto = {
+  userId: number;
+  positionId: number;
+  salary: number;
+  employed: Boolean;
+};
+export type EmployeeUpdateDto = {
+  id: number;
+  userId: number;
+  positionId:number;
+  salary: number;
+  employed: Boolean;
+};
+export type EmployeeGetDto = {
+  id: number;
+  userId: number;
+  positionId: number;
+  salary: number;
+  employed: Boolean;
+};
