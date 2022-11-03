@@ -16,7 +16,7 @@ export const routes = {
   user: `/user`,
   employees: `/employees`,
   employeescreate: `/employees/create`,
-  employeesupdate: `/employees/update`,
+  employeesupdate: `/employees/:id`,
 };
 
 //This is where you will tell React Router what to render when the path matches the route specified.

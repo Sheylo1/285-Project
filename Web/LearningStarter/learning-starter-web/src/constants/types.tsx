@@ -28,7 +28,7 @@ export type EmployeeCreateDto = {
   employed: Boolean;
 };
 export type EmployeeUpdateDto = {
-  id: number;
+  // id: number;
   userId: number;
   positionId:number;
   salary: number;
