@@ -34,9 +34,6 @@ export const EmployeesListingPage = () => {
           <Button type ="button" onClick={() => history.push(routes.employeescreate)}>
             + Create
           </Button>
-          <Button type ="button" onClick={() => history.push(routes.employeesupdate)}>
-            + Update
-          </Button>
           <Table>
             {" "}
             <Table.Header>
