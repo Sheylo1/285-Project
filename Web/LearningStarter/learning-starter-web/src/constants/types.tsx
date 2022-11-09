@@ -22,10 +22,20 @@ export type UserDto = {
   userName: string;
 };
 
+export type BetCreateDto ={
+  name: string;
+  betCategoryId: number;
+  createdDate: string;
+  closedDate: string;
+  commentId: number;
+  betDisputeCall: boolean;
+  escrowSystemId: number;
+}
+
 export type BetGetDto = {
   id: number;
   name: string;
-  betCatagoryId: number;
+  betCategoryId: number;
   createdDate: string;
   closedDate: string;
   commentId: number;
