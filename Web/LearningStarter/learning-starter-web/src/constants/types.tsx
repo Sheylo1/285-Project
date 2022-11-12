@@ -21,3 +21,28 @@ export type UserDto = {
   lastName: string;
   userName: string;
 };
+
+export type CommentGetDto = {
+  id: number;
+  createdAt: string;
+  commentText: string;
+  createdByUserId: number;
+};
+
+export type CommentCreateDto = {
+  id: number;
+  createdAt: string;
+  commentText: string;
+};
+
+export type CommentUpdateDto = {
+  id: number;
+  createdAt: string;
+  commentText: string;
+};
+
+export type CommentDeleteDto = {
+  id: number;
+  createdAt: string;
+  commentText: string;
+};
