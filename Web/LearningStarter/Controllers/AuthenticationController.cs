@@ -59,9 +59,16 @@ namespace LearningStarter.Controllers
 
             var userGetDto = new UserGetDto
             {
+                Id = user.Id,
+                CreatedDate = user.CreatedDate,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                Username = user.Username
+                Username = user.Username,
+                AccountBalance = user.AccountBalance,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                DateOfBirth = user.DateOfBirth,
+                SocialId = user.SocialId
             };
 
             response.Data = userGetDto;

@@ -1,5 +1,5 @@
 import "./navigation.css";
-import React, { Children, useMemo } from "react";
+import React, { useMemo } from "react";
 import { NavLink, NavLinkProps } from "react-router-dom";
 import { Dropdown, Image, Menu, Icon, SemanticICONS } from "semantic-ui-react";
 import logo from "../../assets/logo.png";

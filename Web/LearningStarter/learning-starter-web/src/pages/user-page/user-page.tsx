@@ -15,6 +15,21 @@ export const UserPage = () => {
           <Divider />
           <Header size="small">Last Name</Header>
           <p>{user.lastName}</p>
+          <Divider />
+          <Header size="small"> Account Balance</Header>
+          <p>{user.accountBalance}</p>
+          <Divider />
+          <Header size="small">Email</Header>
+          <p>{user.email}</p>
+          <Divider />
+          <Header size="small">Phone Number</Header>
+          <p>{user.phoneNumber}</p>
+          <Divider />
+          <Header size="small">Date Of Birth</Header>
+          <p>{user.dateOfBirth}</p>
+          <Divider />
+          <Header size="small">SocialId</Header>
+          <p>{user.socialId}</p>
         </Container>
       </div>
     </div>

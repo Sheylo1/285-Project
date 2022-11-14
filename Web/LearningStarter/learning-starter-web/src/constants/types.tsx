@@ -20,6 +20,11 @@ export type UserDto = {
   firstName: string;
   lastName: string;
   userName: string;
+  accountBalance: number;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: string;
+  socialId: number;
 };
 export type EmployeeCreateDto = {
   userId: number;
@@ -40,4 +45,25 @@ export type EmployeeGetDto = {
   positionId: number;
   salary: number;
   employed: Boolean;
+};
+
+export type UserCreateDto = {
+  firstName: string;
+  lastName: string;
+  userName: string;
+  accountBalance: number;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: string;
+  socialId: number;
+};
+export type UserUpdateDto = {
+  firstName: string;
+  lastName: string;
+  userName: string;
+  accountBalance: number;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: string;
+  socialId: number;
 };

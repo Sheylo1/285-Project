@@ -5,7 +5,7 @@ import Header from "semantic-ui-react/dist/commonjs/elements/Header/Header";
 import { ApiResponse, EmployeeGetDto } from "../../../constants/types";
 import {useHistory} from 'react-router-dom'
 import { routes } from "../../../routes/config";
-import { baseUrl } from "../../../constants/env-vars";
+//import { baseUrl } from "../../../constants/env-vars";
 
 export const EmployeesListingPage = () => {
   const [employees, setEmployees] = React.useState<EmployeeGetDto[]>();

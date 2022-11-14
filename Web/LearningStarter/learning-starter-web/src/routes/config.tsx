@@ -14,6 +14,7 @@ export const routes = {
   root: `/`,
   home: `/home`,
   user: `/user`,
+  usercreate: `/user/create`,
   employees: `/employees`,
   employeescreate: `/employees/create`,
   employeesupdate: `/employees/:id`,
