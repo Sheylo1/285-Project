@@ -46,6 +46,11 @@ namespace LearningStarter.Data
             .HasForeignKey(emp => emp.UserId)
             .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Bet>()
+            .HasOne(property => property.BetCategory)
+            .WithMany(x => x.Bets)
+            .HasForeignKey(y => y.BetCategoryId);
+
             modelBuilder.Entity<User>()
                 .Property(x => x.FirstName)
                 .IsRequired();

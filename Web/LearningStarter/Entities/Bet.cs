@@ -10,12 +10,12 @@ namespace LearningStarter.Entities
         public int BetCategoryId { get; set; }
         public BetCategory BetCategory { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
-        public DateTimeOffset ClosedDate { get; set; }
-        public int CommentId { get; set; }
-        public Comment Comment { get; set; }
-        public Boolean BetDisputeCall { get; set; }
-        public int EscrowSystemId { get; set; }
-        public EscrowSystem EscrowSystem { get; set; }
+        public DateTimeOffset? ClosedDate { get; set; }
+        public int? CommentId { get; set; }
+        public Comment? Comment { get; set; }
+        public Boolean? BetDisputeCall { get; set; }
+        public int? EscrowSystemId { get; set; }
+        public EscrowSystem? EscrowSystem { get; set; }
         public List<BetTransaction> BetTransactions { get; set; } = new List<BetTransaction>();
         public List<BetDispute> BetDisputes { get; set; } = new List<BetDispute>();
     }
@@ -26,10 +26,10 @@ namespace LearningStarter.Entities
         public string Name { get; set; }
         public int BetCategoryId { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
-        public DateTimeOffset ClosedDate { get; set; }
-        public int CommentId { get; set; }
-        public bool BetDisputeCall { get; set; }
-        public int EscrowSystemId { get; set; }
+        public DateTimeOffset? ClosedDate { get; set; }
+        public int? CommentId { get; set; }
+        public bool? BetDisputeCall { get; set; }
+        public int? EscrowSystemId { get; set; }
         
     }
 
@@ -38,10 +38,10 @@ namespace LearningStarter.Entities
         public string Name { get; set; }
         public int BetCategoryId { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
-        public DateTimeOffset ClosedDate { get; set; }
-        public int CommentId { get; set; }
-        public bool BetDisputeCall { get; set; }
-        public int EscrowSystemId { get; set; }
+        public DateTimeOffset? ClosedDate { get; set; }
+        public int? CommentId { get; set; }
+        public bool? BetDisputeCall { get; set; }
+        public int? EscrowSystemId { get; set; }
         
     }
 
@@ -50,10 +50,10 @@ namespace LearningStarter.Entities
         public string Name { get; set; }
         public int BetCategoryId { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
-        public DateTimeOffset ClosedDate { get; set; }
-        public int CommentId { get; set; }
-        public bool BetDisputeCall { get; set; }
-        public int EscrowId { get; set; }
+        public DateTimeOffset? ClosedDate { get; set; }
+        public int? CommentId { get; set; }
+        public bool? BetDisputeCall { get; set; }
+        public int? EscrowSystemId { get; set; }
         
     }
 
@@ -62,9 +62,9 @@ namespace LearningStarter.Entities
         public string Name { get; set; }
         public int BetCategoryId { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
-        public DateTimeOffset ClosedDate { get; set; }
-        public int CommentId { get; set; }
-        public bool BetDisputeCall { get; set; }
-        public int EscrowId { get; set; }
+        public DateTimeOffset? ClosedDate { get; set; }
+        public int? CommentId { get; set; }
+        public bool? BetDisputeCall { get; set; }
+        public int? EscrowSystemId { get; set; }
     }
 }

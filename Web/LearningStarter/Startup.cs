@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
@@ -152,16 +153,27 @@ namespace LearningStarter
 
         private void SeedBetCategory(DataContext dataContext)
         {
-            if (!dataContext.BetCategories.Any())
-            {
-                var seededBetCategory = new BetCategory
-                {
-                    Name = "Bet Name",
-                };
+            var betCategories = dataContext.BetCategories;
 
-                dataContext.BetCategories.Add(seededBetCategory);
-                dataContext.SaveChanges();
+            if (dataContext.BetCategories.Any())
+            {
+                return;
             }
+
+            betCategories.Add(new BetCategory
+            {
+                Name = "Sport"
+            });
+            betCategories.Add(new BetCategory
+            {
+                Name = "E-Sport"
+            });
+            betCategories.Add(new BetCategory
+            {
+                Name = "Misc"
+            });
+
+            dataContext.SaveChanges();
         }
 
         public void SeedBet(DataContext dataContext)

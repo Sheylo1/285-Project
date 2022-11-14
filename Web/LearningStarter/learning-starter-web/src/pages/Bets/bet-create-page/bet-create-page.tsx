@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { routes } from "../../../routes/config";
 import { ApiResponse, BetCreateDto, BetGetDto } from "../../../constants/types";
 import axios from "axios";
-import { BaseUrl } from "../../../constants/env-vars";
+
 
 
 export const BetsCreatePage = () => {
@@ -13,19 +13,19 @@ export const BetsCreatePage = () => {
 
   const onSubmit = async (values: BetCreateDto) => {
     const response = await axios.post<ApiResponse<BetGetDto>>(
-      `${BaseUrl}/api/bets/create`, values
+      `/api/Bet`, values
     );
     
     
 
-    if (response.data.hasErrors) {
-      alert("Lol u though this would work idiot");
-      return;
-    }
-
-    alert("nothing exploded, bet created");
-    history.push(routes.bet);
-  };
+    if(response.data.hasErrors) {
+      response.data.errors.forEach((err) => {
+       console.log(err.message);
+      });
+   } else {
+       history.push(routes.bet)
+   }
+  }
 
   return (
     <>
@@ -35,10 +35,15 @@ export const BetsCreatePage = () => {
           <div>
             <div>
               <div className="Field-label">
-                <label htmlFor="=id">Id</label>
+                <label htmlFor="name">Name</label>
               </div>
-              <Field className="field" id="id" name="Name" >
+              <Field className="field" id="name" name="name" >
                 {({ field }) => <Input {...field} />}
+              </Field>
+              
+              <div>Bet Category</div>
+              <Field className="field" number="name" name="betCategoryId"  >
+                {({ field }) => <Input type="number" {...field} />}
               </Field>
             </div>
           </div>

@@ -26,11 +26,11 @@ export type BetCreateDto ={
   name: string;
   betCategoryId: number;
   createdDate: string;
-  closedDate: string;
-  commentId: number;
-  betDisputeCall: boolean;
-  escrowSystemId: number;
-}
+  closedDate: string | undefined;
+  commentId: number | undefined;
+  betDisputeCall: boolean | undefined;
+  escrowSystemId: number | undefined;
+};
 
 export type BetGetDto = {
   id: number;
