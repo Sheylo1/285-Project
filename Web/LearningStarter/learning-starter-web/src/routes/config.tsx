@@ -5,6 +5,10 @@ import { NotFoundPage } from "../pages/not-found";
 import { useUser } from "../authentication/use-auth";
 import { UserPage } from "../pages/user-page/user-page";
 import { PageWrapper } from "../components/page-wrapper/page-wrapper";
+import { CommentsListingPage } from "../pages/comments/comments-listing/comments-listing";
+import { CommentsCreatePage } from "../pages/comments/comments-create/comments-create";
+import { CommentsUpdatePage } from "../pages/comments/comments-update/comments-update";
+import { CommentsDeletePage } from "../pages/comments/comments-delete/comments-delete";
 import { EmployeesListingPage } from "../pages/employees/employees-listing/employees-listing";
 import { EmployeesCreatePage } from "../pages/employees/employee-create-page/employee-create-page";
 import { EmployeesUpdatePage } from "../pages/employees/employee-update-page/employee-update-page";
@@ -14,6 +18,10 @@ export const routes = {
   root: `/`,
   home: `/home`,
   user: `/user`,
+  comment: `/comment`,
+  commentsCreate: "/comment/create",
+  commentsUpdate: `/comment/:id`,
+  commentsDelete: `/comment/delete/:id`,
   usercreate: `/user/create`,
   employees: `/employees`,
   employeescreate: `/employees/create`,
@@ -37,6 +45,20 @@ export const Routes = () => {
           <Route path={routes.user} exact>
             <UserPage />
           </Route>
+          <Route path={routes.comment} exact>
+            <CommentsListingPage />
+          </Route>
+          <Route path={routes.commentsCreate} exact>
+            <CommentsCreatePage/>
+          </Route>
+          <Route path={routes.commentsUpdate} exact>
+            <CommentsUpdatePage/>
+          </Route>
+          <Route path={routes.commentsDelete} exact>
+            <CommentsDeletePage/>
+          </Route>
+
+
           <Route path ={routes.employees} exact>
             <EmployeesListingPage/>
           </Route>
