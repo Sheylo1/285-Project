@@ -31,49 +31,48 @@ export const CommentsListingPage = () => {
     return (
     <>
         {comments && (
-        <Segment>
-            <Header>Comment</Header> 
-              
-                <Table>
-                    <Table.Header>
-                    <Table.Row>
-                    <Table.HeaderCell width={1}></Table.HeaderCell>
-                    <Table.HeaderCell width={1}></Table.HeaderCell>
-                    <Table.HeaderCell>Id</Table.HeaderCell>
-                    <Table.HeaderCell>Comment Date</Table.HeaderCell>
-                    <Table.HeaderCell>Comment Made</Table.HeaderCell>
-                    </Table.Row>
-                    </Table.Header>
-                    <Table.Body>
-                        {comments.map(comment => {
-                            return (
-                                <Table.Row key={comment.id}>
-                                    {user?.id === comment.createdByUserId ? ( 
-                                        <Table.Cell><Icon className="clickable" name='edit' onClick={() => history.push(`/comment/${comment.id}`)}/></Table.Cell> 
-                                        ) : <Table.Cell></Table.Cell>}
+            <Segment>
+                <Header>Comment</Header> 
+                    <Table celled>
+                        <Table.Header>
+                        <Table.Row>
+                        <Table.HeaderCell width={1}></Table.HeaderCell>
+                        <Table.HeaderCell width={1}></Table.HeaderCell>
+                        <Table.HeaderCell>Id</Table.HeaderCell>
+                        <Table.HeaderCell>Comment Date</Table.HeaderCell>
+                        <Table.HeaderCell>Comment Made</Table.HeaderCell>
+                        </Table.Row>
+                        </Table.Header>
+                        <Table.Body>
+                            {comments.map(comment => {
+                                return (
+                                    <Table.Row key={comment.id}>
+                                        {user?.id === comment.createdByUserId ? ( 
+                                            <Table.Cell><Icon className="clickable" name='edit' onClick={() => history.push(`/comment/${comment.id}`)}/></Table.Cell> 
+                                            ) : <Table.Cell></Table.Cell>}
 
-                                    {user?.id === comment.createdByUserId ? ( 
-                                        <Table.Cell><Icon className="clickable" name='delete' onClick={() => history.push(`/comment/delete/${comment.id}`)}/></Table.Cell> 
-                                        ) : <Table.Cell></Table.Cell>}
+                                        {user?.id === comment.createdByUserId ? ( 
+                                            <Table.Cell><Icon className="clickable" name='delete' onClick={() => history.push(`/comment/delete/${comment.id}`)}/></Table.Cell> 
+                                            ) : <Table.Cell></Table.Cell>}
 
-                                    <Table.Cell>{comment.id}</Table.Cell>
-                                    <Table.Cell>{comment.createdAt}</Table.Cell>
-                                    <Table.Cell>{comment.commentText}</Table.Cell>
-                                </Table.Row>
-                            );
-                        })}
-                    </Table.Body>
-                </Table>
-                <div className = "Button">
-                    <Button color= 'blue' onClick={() => history.push(routes.home)}>
-                        Home
-                    </Button>
-                    <Button color= 'green' onClick={() => history.push(routes.commentsCreate)}>
-                        Create Message
-                    </Button>
-                </div>
+                                        <Table.Cell>{comment.id}</Table.Cell>
+                                        <Table.Cell>{comment.createdAt}</Table.Cell>
+                                        <Table.Cell>{comment.commentText}</Table.Cell>
+                                    </Table.Row>
+                                );
+                            })}
+                        </Table.Body>
+                    </Table>
+                    <div className = "Button">
+                        <Button color= 'blue' onClick={() => history.push(routes.home)}>
+                            Home
+                        </Button>
+                        <Button color= 'green' onClick={() => history.push(routes.commentsCreate)}>
+                            Create Message
+                        </Button>
+                    </div>
             </Segment>
-        )}
+    )}
         
     </>
     )

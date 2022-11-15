@@ -42,7 +42,7 @@ export const CommentsUpdatePage = () => {
         <div className="update-centertext">
         <h3 className="small-header">
                 Update Message</h3>
-                </div>
+        </div>
           <div>
             <div>
               <div className="update-header">
