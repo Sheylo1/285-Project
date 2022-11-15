@@ -266,7 +266,7 @@ namespace LearningStarter
                 var seededComments = new Comment
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentText = "Gamble & Give Me Your Money!"
+                    CommentText = "Here's a text"
                 };
                 dataContext.Comments.Add(seededComments);
 
@@ -280,6 +280,7 @@ namespace LearningStarter
                     Email = "JohnSmith@selu.edu",
                     PhoneNumber = "225-666-666",
                     DateOfBirth = DateTimeOffset.Now,
+                    SocialId = 1,
                 };
                 dataContext.Users.Add(seededUser);
                 dataContext.SaveChanges();
@@ -318,7 +319,7 @@ namespace LearningStarter
                 var seededComments = new Comment
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentText = "Gamble & Give Me Your Money!"
+                    CommentText = "Here's a text"
                 };
                 dataContext.Comments.Add(seededComments);
 
@@ -343,7 +344,7 @@ namespace LearningStarter
                 var seededComments = new Comment
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentText = "Gamble & Give Me Your Money!"
+                    CommentText = "Here's a text"
                 };
                 dataContext.Comments.Add(seededComments);
 
@@ -364,7 +365,7 @@ namespace LearningStarter
                 var seededComments = new Comment
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentText = "Gamble & Give Me Your Money!"
+                    CommentText = "Here's a text"
                 };
                 dataContext.Comments.Add(seededComments);
                 dataContext.SaveChanges();
