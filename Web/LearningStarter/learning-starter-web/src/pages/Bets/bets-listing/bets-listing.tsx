@@ -43,7 +43,15 @@ export const BetsListingPage = () => {
               {bets.map((bet) => {
                 return (
                   <Table.Row>
-                    <Table.Cell>{bet.id}</Table.Cell>
+                    <Table.Cell>
+                      <button
+                        type="button"
+                        onClick={() => history.push(routes.betCreate)}
+                      >
+                        Edit Bet
+                      </button>
+                      {bet.id}
+                    </Table.Cell>
                     <Table.Cell>
                       <Button
                         type="button"
