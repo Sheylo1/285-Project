@@ -1,5 +1,5 @@
 import "./navigation.css";
-import React, { useMemo } from "react";
+import React, { Children, useMemo } from "react";
 import { NavLink, NavLinkProps } from "react-router-dom";
 import { Dropdown, Image, Menu, Icon, SemanticICONS } from "semantic-ui-react";
 import logo from "../../assets/logo.png";
@@ -47,6 +47,7 @@ const DesktopNavigation = () => {
         },
       },
       {
+        
         text: "Listings",
         icon: "sort amount down",
         children: [
@@ -60,6 +61,15 @@ const DesktopNavigation = () => {
           },
         ]
       }
+
+        text: "Employees",
+        icon: "pied piper hat",
+            hide: false,
+            nav: {
+              to: routes.employees,
+            },
+      },
+
     ];
   }, []);
 
