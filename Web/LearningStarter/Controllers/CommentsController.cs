@@ -1,7 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using LearningStarter.Common;
 using LearningStarter.Data;
 using LearningStarter.Entities;
+using LearningStarter.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 
@@ -12,9 +14,11 @@ namespace LearningStarter.Controllers
     public class CommentsController : ControllerBase
     {
         private readonly DataContext _dataContext;
+        private readonly IAuthenticationService _authenticationService;
 
-        public CommentsController(DataContext dataContext)
+        public CommentsController(DataContext dataContext, IAuthenticationService authenticationService)
         {
+            _authenticationService = authenticationService;
             _dataContext = dataContext;
         }
 
@@ -30,6 +34,7 @@ namespace LearningStarter.Controllers
                     Id = comment.Id,
                     CreatedAt = comment.CreatedAt,
                     CommentText = comment.CommentText,
+                    CreatedByUserId = comment.CreatedByUserId,
                 })
                 .ToList();
 
@@ -50,6 +55,7 @@ namespace LearningStarter.Controllers
                     Id = comment.Id,
                     CreatedAt = comment.CreatedAt,
                     CommentText = comment.CommentText,
+                    CreatedByUserId = comment.CreatedByUserId,
                 })
                 .FirstOrDefault(comment => comment.Id == id);
 
@@ -68,11 +74,19 @@ namespace LearningStarter.Controllers
         public IActionResult Create([FromBody] CommentCreateDto commentCreateDto)
         {
             var response = new Response();
+            var currentUser = _authenticationService.GetLoggedInUser();
+
+            if(currentUser == null)
+            {
+                response.AddError("userId", "must be logged in >:(");
+                return BadRequest(response);
+            }
 
             var commentToAdd = new Comment
             {
-                CreatedAt = System.DateTimeOffset.Now,
-                CommentText = commentCreateDto.CommentText
+                CreatedAt = DateTimeOffset.Now,
+                CommentText = commentCreateDto.CommentText,
+                CreatedByUser = currentUser,
             };
 
             _dataContext.Comments.Add(commentToAdd);
@@ -83,6 +97,7 @@ namespace LearningStarter.Controllers
                 Id = commentToAdd.Id,
                 CreatedAt = commentToAdd.CreatedAt,
                 CommentText = commentToAdd.CommentText,
+                CreatedByUserId = currentUser.Id,
             };
 
             response.Data = CommentToReturn;
@@ -111,7 +126,7 @@ namespace LearningStarter.Controllers
                 return BadRequest(response);
             }
 
-            commentToUpdate.CreatedAt = commentUpdateDto.CreatedAt;
+            commentToUpdate.CreatedAt = DateTimeOffset.Now;
             commentToUpdate.CommentText = commentUpdateDto.CommentText;
 
             _dataContext.SaveChanges();
@@ -121,6 +136,7 @@ namespace LearningStarter.Controllers
                 Id = commentToUpdate.Id,
                 CreatedAt = commentToUpdate.CreatedAt,
                 CommentText = commentToUpdate.CommentText,
+                CreatedByUserId= commentToUpdate.CreatedByUserId,
             };
 
             response.Data = CommentToReturn;

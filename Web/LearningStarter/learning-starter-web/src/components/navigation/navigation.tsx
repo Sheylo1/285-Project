@@ -47,6 +47,21 @@ const DesktopNavigation = () => {
         },
       },
       {
+        
+        text: "Listings",
+        icon: "sort amount down",
+        children: [
+          {
+            text: "Comments",
+            icon: "comment",
+            hide: false,
+            nav: {
+              to: routes.comment,
+            },
+          },
+        ]
+      }
+
         text: "Employees",
         icon: "pied piper hat",
             hide: false,
@@ -54,6 +69,7 @@ const DesktopNavigation = () => {
               to: routes.employees,
             },
       },
+
     ];
   }, []);
 
