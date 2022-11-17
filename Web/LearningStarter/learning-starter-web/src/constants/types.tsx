@@ -54,7 +54,7 @@ export type UserCreateDto = {
   accountBalance: number;
   email: string;
   phoneNumber: string;
-  dateOfBirth: Date;
+  dateOfBirth: Date | undefined;
   socialId: number;
 };
 export type UserUpdateDto = {

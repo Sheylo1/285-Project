@@ -1,10 +1,12 @@
 import React from "react";
 import { useUser } from "../../authentication/use-auth";
 import { Header, Container, Divider } from "semantic-ui-react";
+import moment from "moment";
 import "./user-page.css";
 
 export const UserPage = () => {
   const user = useUser();
+
   return (
     <div className="user-page-container">
       <div>
@@ -26,10 +28,8 @@ export const UserPage = () => {
           <p>{user.phoneNumber}</p>
           <Divider />
           <Header size="small">Date Of Birth</Header>
-          <p>{user.dateOfBirth}</p>
+          <p>{moment(user.dateOfBirth).format("MMMM Do YYYY")}</p>
           <Divider />
-          <Header size="small">SocialId</Header>
-          <p>{user.socialId}</p>
         </Container>
       </div>
     </div>

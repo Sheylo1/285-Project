@@ -27,7 +27,6 @@ type FormValues = LoginRequest;
 //The css used in here is a good example of how flexbox works in css
 //For more info on flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 export const LoginPage = () => {
-  const d: Date = new Date("2001-11-11")
   const originalValues: UserCreateDto = {
     firstName: "",
     lastName: "",
@@ -35,7 +34,7 @@ export const LoginPage = () => {
     accountBalance: 0,
     email: "",
     phoneNumber: "",
-    dateOfBirth: d,
+    dateOfBirth: undefined,
     socialId: 1,
   };
   const[open, setOpen] = useState(false);
@@ -53,7 +52,7 @@ export const LoginPage = () => {
       return;
     }else{
             alert("Nothing went wrong!");
-     history.push(routes.user);
+     history.push(routes.home);
     }
     setOpen(false);
 
@@ -108,18 +107,20 @@ export const LoginPage = () => {
                 <div className="button-container-login-page">
                   <Button className="login-button" type="submit">
                     Login
-                  </Button>;
+                  </Button>
                 </div>
               </div>
             </Form>
           </Formik>
           <Header>Create New Account</Header>
       <Formik onSubmit={onSubmit} initialValues={originalValues }>
-        <Modal as={Form}
+        <Modal 
+        closeIcon
+        as={Form}
         onOpen={()=> setOpen(true)}
         onClose={()=>setOpen(false)}
         open={open}
-        trigger={<Button positive><Icon name="add"/></Button>}
+        trigger={<Button color="blue">Sign Up</Button>}
         >
             <Modal.Header>Create Account</Modal.Header>
             <Modal.Content>
@@ -186,7 +187,7 @@ export const LoginPage = () => {
             <Button
               secondary
               type="button"
-               onClick={() => history.push(routes.home)}
+               onClick={() => setOpen(false)}
             >
               Cancel
             </Button>
@@ -201,3 +202,7 @@ export const LoginPage = () => {
     </PageWrapper>
   );
 };
+function preventDefault() {
+  throw new Error("Function not implemented.");
+}
+
