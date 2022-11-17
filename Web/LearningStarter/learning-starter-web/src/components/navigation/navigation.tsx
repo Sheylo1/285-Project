@@ -54,6 +54,7 @@ const DesktopNavigation = () => {
               to: routes.employees,
             },
       },
+
     ];
   }, []);
 

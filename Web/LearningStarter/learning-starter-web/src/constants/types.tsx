@@ -23,7 +23,7 @@ export type UserDto = {
   accountBalance: number;
   email: string;
   phoneNumber: string;
-  dateOfBirth: string;
+  dateOfBirth: Date;
   socialId: number;
 };
 export type EmployeeCreateDto = {
@@ -54,7 +54,7 @@ export type UserCreateDto = {
   accountBalance: number;
   email: string;
   phoneNumber: string;
-  dateOfBirth: string;
+  dateOfBirth: Date;
   socialId: number;
 };
 export type UserUpdateDto = {
@@ -64,6 +64,6 @@ export type UserUpdateDto = {
   accountBalance: number;
   email: string;
   phoneNumber: string;
-  dateOfBirth: string;
+  dateOfBirth: Date;
   socialId: number;
 };
