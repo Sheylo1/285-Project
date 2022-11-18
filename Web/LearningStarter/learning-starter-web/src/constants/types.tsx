@@ -42,7 +42,31 @@ export type CommentUpdateDto = {
 };
 
 export type CommentDeleteDto = {
+
   id: number;
   createdAt: string;
   commentText: string;
 };
+export type EmployeeCreateDto = {
+
+  userId: number;
+  positionId: number;
+  salary: number;
+  employed: Boolean;
+};
+export type EmployeeUpdateDto = {
+
+  userId: number;
+  positionId:number;
+  salary: number;
+  employed: Boolean;
+};
+
+export type EmployeeGetDto = {
+  id: number;
+  userId: number;
+  positionId: number;
+  salary: number;
+  employed: Boolean;
+};
+
