@@ -19,6 +19,7 @@ export const CommentsCreatePage = () => {
 
         if(response.data.hasErrors) {
            response.data.errors.forEach((err) => {
+            alert("Must enter a message");
             console.log(err.message);
            });
         } else {
