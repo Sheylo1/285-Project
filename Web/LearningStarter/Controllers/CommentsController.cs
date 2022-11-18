@@ -35,6 +35,7 @@ namespace LearningStarter.Controllers
                     CreatedAt = comment.CreatedAt,
                     CommentText = comment.CommentText,
                     CreatedByUserId = comment.CreatedByUserId,
+                    CreatedByUserName = comment.CreatedByUser.Username,
                 })
                 .ToList();
 
@@ -79,6 +80,17 @@ namespace LearningStarter.Controllers
             if(currentUser == null)
             {
                 response.AddError("userId", "must be logged in >:(");
+                return BadRequest(response);
+            }
+
+            if(string.IsNullOrEmpty(commentCreateDto.CommentText))
+            {
+                response.AddError("comment", "Must enter a comment");
+                return BadRequest(response);
+            }
+
+            if (response.HasErrors)
+            {
                 return BadRequest(response);
             }
 

@@ -47,6 +47,14 @@ const DesktopNavigation = () => {
         },
       },
       {
+        text: "Employees",
+        icon: "pied piper hat",
+            hide: false,
+            nav: {
+              to: routes.employees,
+            },
+      },
+      {
         
         text: "Listings",
         icon: "sort amount down",
@@ -60,14 +68,6 @@ const DesktopNavigation = () => {
             },
           },
         ]
-      }
-
-        text: "Employees",
-        icon: "pied piper hat",
-            hide: false,
-            nav: {
-              to: routes.employees,
-            },
       },
 
     ];

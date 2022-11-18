@@ -20,6 +20,7 @@ namespace LearningStarter.Entities
         public DateTimeOffset CreatedAt { get; set; }
         public string CommentText { get; set; }
         public int? CreatedByUserId { get; set; }
+        public string CreatedByUserName { get; set; }
     }
     public class CommentCreateDto
     {
