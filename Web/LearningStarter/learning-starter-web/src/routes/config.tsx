@@ -16,7 +16,7 @@ export const routes = {
   home: `/home`,
   user: `/user`,
   comment: `/comment`,
-  commentsCreate: "/comment/create",
+  commentsCreate: `/comment/create`,
   commentsUpdate: `/comment/:id`,
   commentsDelete: `/comment/delete/:id`,
 };
