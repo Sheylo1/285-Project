@@ -46,6 +46,14 @@ const DesktopNavigation = () => {
           to: routes.user,
         },
       },
+      {
+        text: "Bet Categories",
+        icon: "list",
+        hide: false,
+        nav: {
+          to: routes.betCategories.listing,
+        }, 
+      },
     ];
   }, []);
 

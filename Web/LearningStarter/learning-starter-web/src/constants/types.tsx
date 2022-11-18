@@ -21,3 +21,16 @@ export type UserDto = {
   lastName: string;
   userName: string;
 };
+
+export type BetCategoryGetDto = {
+  id: number;
+  name: string;
+};
+
+export type BetCategoryCreateDto = {
+  name: string;
+};
+
+export type BetCategoryUpdateDto = {
+  name: string;
+};
