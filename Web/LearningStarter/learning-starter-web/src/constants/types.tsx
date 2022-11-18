@@ -27,6 +27,7 @@ export type CommentGetDto = {
   createdAt: string;
   commentText: string;
   createdByUserId: number;
+  createdByUserName: string;
 };
 
 export type CommentCreateDto = {
