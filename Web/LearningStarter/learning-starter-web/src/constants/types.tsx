@@ -20,6 +20,11 @@ export type UserDto = {
   firstName: string;
   lastName: string;
   userName: string;
+  accountBalance: number;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: Date;
+  socialId: number;
 };
 
 export type CommentGetDto = {
@@ -71,3 +76,24 @@ export type EmployeeGetDto = {
   employed: Boolean;
 };
 
+export type UserCreateDto = {
+  firstName: string;
+  lastName: string;
+  userName: string;
+  accountBalance: number;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: Date | undefined;
+  socialId: number;
+};
+
+export type UserUpdateDto = {
+  firstName: string;
+  lastName: string;
+  userName: string;
+  accountBalance: number;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: Date;
+  socialId: number;
+};

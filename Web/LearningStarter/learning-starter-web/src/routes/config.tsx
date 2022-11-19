@@ -19,8 +19,8 @@ import { EmployeesUpdatePage } from "../pages/employees/employee-update-page/emp
 export const routes = {
   root: `/`,
   home: `/home`,
-  user: `/user`,
-
+  user: `/users`,
+  usercreate: `/user/create`,
   comment: `/comment`,
   commentsCreate: `/comment/create`,
   commentsUpdate: `/comment/:id`,
