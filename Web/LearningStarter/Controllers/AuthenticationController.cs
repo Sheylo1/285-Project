@@ -68,7 +68,6 @@ namespace LearningStarter.Controllers
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 DateOfBirth = user.DateOfBirth,
-                SocialId = user.SocialId
             };
 
             response.Data = userGetDto;

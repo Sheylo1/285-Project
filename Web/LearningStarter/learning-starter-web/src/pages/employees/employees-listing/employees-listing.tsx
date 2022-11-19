@@ -31,10 +31,12 @@ export const EmployeesListingPage = () => {
       {employees && (
         <Segment>
           <Header>Employees</Header>{" "}
-          <Button type ="button" onClick={() => history.push(routes.employeescreate)}>
+          <div className='button'>
+          <Button color= 'green' onClick={() => history.push(routes.employeescreate)}>
             + Create
           </Button>
-          <Table>
+          </div>
+          <Table celled>
             {" "}
             <Table.Header>
               <Table.Row>
@@ -42,7 +44,7 @@ export const EmployeesListingPage = () => {
                 <Table.HeaderCell></Table.HeaderCell>
                 <Table.HeaderCell>Id</Table.HeaderCell>
                 <Table.HeaderCell>UserId</Table.HeaderCell>
-                <Table.HeaderCell>PositionsId</Table.HeaderCell>
+                <Table.HeaderCell>PositionId</Table.HeaderCell>
                 <Table.HeaderCell>Salary</Table.HeaderCell>
                 <Table.HeaderCell>Employed</Table.HeaderCell>
               </Table.Row>
@@ -63,9 +65,11 @@ export const EmployeesListingPage = () => {
               ))}
             </Table.Body>
           </Table>
-          <Button onClick={() => history.push(routes.home)}>
+          <div className = "button">
+            <Button color= 'blue' onClick={() => history.push(routes.home)}>
             Go Home
           </Button>
+          </div>
         </Segment>
       )}
     </>

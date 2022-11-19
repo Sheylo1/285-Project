@@ -54,6 +54,21 @@ const DesktopNavigation = () => {
               to: routes.employees,
             },
       },
+      {
+        
+        text: "Listings",
+        icon: "sort amount down",
+        children: [
+          {
+            text: "Comments",
+            icon: "comment",
+            hide: false,
+            nav: {
+              to: routes.comment,
+            },
+          },
+        ]
+      },
 
     ];
   }, []);

@@ -26,19 +26,48 @@ export type UserDto = {
   dateOfBirth: Date;
   socialId: number;
 };
+
+export type CommentGetDto = {
+  id: number;
+  createdAt: string;
+  commentText: string;
+  createdByUserId: number;
+  createdByUserName: string;
+};
+
+export type CommentCreateDto = {
+  id: number;
+  createdAt: string;
+  commentText: string;
+};
+
+export type CommentUpdateDto = {
+  id: number;
+  createdAt: string;
+  commentText: string;
+};
+
+export type CommentDeleteDto = {
+
+  id: number;
+  createdAt: string;
+  commentText: string;
+};
 export type EmployeeCreateDto = {
+
   userId: number;
   positionId: number;
   salary: number;
   employed: Boolean;
 };
 export type EmployeeUpdateDto = {
-  // id: number;
+
   userId: number;
   positionId:number;
   salary: number;
   employed: Boolean;
 };
+
 export type EmployeeGetDto = {
   id: number;
   userId: number;
@@ -57,6 +86,7 @@ export type UserCreateDto = {
   dateOfBirth: Date | undefined;
   socialId: number;
 };
+
 export type UserUpdateDto = {
   firstName: string;
   lastName: string;
