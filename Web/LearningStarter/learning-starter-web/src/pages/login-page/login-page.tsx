@@ -93,7 +93,7 @@ export const LoginPage = () => {
                     <label htmlFor="userName">UserName</label>
                   </div>
                   <Field className="field" id="username" name="username">
-                    {({ field }) => <Input {...field} />}
+                    {({ field }) => <Input placeholder= "username" type="username" {...field} />}
                   </Field>
                 </div>
                 <div>
@@ -101,12 +101,15 @@ export const LoginPage = () => {
                     <label htmlFor="password">Password</label>
                   </div>
                   <Field className="field" id="password" name="password">
-                    {({ field }) => <Input type="password" {...field} />}
+                    {({ field }) => <Input placeholder= "password" type="password" {...field} />}
                   </Field>
                 </div>
                 <div className="button-container-login-page">
-                  <Button className="login-button" type="submit">
+                  <Button color= 'green' className="login-button" type="submit">
                     Login
+                  </Button>
+                  <Button color= 'blue' className="login-button" type="submit">
+                    Sign Up
                   </Button>
                 </div>
               </div>

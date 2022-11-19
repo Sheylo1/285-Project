@@ -1,4 +1,20 @@
+.abstract-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
 .home-page-container {
   display: flex;
   justify-content: center;
+}
+
+.home-items {
+  display:flex;
+  flex-direction: column;
 }
