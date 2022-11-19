@@ -48,10 +48,10 @@ export const CommentsDeletePage = () => {
               </div>
             </div>
             <div className="delete-buttons">
-              <Button color= 'green' primary type="submit">
+              <Button primary type="submit">
                 Delete
               </Button>
-              <Button color= 'red'
+              <Button
                 secondary
                 type="button"
                 onClick={() => history.push(routes.comment)}

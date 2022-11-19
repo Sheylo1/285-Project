@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { routes } from '../../../routes/config';
 import { useUser } from '../../../authentication/use-auth';
 import "./comment-listing.css";
+import moment from 'moment';
 
 export const CommentsListingPage = () => {
     const [comments, setComments] = useState<CommentGetDto[]>()
@@ -61,7 +62,7 @@ export const CommentsListingPage = () => {
                                             <Table.Cell><Icon className="clickable" name='delete' onClick={() => history.push(`/comment/delete/${comment.id}`)}/></Table.Cell> 
                                             ) : <Table.Cell></Table.Cell>}
                                         <Table.Cell>{comment.id}</Table.Cell>
-                                        <Table.Cell>{comment.createdAt}</Table.Cell>
+                                        <Table.Cell>{moment(comment.createdAt).format("MMMM Do YYYY")}</Table.Cell>
                                         <Table.Cell>{comment.createdByUserName}</Table.Cell>
                                         <Table.Cell>{comment.commentText}</Table.Cell>
                                     </Table.Row>

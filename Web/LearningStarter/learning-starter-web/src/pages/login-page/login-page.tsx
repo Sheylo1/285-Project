@@ -108,9 +108,6 @@ export const LoginPage = () => {
                   <Button color= 'green' className="login-button" type="submit">
                     Login
                   </Button>
-                  <Button color= 'blue' className="login-button" type="submit">
-                    Sign Up
-                  </Button>
                 </div>
               </div>
             </Form>
