@@ -197,7 +197,7 @@ namespace LearningStarter
                 var seededBetDispute = new BetDispute
                 {
                     BetId = dataContext.Bets.FirstOrDefault().Id,
-                    Issue = "Disputed",
+                    Issue = "Undisputed",
                     CreatedDate = DateTime.Now,
                     ClosedDate = DateTime.Now,
                     EmployeeId = 1,
@@ -232,7 +232,7 @@ namespace LearningStarter
 
                 var seededPosition = new Position
                 {
-                    Salary = 12000,
+                    Salary = 10000,
                     Name = "Adminsitrator"
                 };
 
@@ -272,13 +272,13 @@ namespace LearningStarter
 
                 var seededUser = new User
                 {
-                    FirstName = "Seeded",
-                    LastName = "User",
-                    Username = "admin",
+                    FirstName = "Admin",
+                    LastName = "Admin",
+                    Username = "Admin",
                     Password = "password",
-                    AccountBalance = 1250,
-                    Email = "JohnSmith@selu.edu",
-                    PhoneNumber = "225-666-666",
+                    AccountBalance = 10000,
+                    Email = "admin@admin.aol",
+                    PhoneNumber = "219-455-2855",
                     DateOfBirth = DateTimeOffset.Now,
                 };
                 dataContext.Users.Add(seededUser);
@@ -293,7 +293,7 @@ namespace LearningStarter
                 var user = dataContext.Users.FirstOrDefault();
                 var seededEmployee = new Employee
                 {
-                    Salary = 12000,
+                    Salary = 10000,
                     Employed = true,
                     User = user,
                     Position = position
