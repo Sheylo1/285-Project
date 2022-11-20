@@ -28,7 +28,7 @@ export type BetCreateDto ={
   createdDate: string;
   closedDate: string | undefined;
   commentId: number | undefined;
-  betDisputeCall: boolean | undefined;
+  betDisputeCall: boolean;
   escrowSystemId: number | undefined;
 };
 
@@ -42,3 +42,8 @@ export type BetGetDto = {
   betDisputeCall: boolean;
   escrowSystemId: number;
 };
+
+export type BetUpdateDto = {
+  name: string;
+  betDisputeCall: boolean;
+}

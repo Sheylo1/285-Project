@@ -37,6 +37,7 @@ export const BetsListingPage = () => {
                 <Table.HeaderCell>Name</Table.HeaderCell>
                 <Table.HeaderCell>Bet CategoryId</Table.HeaderCell>
                 <Table.HeaderCell>Created Date</Table.HeaderCell>
+                <Table.HeaderCell>Dispute Status</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
@@ -44,12 +45,12 @@ export const BetsListingPage = () => {
                 return (
                   <Table.Row>
                     <Table.Cell>
-                      <button
+                      <Button
                         type="button"
-                        onClick={() => history.push(routes.betCreate)}
+                        onClick={() => history.push(routes.betUpdate.replace(":id", `${bet.id}`))}
                       >
                         Edit Bet
-                      </button>
+                      </Button>
                       {bet.id}
                     </Table.Cell>
                     <Table.Cell>
@@ -63,6 +64,7 @@ export const BetsListingPage = () => {
                     <Table.Cell>{bet.name}</Table.Cell>
                     <Table.Cell>{bet.betCategoryId}</Table.Cell>
                     <Table.Cell>{bet.createdDate}</Table.Cell>
+                    <Table.Cell>{bet.betDisputeCall}</Table.Cell>
                   </Table.Row>
                 );
               })}

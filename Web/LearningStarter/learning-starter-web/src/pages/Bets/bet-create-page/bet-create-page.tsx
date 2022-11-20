@@ -42,7 +42,7 @@ export const BetsCreatePage = () => {
               </Field>
               
               <div>Bet Category</div>
-              <Field className="field" number="name" name="betCategoryId"  >
+              <Field className="field" number="id" name="betCategoryId"  >
                 {({ field }) => <Input type="number" {...field} />}
               </Field>
             </div>
