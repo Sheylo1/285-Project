@@ -8,6 +8,7 @@ import { PageWrapper } from "../components/page-wrapper/page-wrapper";
 import { BetsListingPage } from "../pages/Bets/bets-listing/bets-listing";
 import { BetsCreatePage } from "../pages/Bets/bet-create-page/bet-create-page";
 import { BetUpdatePagePage } from "../pages/Bets/bet-update-page/bet-update-page";
+import { BetDeletePage } from "../pages/Bets/bet-delete-page/bet-delete-page";
 
 //This is where you will declare all of your routes (the ones that show up in the search bar)
 export const routes = {
@@ -16,7 +17,8 @@ export const routes = {
   user: `/user`,
   bet: `/bets`,
   betCreate: `/bets/create`,
-  betUpdate: `/bets/:id`
+  betUpdate: `/bets/:id`,
+  betDelete: `/bets/delete/:id`
 };
 
 //This is where you will tell React Router what to render when the path matches the route specified.
@@ -44,6 +46,9 @@ export const Routes = () => {
           </Route>
           <Route path={routes.betUpdate} exact>
             <BetUpdatePagePage />
+          </Route>
+          <Route path={routes.betDelete} exact>
+            <BetDeletePage />
           </Route>
           {/* Going to route "localhost:5001/" will go to homepage */}
           <Route path={routes.root} exact>

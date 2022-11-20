@@ -47,3 +47,7 @@ export type BetUpdateDto = {
   name: string;
   betDisputeCall: boolean;
 }
+
+export type BetDeleteDto = {
+  id: number;
+};
