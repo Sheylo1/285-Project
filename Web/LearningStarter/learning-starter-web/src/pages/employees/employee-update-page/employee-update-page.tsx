@@ -3,6 +3,7 @@ import React from "react";
 import { Button, Header, Input } from "semantic-ui-react";
 import { useHistory, useRouteMatch} from "react-router-dom";
 import { routes } from "../../../routes/config";
+import "./employee-update-page.css";
 import {
   ApiResponse,
   EmployeeGetDto,
@@ -10,7 +11,7 @@ import {
 } from "../../../constants/types";
 import axios from "axios";
 export const EmployeesUpdatePage = () => {
-  const match = useRouteMatch();
+  let match = useRouteMatch<{ id: string }>();
   const id = match.params.id;
 
   const initialValues: EmployeeUpdateDto = {
@@ -45,44 +46,53 @@ export const EmployeesUpdatePage = () => {
   };
   return (
     <>
-      <Header>Update Employee</Header>
+      <h2 className="employeeupdate-header">Update Employee</h2>
       <Formik onSubmit={onSubmit} initialValues={initialValues}>
         <Form>
           <div>
             <div>
-              <div className="field-label">
+            <div className="employeeupdate1-header">
                 <label htmlFor="userId">UserId</label>
               </div>
+              <div className="employeeupdate1-header">
               <Field className="field" id="userId" name="userId">
-                {({ field }) => <Input {...field} />}
+                {({ field }) => <Input placeholder="UserId" {...field} />}
               </Field>
+              </div>
               <div>
-                <div className="field-label">
+              <div className="employeeupdate1-header">
                   <label htmlFor="positionId">PositionsId</label>
                 </div>
+                <div className="employeeupdate1-header">
                 <Field className="field" id="positionId" name="positionId">
-                  {({ field }) => <Input {...field} />}
+                  {({ field }) => <Input placeholder="PositionId" {...field} />}
                 </Field>
+                </div>
               </div>
               <div>
-                <div className="field-label">
+              <div className="employeeupdate1-header">
                   <label htmlFor="salary">Salary</label>
                 </div>
+                <div className="employeeupdate1-header">
                 <Field className="field" id="salary" name="salary">
-                  {({ field }) => <Input {...field} />}
+                  {({ field }) => <Input placeholder="Salary" {...field} />}
                 </Field>
+                </div>
               </div>
               <div>
-                <div className="field-label">
-                  <label htmlFor="employed">Employed</label>
+              <div className="employeeupdate1-header">
+                  <label htmlFor="employed">Employment</label>
                 </div>
+                <div className="employeeupdate1-header">
                 <Field className="field" id="employed" name="employed">
-                  {({ field }) => <Input {...field} />}
+                  {({ field }) => <Input placeholder="Employment" {...field} />}
                 </Field>
+                </div>
               </div>
             </div>
           </div>
           <div>
+          <div className="employeecreate-buttons">
             <Button
               primary
               type="submit"
@@ -97,6 +107,7 @@ export const EmployeesUpdatePage = () => {
             >
               Cancel
             </Button>
+            </div>
           </div>
         </Form>
       </Formik>
