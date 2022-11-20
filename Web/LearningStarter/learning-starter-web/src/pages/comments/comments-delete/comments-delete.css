@@ -1,6 +1,7 @@
 .delete-header {
     display: flex;
     justify-content: center;
+    color: white;
 }
 
 .delete-buttons {

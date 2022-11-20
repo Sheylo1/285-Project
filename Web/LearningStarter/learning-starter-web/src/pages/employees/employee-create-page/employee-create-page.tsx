@@ -4,6 +4,7 @@ import { Button, Header, Input } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
 import { routes } from "../../../routes/config";
 //import { baseUrl } from "../../../constants/env-vars";
+import "./employee-create-page.css";
 
 import {
   ApiResponse,
@@ -46,44 +47,53 @@ export const EmployeesCreatePage = () => {
   };
   return (
     <>
-      <Header>Add New Employee</Header>
+      <h2 className="employeecreate-header">Add New Employee</h2>
       <Formik onSubmit={onSubmit} initialValues={initialValues }>
         <Form>
           <div>
             <div>
-              <div className="field-label">
+              <div className="employeecreate1-header">
                 <label htmlFor="userId">UserId</label>
-              </div>
+                </div>
+                <div className="employeecreate1-header">
               <Field className="field" id="userId" name="userId">
-                {({ field }) => <Input {...field} />}
+                {({ field }) => <Input placeholder="UserId" {...field} />}
               </Field>
-              <div>
-              <div className="field-label">
-                <label htmlFor="positionId">PositionsId</label>
               </div>
+              <div>
+              <div className="employeecreate1-header">
+                <label htmlFor="positionId">PositionsId</label>
+                </div>
+                <div className="employeecreate1-header">
               <Field className="field" id="positionId" name="positionId">
-                {({ field }) => <Input {...field} />}
+                {({ field }) => <Input placeholder="PositionId" {...field} />}
               </Field>
+              </div>
             </div>
             <div>
-              <div className="field-label">
+            <div className="employeecreate1-header">
                 <label htmlFor="salary">Salary</label>
               </div>
+              <div className="employeecreate1-header">
               <Field className="field" id="salary" name="salary">
-                {({ field }) => <Input {...field} />}
+                {({ field }) => <Input placeholder="Salary" {...field} />}
               </Field>
+              </div>
             </div>
             <div>
-              <div className="field-label">
-                <label htmlFor="employed">Employed</label>
+            <div className="employeecreate1-header">
+                <label htmlFor="employed">Employment</label>
               </div>
+              <div className="employeecreate1-header">
               <Field className="field" id="employed" name="employed">
-                {({ field }) => <Input {...field} />}
+                {({ field }) => <Input placeholder="Employment" {...field} />}
               </Field>
+              </div>
             </div>
             </div>
           </div>
           <div>
+            <div className="employeecreate-buttons">
             <Button
               primary
               type="submit"
@@ -98,6 +108,7 @@ export const EmployeesCreatePage = () => {
             >
               Cancel
             </Button>
+            </div>
           </div>
         </Form>
       </Formik>
