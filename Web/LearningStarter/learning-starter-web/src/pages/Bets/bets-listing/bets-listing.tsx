@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Header, Segment, Table } from "semantic-ui-react";
@@ -68,7 +69,9 @@ export const BetsListingPage = () => {
                     </Table.Cell>
                     <Table.Cell>{bet.name}</Table.Cell>
                     <Table.Cell>{bet.betCategoryId}</Table.Cell>
-                    <Table.Cell>{bet.createdDate}</Table.Cell>
+                    <Table.Cell>{moment(bet.createdDate)
+                    .format("MM-DD-YYYY")
+                    .toString()}</Table.Cell>
                     <Table.Cell>{bet.betDisputeCall}</Table.Cell>
                     <Table.Cell>
                       <Button
