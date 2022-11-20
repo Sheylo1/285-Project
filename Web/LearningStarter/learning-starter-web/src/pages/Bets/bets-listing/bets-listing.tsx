@@ -48,7 +48,11 @@ export const BetsListingPage = () => {
                     <Table.Cell>
                       <Button
                         type="button"
-                        onClick={() => history.push(routes.betUpdate.replace(":id", `${bet.id}`))}
+                        onClick={() =>
+                          history.push(
+                            routes.betUpdate.replace(":id", `${bet.id}`)
+                          )
+                        }
                       >
                         Edit Bet
                       </Button>
@@ -66,12 +70,19 @@ export const BetsListingPage = () => {
                     <Table.Cell>{bet.betCategoryId}</Table.Cell>
                     <Table.Cell>{bet.createdDate}</Table.Cell>
                     <Table.Cell>{bet.betDisputeCall}</Table.Cell>
-                    <Table.Cell><Button
+                    <Table.Cell>
+                      <Button
+                        style={{ color: "red" }}
                         type="button"
-                        onClick={() => history.push(routes.betDelete.replace(":id", `${bet.id}`))}
+                        onClick={() =>
+                          history.push(
+                            routes.betDelete.replace(":id", `${bet.id}`)
+                          )
+                        }
                       >
                         Delete
-                      </Button></Table.Cell>
+                      </Button>
+                    </Table.Cell>
                   </Table.Row>
                 );
               })}
