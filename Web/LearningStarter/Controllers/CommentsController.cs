@@ -132,6 +132,12 @@ namespace LearningStarter.Controllers
                 response.AddError("id", "Comment not found.");
             }
 
+            if (string.IsNullOrEmpty(commentUpdateDto.CommentText))
+            {
+                response.AddError("comment", "Must enter a comment");
+                return BadRequest(response);
+            }
+
 
             if (response.HasErrors)
             {
