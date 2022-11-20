@@ -126,43 +126,7 @@ export const LoginPage = () => {
             <Modal.Content>
                          <div>
             <div>
-              <div className="field-label">
-                <label htmlFor="userId">First Name</label>
-              </div>
-              <Field className="field" id="firstName" name="firstName">
-                {({ field }) => <Input {...field} />}
-              </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Last Name</label>
-              </div>
-              <Field className="field" id="lastName" name="lastName">
-                {({ field }) => <Input {...field} />}
-              </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Username</label>
-              </div>
-              <Field className="field" id="userName" name="userName">
-                {({ field }) => <Input {...field} />}
-              </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Password</label>
-              </div>
-              <Field className="field" id="password" name="password">
-                {({ field }) => <Input {...field} />}
-              </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Email</label>
-              </div>
-              <Field className="field" id="email" name="email">
-                {({ field }) => <Input {...field} />}
-              </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Phone Number</label>
-              </div>
-              <Field className="field" id="phoneNumber" name="phoneNumber">
-                {({ field }) => <Input {...field} />}
-              </Field>
-              <div className="field-label">
+            <div className="field-label">
                 <label htmlFor="userId">Date of Birth</label>
               </div>
               <Field className="date" id="dateOfBirth" name="dateOfBirth">
@@ -171,6 +135,42 @@ export const LoginPage = () => {
                   console.log("debug",value)
                   form.setFieldValue(name, value)}
                 }  />}
+              </Field>
+              <div className="field-label">
+                <label htmlFor="userId">First Name</label>
+              </div>
+              <Field className="field" id="firstName" name="firstName">
+                {({ field }) => <Input placeholder= "First Name" {...field} />}
+              </Field>
+              <div className="field-label">
+                <label htmlFor="userId">Last Name</label>
+              </div>
+              <Field className="field" id="lastName" name="lastName">
+                {({ field }) => <Input placeholder= "Last Name" {...field} />}
+              </Field>
+              <div className="field-label">
+                <label htmlFor="userId">Username</label>
+              </div>
+              <Field className="field" id="userName" name="userName">
+                {({ field }) => <Input placeholder= "Username" {...field} />}
+              </Field>
+              <div className="field-label">
+                <label htmlFor="userId">Email</label>
+              </div>
+              <Field className="field" id="email" name="email">
+                {({ field }) => <Input placeholder= "Email" {...field} />}
+              </Field>
+              <div className="field-label">
+                <label htmlFor="userId">Password</label>
+              </div>
+              <Field className="field" id="password" name="password">
+                {({ field }) => <Input placeholder= "Password" {...field} />}
+              </Field>
+              <div className="field-label">
+                <label htmlFor="userId">Phone Number</label>
+              </div>
+              <Field className="field" id="phoneNumber" name="phoneNumber">
+                {({ field }) => <Input placeholder= "Phone Number" {...field} />}
               </Field>
             </div>
           </div> 

@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import React from "react";
 import { Header, Input, Button } from "semantic-ui-react";
-import { useHistory, useRouteMatch } from "react-router-dom";
+import { useHistory, useParams, useRouteMatch } from "react-router-dom";
 import { routes } from "../../../routes/config";
 import {
   ApiResponse,
@@ -15,9 +15,9 @@ import { BaseUrl } from "../../../constants/env-vars";
 import "./comments-delete.css";
 
 export const CommentsDeletePage = () => {
+  let match = useRouteMatch<{ id: string }>();
+  const id = match.params.id;
   const history = useHistory();
-  const route = useRouteMatch();
-  const id = route.params.id;
 
   const onSubmit = async (values: CommentDeleteDto) => {
     const response = await axios.delete<ApiResponse<CommentGetDto>>(

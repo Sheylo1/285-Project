@@ -15,9 +15,9 @@ import { BaseUrl } from "../../../constants/env-vars";
 import "./comments-update.css";
 
 export const CommentsUpdatePage = () => {
+  let match = useRouteMatch<{ id: string }>();
+  const id = match.params.id;
   const history = useHistory();
-  const route = useRouteMatch();
-  const id = route.params.id;
 
   const onSubmit = async (values: CommentUpdateDto) => {
     const response = await axios.put<ApiResponse<CommentGetDto>>(
