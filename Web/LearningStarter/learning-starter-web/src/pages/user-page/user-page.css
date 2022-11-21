@@ -14,3 +14,9 @@
   justify-content: center;
   padding-bottom: 25px;
 }
+
+.headertitles{
+  display: flex;
+  justify-content: center;
+  color: white;
+}

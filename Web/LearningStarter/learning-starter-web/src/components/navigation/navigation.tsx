@@ -39,14 +39,6 @@ const DesktopNavigation = () => {
         },
       },
       {
-        text: "Bets",
-        hide: false,
-        nav: {
-          to: routes.bet,
-        },
-        
-      },
-      {
         text: "User",
         icon: "user",
         hide: false,
@@ -55,19 +47,29 @@ const DesktopNavigation = () => {
         },
       },
       {
-        text: "Bet Categories",
-        icon: "list",
-        hide: false,
-        nav: {
-          to: routes.betCategories.listing,
-        }, 
-      },
         text: "Employees",
         icon: "pied piper hat",
             hide: false,
             nav: {
               to: routes.employees,
             },
+      },
+      {
+        text: "Bets",
+        icon: "handshake",
+        hide: false,
+        nav: {
+          to: routes.bet,
+        },
+        
+      },
+      {
+        text: "Bet Categories",
+        icon: "list",
+        hide: false,
+        nav: {
+          to: routes.betCategories.listing,
+        }, 
       },
       {
         
