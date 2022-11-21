@@ -143,9 +143,13 @@ namespace LearningStarter
             SeedSocials(dataContext);
             SeedPosts(dataContext);
             SeedComments(dataContext);
-            SeedEscrowSystems(dataContext);
             SeedBetCategory(dataContext);
+            SeedEscrowSystems(dataContext);
+            SeedHouseSystems(dataContext);
+            SeedTransactions(dataContext);
             SeedBet(dataContext);
+            SeedTransactionUsers(dataContext);
+            SeedBetTransactions(dataContext);
             SeedBetDisputes(dataContext);
            
             
@@ -205,7 +209,7 @@ namespace LearningStarter
                 var seededBetDispute = new BetDispute
                 {
                     BetId = dataContext.Bets.FirstOrDefault().Id,
-                    Issue = "Disputed",
+                    Issue = "Undisputed",
                     CreatedDate = DateTime.Now,
                     ClosedDate = DateTime.Now,
                     EmployeeId = 1,
@@ -231,8 +235,6 @@ namespace LearningStarter
                 dataContext.EscrowSystems.Add(seededEscrowSystem);
                 dataContext.SaveChanges();
             }
-
-
         }
 
         private void SeedPostions(DataContext dataContext)
@@ -242,7 +244,7 @@ namespace LearningStarter
 
                 var seededPosition = new Position
                 {
-                    Salary = 12000,
+                    Salary = 10000,
                     Name = "Adminsitrator"
                 };
 
@@ -276,21 +278,20 @@ namespace LearningStarter
                 var seededComments = new Comment
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentText = "Here's a text"
+                    CommentText = "Gamble & Give Me Your Money!"
                 };
                 dataContext.Comments.Add(seededComments);
 
                 var seededUser = new User
                 {
-                    FirstName = "Seeded",
-                    LastName = "User",
-                    Username = "admin",
+                    FirstName = "Admin",
+                    LastName = "Admin",
+                    Username = "Admin",
                     Password = "password",
-                    AccountBalance = 1250,
-                    Email = "JohnSmith@selu.edu",
-                    PhoneNumber = "225-666-666",
+                    AccountBalance = 10000,
+                    Email = "admin@admin.aol",
+                    PhoneNumber = "219-455-2855",
                     DateOfBirth = DateTimeOffset.Now,
-                    SocialId = 1,
                 };
                 dataContext.Users.Add(seededUser);
                 dataContext.SaveChanges();
@@ -300,11 +301,11 @@ namespace LearningStarter
         {
             if (!dataContext.Employees.Any())
             {
-                var position = dataContext.Positions.First();
-                var user = dataContext.Users.First();
+                var position = dataContext.Positions.FirstOrDefault();
+                var user = dataContext.Users.FirstOrDefault();
                 var seededEmployee = new Employee
                 {
-                    Salary = 12000,
+                    Salary = 10000,
                     Employed = true,
                     User = user,
                     Position = position
@@ -329,7 +330,7 @@ namespace LearningStarter
                 var seededComments = new Comment
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentText = "Here's a text"
+                    CommentText = "Gamble & Give Me Your Money!"
                 };
                 dataContext.Comments.Add(seededComments);
 
@@ -354,7 +355,7 @@ namespace LearningStarter
                 var seededComments = new Comment
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentText = "Here's a text"
+                    CommentText = "Gamble & Give Me Your Money!"
                 };
                 dataContext.Comments.Add(seededComments);
 
@@ -375,13 +376,140 @@ namespace LearningStarter
                 var seededComments = new Comment
                 {
                     CreatedAt = DateTimeOffset.Now,
-                    CommentText = "Here's a text"
+                    CommentText = "Gamble & Give Me Your Money!"
                 };
                 dataContext.Comments.Add(seededComments);
                 dataContext.SaveChanges();
             }
         }
+       
+        public void SeedBetCategories(DataContext dataContext)
+        {
+            if (!dataContext.BetCategories.Any())
+            {
+                var seededBetCategories = new BetCategory()
+                {
+                    Name = "Sports"
+                };
+                dataContext.BetCategories.Add(seededBetCategories);
+                dataContext.SaveChanges();
+            }
+        }
+
+        public void SeedTransactionUsers(DataContext dataContext)
+        {
+            if (!dataContext.TransactionsUsers.Any())
+            {
 
 
+                var seededTransactionUsers = new TransactionsUser()
+                {
+                    Amount = 500,
+                    TransactionsId = dataContext.Transactions.FirstOrDefault().Id,
+                    UserId = dataContext.Users.FirstOrDefault().Id,
+                };
+                dataContext.TransactionsUsers.Add(seededTransactionUsers);
+                dataContext.SaveChanges();
+
+
+            }
+        }
+
+
+        public void SeedEscroSystems(DataContext dataContext)
+        {
+            if (!dataContext.EscrowSystems.Any())
+            {
+                var seededEscroSystems = new EscrowSystem()
+                {
+                    PaymentType = "Debit",
+                    CreatedDate = DateTimeOffset.Now,
+                    ClosedDate = DateTimeOffset.Now,
+                    DispersalCompletionDate = DateTimeOffset.Now,
+                    EscrowPayout = 20
+
+                };
+                dataContext.EscrowSystems.Add(seededEscroSystems);
+                dataContext.SaveChanges();
+            };
+        }
+
+        public void SeedHouseSystems(DataContext dataContext)
+        {
+            if (!dataContext.HouseSystems.Any())
+            {
+                var seededHouseSystems = new HouseSystem()
+                {
+                    Payout = 20,
+                    BetPercentage = 3,
+                };
+                dataContext.HouseSystems.Add(seededHouseSystems);
+                dataContext.SaveChanges();
+            }
+        }
+
+        public void SeedTransactions(DataContext dataContext)
+        {
+            if (!dataContext.Transactions.Any())
+            {
+                var seededTransactions = new Transaction()
+                {
+                    Amount = 500,
+                    PaymentType = "Credit",
+                    CreatedAt = DateTimeOffset.Now,
+                };
+
+                dataContext.Add(seededTransactions);
+                dataContext.SaveChanges();
+            }
+        }
+
+        public void SeedBets(DataContext dataContext)
+        {
+            if (!dataContext.Bets.Any())
+            {
+
+
+                var seededBets = new Bet()
+                {
+                    Name = "Bet",
+                    BetCategoryId = dataContext.BetCategories.FirstOrDefault().Id,
+                    CreatedDate = DateTimeOffset.Now,
+                    ClosedDate = DateTimeOffset.Now,
+                    CommentId = dataContext.Comments.FirstOrDefault().Id,
+                    BetDisputeCall = false,
+                    EscrowSystemId = dataContext.EscrowSystems.FirstOrDefault().Id
+
+                };
+                dataContext.Bets.Add(seededBets);
+                dataContext.SaveChanges();
+
+            }
+        }
+
+
+        public void SeedBetTransactions(DataContext dataContext)
+        {
+
+            if (!dataContext.BetTransactions.Any())
+            {
+
+                var seededBetTransactions = new BetTransaction()
+                {
+                    BetId = dataContext.Bets.FirstOrDefault().Id,
+                    CreatedDate = DateTimeOffset.Now,
+                    FinishedAt = DateTimeOffset.Now,
+                    Amount = 100,
+                    Result = "Fail",
+                    HouseSystemId = dataContext.HouseSystems.FirstOrDefault().Id,
+                    UserId = dataContext.Users.FirstOrDefault().Id,
+                    EmployeeId = dataContext.Employees.FirstOrDefault().Id,
+                    TransactionId = dataContext.Transactions.FirstOrDefault().Id
+                };
+                dataContext.BetTransactions.Add(seededBetTransactions);
+
+                dataContext.SaveChanges();
+            }
+        }
     }
 }

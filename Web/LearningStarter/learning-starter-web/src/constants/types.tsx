@@ -50,4 +50,77 @@ export type BetUpdateDto = {
 
 export type BetDeleteDto = {
   id: number;
+  accountBalance: number;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: Date;
+};
+
+export type CommentGetDto = {
+  id: number;
+  createdAt: string;
+  commentText: string;
+  createdByUserId: number;
+  createdByUserName: string;
+};
+
+export type CommentCreateDto = {
+  id: number;
+  createdAt: string;
+  commentText: string;
+};
+
+export type CommentUpdateDto = {
+  id: number;
+  createdAt: string;
+  commentText: string;
+};
+
+export type CommentDeleteDto = {
+
+  id: number;
+  createdAt: string;
+  commentText: string;
+};
+export type EmployeeCreateDto = {
+
+  userId: number;
+  positionId: number;
+  salary: number;
+  employed: Boolean;
+};
+export type EmployeeUpdateDto = {
+
+  userId: number;
+  positionId:number;
+  salary: number;
+  employed: Boolean;
+};
+
+export type EmployeeGetDto = {
+  id: number;
+  userId: number;
+  positionId: number;
+  salary: number;
+  employed: Boolean;
+};
+
+export type UserCreateDto = {
+  firstName: string;
+  lastName: string;
+  userName: string;
+  accountBalance: number;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: Date | undefined;
+};
+
+export type UserUpdateDto = {
+  firstName: string;
+  lastName: string;
+  userName: string;
+  accountBalance: number;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: Date;
 };

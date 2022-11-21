@@ -2,7 +2,7 @@
   z-index: 3;
   margin: 0;
   padding: 0 25px 0 10px;
-  border-bottom: solid 1px #d7d6d4;
+  border-bottom: solid 1px #d7d4d4;
   height: 60px !important;
 }
 
@@ -12,8 +12,8 @@
 }
 
 .top-navigation.ui.secondary.menu .logo {
-  height: 40px;
-  width: 45px;
+  height: 55spx;
+  width: 60px;
 }
 
 .top-navigation.ui.secondary.menu .ui.dropdown .menu {
@@ -55,7 +55,7 @@
 .top-navigation.ui.secondary.menu
   .ui.secondary.menu.desktop-navigation
   .item.active:hover {
-  background-color: #d7d6d4;
+  background-color: rgba(40, 90, 133);
 }
 
 .top-navigation.ui.secondary.menu
@@ -65,7 +65,7 @@
   .ui.secondary.menu.desktop-navigation
   .item.active:hover
   > .label {
-  background-color: #ecebea;
+  background-color: rgba(40, 90, 133);
   color: lighten(0.05, #1b1c1d);
 }
 
@@ -75,7 +75,7 @@
   .item.active,
 .item.active:hover {
   border: none;
-  background-color: #ecebea;
+  background-color: rgba(40, 90, 133);
 }
 
 .top-navigation.ui.secondary.menu
@@ -121,7 +121,7 @@
 }
 
 .user-icon.ui.item:hover {
-  background-color: #ecebea !important;
+  background-color: #eceaea !important;
 }
 
 .top-navigation.ui.secondary.menu .logo-menu-item {

@@ -6,7 +6,7 @@ namespace LearningStarter.Entities
 {
     public class User
     {
-        [JsonIgnore] 
+        [JsonIgnore]
         public int Id { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
@@ -18,8 +18,6 @@ namespace LearningStarter.Entities
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
         public DateTimeOffset DateOfBirth { get; set; }
-        public int SocialId { get; set; }
-        public Social Social { get; set; }
 
 
         public List<Employee> Employees { get; set; } = new List<Employee>();
@@ -40,11 +38,10 @@ namespace LearningStarter.Entities
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
         public DateTimeOffset DateOfBirth { get; set; }
-        public int SocialId { get; set; }
     }
 
     public class UserUpdateDto
-    {        
+    {
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset ClosedDate { get; set; }
         public decimal AccountBalance { get; set; }
@@ -55,7 +52,6 @@ namespace LearningStarter.Entities
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
         public DateTimeOffset DateOfBirth { get; set; }
-        public int SocialId { get; set; }
     }
 
     public class UserGetDto
@@ -72,7 +68,6 @@ namespace LearningStarter.Entities
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
         public DateTimeOffset DateOfBirth { get; set; }
-        public int SocialId { get; set; }
     }
 
     public class UserListingDto
@@ -87,6 +82,5 @@ namespace LearningStarter.Entities
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
         public DateTimeOffset DateOfBirth { get; set; }
-        public int SocialId { get; set; }
     }
 }

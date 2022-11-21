@@ -96,6 +96,7 @@ namespace LearningStarter.Controllers
             {
                 Id = betDisputeToAdd.Id,
                 BetId = betDisputeToAdd.BetId,
+                Issue = betDisputeToAdd.Issue,
                 CreatedDate = betDisputeToAdd.CreatedDate,
                 ClosedDate = betDisputeToAdd.ClosedDate,
                 EmployeeId = betDisputeToAdd.EmployeeId,
@@ -131,6 +132,7 @@ namespace LearningStarter.Controllers
             {
                 Id = betDisputeToUpdate.Id,
                 BetId = betDisputeToUpdate.BetId,
+                Issue = betDisputeToUpdate.Issue,
                 CreatedDate = betDisputeToUpdate.CreatedDate,
                 ClosedDate= betDisputeToUpdate.ClosedDate,
                 EmployeeId = betDisputeToUpdate.EmployeeId,

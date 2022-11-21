@@ -1,0 +1,16 @@
+.delete-header {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.delete-buttons {
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+}
+
+.small-header {
+    display: flex;
+    padding-top: 3px;
+}
