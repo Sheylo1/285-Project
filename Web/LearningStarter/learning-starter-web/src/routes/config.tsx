@@ -5,6 +5,10 @@ import { NotFoundPage } from "../pages/not-found";
 import { useUser } from "../authentication/use-auth";
 import { UserPage } from "../pages/user-page/user-page";
 import { PageWrapper } from "../components/page-wrapper/page-wrapper";
+import { BetsListingPage } from "../pages/Bets/bets-listing/bets-listing";
+import { BetsCreatePage } from "../pages/Bets/bet-create-page/bet-create-page";
+import { BetUpdatePagePage } from "../pages/Bets/bet-update-page/bet-update-page";
+import { BetDeletePage } from "../pages/Bets/bet-delete-page/bet-delete-page";
 
 import { CommentsListingPage } from "../pages/comments/comments-listing/comments-listing";
 import { CommentsCreatePage } from "../pages/comments/comments-create/comments-create";
@@ -19,6 +23,11 @@ import { EmployeesUpdatePage } from "../pages/employees/employee-update-page/emp
 export const routes = {
   root: `/`,
   home: `/home`,
+  user: `/user`,
+  bet: `/bets`,
+  betCreate: `/bets/create`,
+  betUpdate: `/bets/:id`,
+  betDelete: `/bets/delete/:id`
   user: `/users`,
   usercreate: `/user/create`,
   comment: `/comment`,
@@ -47,6 +56,17 @@ export const Routes = () => {
           <Route path={routes.user} exact>
             <UserPage />
           </Route>
+          <Route path={routes.bet} exact>
+            <BetsListingPage />
+          </Route>
+          <Route path={routes.betCreate} exact>
+            <BetsCreatePage />
+          </Route>
+          <Route path={routes.betUpdate} exact>
+            <BetUpdatePagePage />
+          </Route>
+          <Route path={routes.betDelete} exact>
+            <BetDeletePage />
           <Route path={routes.comment} exact>
             <CommentsListingPage />
           </Route>

@@ -20,6 +20,36 @@ export type UserDto = {
   firstName: string;
   lastName: string;
   userName: string;
+};
+
+export type BetCreateDto ={
+  name: string;
+  betCategoryId: number;
+  createdDate: string;
+  closedDate: string | undefined;
+  commentId: number | undefined;
+  betDisputeCall: boolean;
+  escrowSystemId: number | undefined;
+};
+
+export type BetGetDto = {
+  id: number;
+  name: string;
+  betCategoryId: number;
+  createdDate: string;
+  closedDate: string;
+  commentId: number;
+  betDisputeCall: boolean;
+  escrowSystemId: number;
+};
+
+export type BetUpdateDto = {
+  name: string;
+  betDisputeCall: boolean;
+}
+
+export type BetDeleteDto = {
+  id: number;
   accountBalance: number;
   email: string;
   phoneNumber: string;
