@@ -1,8 +1,7 @@
 .abstract-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  object-fit: cover;
+  size: cover;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .header {

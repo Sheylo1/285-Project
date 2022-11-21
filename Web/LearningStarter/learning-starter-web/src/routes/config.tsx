@@ -27,8 +27,8 @@ export const routes = {
   bet: `/bets`,
   betCreate: `/bets/create`,
   betUpdate: `/bets/:id`,
-  betDelete: `/bets/delete/:id`
-  user: `/users`,
+  betDelete: `/bets/delete/:id`,
+  users: `/users`,
   usercreate: `/user/create`,
   comment: `/comment`,
   commentsCreate: `/comment/create`,
@@ -67,6 +67,7 @@ export const Routes = () => {
           </Route>
           <Route path={routes.betDelete} exact>
             <BetDeletePage />
+            </Route>
           <Route path={routes.comment} exact>
             <CommentsListingPage />
           </Route>

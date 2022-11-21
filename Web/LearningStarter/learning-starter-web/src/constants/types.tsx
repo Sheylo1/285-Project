@@ -16,10 +16,14 @@ export type AnyObject = {
 };
 
 export type UserDto = {
+  accountBalance: number;
   id: number;
   firstName: string;
   lastName: string;
   userName: string;
+  dateOfBirth: Date;
+  email: string;
+  phoneNumber: number;
 };
 
 export type BetCreateDto ={
