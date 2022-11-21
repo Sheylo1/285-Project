@@ -55,6 +55,13 @@ const DesktopNavigation = () => {
         },
       },
       {
+        text: "Bet Categories",
+        icon: "list",
+        hide: false,
+        nav: {
+          to: routes.betCategories.listing,
+        }, 
+      },
         text: "Employees",
         icon: "pied piper hat",
             hide: false,

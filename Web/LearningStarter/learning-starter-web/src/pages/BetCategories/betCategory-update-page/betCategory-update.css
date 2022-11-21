@@ -1,0 +1,11 @@
+.betCategory-update-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .betCategory-update-header-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }

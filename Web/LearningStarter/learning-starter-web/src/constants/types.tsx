@@ -26,6 +26,19 @@ export type UserDto = {
   phoneNumber: number;
 };
 
+export type BetCategoryGetDto = {
+  id: number;
+  name: string;
+};
+
+export type BetCategoryCreateDto = {
+  name: string;
+};
+
+export type BetCategoryUpdateDto = {
+  name: string;
+};
+
 export type BetCreateDto ={
   name: string;
   betCategoryId: number;

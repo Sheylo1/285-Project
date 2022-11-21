@@ -1,0 +1,11 @@
+.betCategory-createheader-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .betCategory-create-container {
+    display: flex;
+    justify-content: center;
+  }

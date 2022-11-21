@@ -1,0 +1,11 @@
+.betCategory-delete-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .betCategory-deleteheader-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }

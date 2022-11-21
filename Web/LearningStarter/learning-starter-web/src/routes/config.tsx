@@ -5,16 +5,18 @@ import { NotFoundPage } from "../pages/not-found";
 import { useUser } from "../authentication/use-auth";
 import { UserPage } from "../pages/user-page/user-page";
 import { PageWrapper } from "../components/page-wrapper/page-wrapper";
+import { BetCategoriesListingPage } from "../pages/BetCategories/betCategory-listing-page/betCategory-listing";
+import { BetCategoriesCreatePage } from "../pages/BetCategories/betCategory-create-page/betCategory-create";
+import { BetCategoriesUpdatePage } from "../pages/BetCategories/betCategory-update-page/betCategory-update";
+import { BetCategoriesDeletePage } from "../pages/BetCategories/betCategory-delete-page/betCategory-delete";
 import { BetsListingPage } from "../pages/Bets/bets-listing/bets-listing";
 import { BetsCreatePage } from "../pages/Bets/bet-create-page/bet-create-page";
 import { BetUpdatePagePage } from "../pages/Bets/bet-update-page/bet-update-page";
 import { BetDeletePage } from "../pages/Bets/bet-delete-page/bet-delete-page";
-
 import { CommentsListingPage } from "../pages/comments/comments-listing/comments-listing";
 import { CommentsCreatePage } from "../pages/comments/comments-create/comments-create";
 import { CommentsUpdatePage } from "../pages/comments/comments-update/comments-update";
 import { CommentsDeletePage } from "../pages/comments/comments-delete/comments-delete";
-
 import { EmployeesListingPage } from "../pages/employees/employees-listing/employees-listing";
 import { EmployeesCreatePage } from "../pages/employees/employee-create-page/employee-create-page";
 import { EmployeesUpdatePage } from "../pages/employees/employee-update-page/employee-update-page";
@@ -24,6 +26,12 @@ export const routes = {
   root: `/`,
   home: `/home`,
   user: `/user`,
+  betCategories: {
+    listing: "/betcategorylisting",
+    create: "/betcategorycreate",
+    update: "/betcategoryupdate/:id",
+    delete: "/betcategorydelete/:id",
+  },
   bet: `/bets`,
   betCreate: `/bets/create`,
   betUpdate: `/bets/:id`,
@@ -55,6 +63,18 @@ export const Routes = () => {
           {/* When path === /iser render UserPage */}
           <Route path={routes.user} exact>
             <UserPage />
+          </Route>
+          <Route path={routes.betCategories.create} exact>
+            <BetCategoriesCreatePage />
+          </Route>
+          <Route path={routes.betCategories.listing} exact>
+            <BetCategoriesListingPage />
+          </Route>
+          <Route path={routes.betCategories.update} exact>
+            <BetCategoriesUpdatePage />
+          </Route>
+          <Route path={routes.betCategories.delete} exact>
+            <BetCategoriesDeletePage />
           </Route>
           <Route path={routes.bet} exact>
             <BetsListingPage />
