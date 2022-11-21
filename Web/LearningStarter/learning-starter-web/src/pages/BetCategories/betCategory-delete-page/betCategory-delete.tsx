@@ -11,9 +11,8 @@ import "./betCategory-delete.css";
 
 export const BetCategoriesDeletePage = () => {
     const [betCategory, setBetCategory] = useState<BetCategoryGetDto>();
-    const {params} = useRouteMatch();
-    const id = Number(params.id);
-
+    let match = useRouteMatch<{ id: string }>();
+    const id = match.params.id;
     const history = useHistory();
 
     useEffect(() => {

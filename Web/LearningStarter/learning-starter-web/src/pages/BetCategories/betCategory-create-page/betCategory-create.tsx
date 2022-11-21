@@ -3,7 +3,7 @@ import { Field, Form, Formik } from "formik";
 import React from "react";
 import { Input, Button, Header, Table, Segment, Icon, Label } from "semantic-ui-react";
 import { ApiResponse, BetCategoryCreateDto, BetCategoryGetDto } from '../../../constants/types'
-import {useHistory} from "react-router-dom";
+import {useHistory, useRouteMatch} from "react-router-dom";
 import { routes } from "../../../routes/config";
 import { BaseUrl } from "../../../constants/env-vars";
 import "./betCategory-create.css";
@@ -12,6 +12,8 @@ const initialValues: BetCategoryCreateDto = {
 };
 
 export const BetCategoriesCreatePage = () => {
+    let match = useRouteMatch<{ id: string }>();
+    const id = match.params.id;
     const history = useHistory();
 
 const onSubmit = async (values: BetCategoryCreateDto) => {

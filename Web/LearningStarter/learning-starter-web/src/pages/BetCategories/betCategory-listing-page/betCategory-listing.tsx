@@ -10,8 +10,8 @@ import "./betCategory-listing.css";
 export const BetCategoriesListingPage = () => {
 const [BetCategories, setBetCategories] = useState<BetCategoryGetDto[]>();
 console.log({BetCategories})
-const {params} = useRouteMatch();
-const id = Number(params.id);
+let match = useRouteMatch<{ id: string }>();
+const id = match.params.id;
 const history = useHistory();
 
 useEffect (() => {
@@ -30,7 +30,9 @@ useEffect (() => {
 
     return(
     <>
-      <div className="betCategory-listing-container">
+      {BetCategories && (
+        <Segment>
+       <div className="betCategory-listing-container">
               <Header as='h2' icon>
                       <Icon name='list'/>
                       <Header.Subheader>
@@ -38,8 +40,6 @@ useEffect (() => {
                       </Header.Subheader>
               </Header>
       </div>
-      {BetCategories && (
-        <Segment inverted>
             <Table>
               <Table.Header>
                 <Table.Row>

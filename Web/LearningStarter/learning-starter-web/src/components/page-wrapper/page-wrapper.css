@@ -7,7 +7,7 @@
   flex: 1 1 0%;
   overflow-x: auto;
   position: relative;
-  background: linear-gradient(to bottom right, rgb(40, 90, 133), rgb(152, 146, 146));
+  background-image: url(https://i.imgur.com/sSD7Gfn.png);
   border: solid 1px #ceb4b4;
   box-shadow: rgb(87, 99, 105) -1px 2px 4px -3px;
   border-top: none;
