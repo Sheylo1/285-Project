@@ -35,7 +35,6 @@ export const LoginPage = () => {
     email: "",
     phoneNumber: "",
     dateOfBirth: undefined,
-    socialId: 1,
   };
   const[open, setOpen] = useState(false);
   const history = useHistory();
@@ -140,37 +139,37 @@ export const LoginPage = () => {
                 <label htmlFor="userId">First Name</label>
               </div>
               <Field className="field" id="firstName" name="firstName">
-                {({ field }) => <Input placeholder= "First Name" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your first name', pointing: 'below' }} placeholder= "First Name" {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Last Name</label>
               </div>
               <Field className="field" id="lastName" name="lastName">
-                {({ field }) => <Input placeholder= "Last Name" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your last name', pointing: 'below' }} placeholder= "Last Name" {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Username</label>
               </div>
               <Field className="field" id="userName" name="userName">
-                {({ field }) => <Input placeholder= "Username" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your username', pointing: 'below' }} placeholder= "Username" {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Email</label>
               </div>
               <Field className="field" id="email" name="email">
-                {({ field }) => <Input placeholder= "Email" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your email', pointing: 'below' }} placeholder= "Email" {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Password</label>
               </div>
               <Field className="field" id="password" name="password">
-                {({ field }) => <Input placeholder= "Password" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your password', pointing: 'below' }} placeholder= "Password" {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Phone Number</label>
               </div>
               <Field className="field" id="phoneNumber" name="phoneNumber">
-                {({ field }) => <Input placeholder= "Phone Number" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your phonenumber', pointing: 'below' }} placeholder= "Phone Number" {...field} />}
               </Field>
             </div>
           </div> 
