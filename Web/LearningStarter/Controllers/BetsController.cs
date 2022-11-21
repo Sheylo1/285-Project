@@ -2,6 +2,7 @@
 using LearningStarter.Data;
 using LearningStarter.Entities;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Linq;
 
 namespace LearningStarter.Controllers
@@ -41,6 +42,7 @@ namespace LearningStarter.Controllers
             response.Data = Bets;
             return Ok(response);
         }
+
 
         [HttpGet("{id}")]
         public IActionResult GetById([FromRoute] int id)
@@ -92,8 +94,8 @@ namespace LearningStarter.Controllers
             {
                 Name = betCreateDto.Name,
                 BetCategoryId = betCreateDto.BetCategoryId,
-                CreatedDate = betCreateDto.CreatedDate,
-                ClosedDate = betCreateDto.ClosedDate,
+                CreatedDate = DateTimeOffset.Now,
+                ClosedDate = DateTimeOffset.Now,
                 CommentId = betCreateDto.CommentId,
                 BetDisputeCall = betCreateDto.BetDisputeCall,
                 EscrowSystemId = betCreateDto.EscrowSystemId
@@ -136,7 +138,8 @@ namespace LearningStarter.Controllers
                 response.AddError("id", "Bet was not found.");
                 return BadRequest(response);
             }
-
+            betToUpdate.CreatedDate = DateTimeOffset.Now;
+            betToUpdate.ClosedDate = DateTimeOffset.Now;
             betToUpdate.Name = betUpdateDto.Name;
             _dataContext.SaveChanges();
 

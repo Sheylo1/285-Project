@@ -1,0 +1,29 @@
+.employeeupdate-header {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.employeeupdate1-header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.employeeupdate-buttons {
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+}
+
+.smallemployeeupdate-header {
+    display: flex;
+    padding-top: 3px;
+}
+
+.employeeupdate-centertext {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}

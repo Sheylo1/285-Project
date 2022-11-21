@@ -2,3 +2,15 @@
   display: flex;
   justify-content: center;
 }
+
+.user-page-header {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.paddinginfo{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+}

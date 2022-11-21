@@ -1,0 +1,23 @@
+.update-header {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.update-buttons {
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+}
+
+.small-header {
+    display: flex;
+    padding-top: 3px;
+    color: white;
+}
+
+.update-centertext {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}

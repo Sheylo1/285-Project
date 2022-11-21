@@ -11,10 +11,6 @@ namespace LearningStarter.Entities
 
         public List<Bet> Bets { get; set; } = new List<Bet>();
 
-        public static implicit operator int(BetCategory v)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public class BetCategoryGetDto

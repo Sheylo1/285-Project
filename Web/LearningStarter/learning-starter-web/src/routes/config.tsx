@@ -9,8 +9,17 @@ import { BetCategoriesListingPage } from "../pages/BetCategories/betCategory-lis
 import { BetCategoriesCreatePage } from "../pages/BetCategories/betCategory-create-page/betCategory-create";
 import { BetCategoriesUpdatePage } from "../pages/BetCategories/betCategory-update-page/betCategory-update";
 import { BetCategoriesDeletePage } from "../pages/BetCategories/betCategory-delete-page/betCategory-delete";
-
-
+import { BetsListingPage } from "../pages/Bets/bets-listing/bets-listing";
+import { BetsCreatePage } from "../pages/Bets/bet-create-page/bet-create-page";
+import { BetUpdatePagePage } from "../pages/Bets/bet-update-page/bet-update-page";
+import { BetDeletePage } from "../pages/Bets/bet-delete-page/bet-delete-page";
+import { CommentsListingPage } from "../pages/comments/comments-listing/comments-listing";
+import { CommentsCreatePage } from "../pages/comments/comments-create/comments-create";
+import { CommentsUpdatePage } from "../pages/comments/comments-update/comments-update";
+import { CommentsDeletePage } from "../pages/comments/comments-delete/comments-delete";
+import { EmployeesListingPage } from "../pages/employees/employees-listing/employees-listing";
+import { EmployeesCreatePage } from "../pages/employees/employee-create-page/employee-create-page";
+import { EmployeesUpdatePage } from "../pages/employees/employee-update-page/employee-update-page";
 
 //This is where you will declare all of your routes (the ones that show up in the search bar)
 export const routes = {
@@ -23,6 +32,19 @@ export const routes = {
     update: "/betcategoryupdate/:id",
     delete: "/betcategorydelete/:id",
   },
+  bet: `/bets`,
+  betCreate: `/bets/create`,
+  betUpdate: `/bets/:id`,
+  betDelete: `/bets/delete/:id`,
+  users: `/users`,
+  usercreate: `/user/create`,
+  comment: `/comment`,
+  commentsCreate: `/comment/create`,
+  commentsUpdate: `/comment/:id`,
+  commentsDelete: `/comment/delete/:id`,
+  employees: `/employees`,
+  employeescreate: `/employees/create`,
+  employeesupdate: `/employees/:id`,
 };
 
 //This is where you will tell React Router what to render when the path matches the route specified.
@@ -42,8 +64,6 @@ export const Routes = () => {
           <Route path={routes.user} exact>
             <UserPage />
           </Route>
-
-
           <Route path={routes.betCategories.create} exact>
             <BetCategoriesCreatePage />
           </Route>
@@ -56,8 +76,39 @@ export const Routes = () => {
           <Route path={routes.betCategories.delete} exact>
             <BetCategoriesDeletePage />
           </Route>
-
-          
+          <Route path={routes.bet} exact>
+            <BetsListingPage />
+          </Route>
+          <Route path={routes.betCreate} exact>
+            <BetsCreatePage />
+          </Route>
+          <Route path={routes.betUpdate} exact>
+            <BetUpdatePagePage />
+          </Route>
+          <Route path={routes.betDelete} exact>
+            <BetDeletePage />
+            </Route>
+          <Route path={routes.comment} exact>
+            <CommentsListingPage />
+          </Route>
+          <Route path={routes.commentsCreate} exact>
+            <CommentsCreatePage/>
+          </Route>
+          <Route path={routes.commentsUpdate} exact>
+            <CommentsUpdatePage/>
+          </Route>
+          <Route path={routes.commentsDelete} exact>
+            <CommentsDeletePage/>
+          </Route>
+          <Route path ={routes.employees} exact>
+            <EmployeesListingPage/>
+          </Route>
+          <Route path={routes.employeescreate} exact>
+            <EmployeesCreatePage/>
+          </Route>
+          <Route path={routes.employeesupdate} exact>
+            <EmployeesUpdatePage/>
+          </Route>
           {/* Going to route "localhost:5001/" will go to homepage */}
           <Route path={routes.root} exact>
             <Redirect to={routes.home} />

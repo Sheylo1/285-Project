@@ -39,6 +39,14 @@ const DesktopNavigation = () => {
         },
       },
       {
+        text: "Bets",
+        hide: false,
+        nav: {
+          to: routes.bet,
+        },
+        
+      },
+      {
         text: "User",
         icon: "user",
         hide: false,
@@ -54,6 +62,29 @@ const DesktopNavigation = () => {
           to: routes.betCategories.listing,
         }, 
       },
+        text: "Employees",
+        icon: "pied piper hat",
+            hide: false,
+            nav: {
+              to: routes.employees,
+            },
+      },
+      {
+        
+        text: "Listings",
+        icon: "sort amount down",
+        children: [
+          {
+            text: "Comments",
+            icon: "comment",
+            hide: false,
+            nav: {
+              to: routes.comment,
+            },
+          },
+        ]
+      },
+
     ];
   }, []);
 

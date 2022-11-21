@@ -7,10 +7,43 @@
 
 .login-form {
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .button-container-login-page {
   margin-top: 5px;
   display: flex;
   justify-content: center;
+}
+
+.loginpage-header {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.loginpage1-header {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
+  color: white;
+}
+
+.loginpage-buttons {
+  display: flex;
+  padding-top: 15px;
+  justify-content: center;
+  font-family: 'YourFontName';
+}
+
+.loginpage-header {
+  display: flex;
+  padding-top: 3px;
+}
+
+.loginpage-centertext {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
 }

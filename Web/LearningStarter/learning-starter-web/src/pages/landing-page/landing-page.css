@@ -1,4 +1,20 @@
+.abstract-img {
+  size: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
 .home-page-container {
   display: flex;
   justify-content: center;
+}
+
+.home-items {
+  display:flex;
+  flex-direction: column;
 }
