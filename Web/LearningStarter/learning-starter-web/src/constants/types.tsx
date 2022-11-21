@@ -24,7 +24,6 @@ export type UserDto = {
   email: string;
   phoneNumber: string;
   dateOfBirth: Date;
-  socialId: number;
 };
 
 export type CommentGetDto = {
@@ -84,7 +83,6 @@ export type UserCreateDto = {
   email: string;
   phoneNumber: string;
   dateOfBirth: Date | undefined;
-  socialId: number;
 };
 
 export type UserUpdateDto = {
@@ -95,5 +93,4 @@ export type UserUpdateDto = {
   email: string;
   phoneNumber: string;
   dateOfBirth: Date;
-  socialId: number;
 };
