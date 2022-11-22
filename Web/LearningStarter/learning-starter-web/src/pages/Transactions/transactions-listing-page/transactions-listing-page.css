@@ -1,0 +1,8 @@
+.bottom-header{
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: x-large;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

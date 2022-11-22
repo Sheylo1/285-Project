@@ -6,6 +6,7 @@ import { ApiResponse, TransactionGetDto } from "../../../constants/types";
 import {useHistory} from 'react-router-dom'
 import { routes } from "../../../routes/config";
 import moment from "moment";
+import "./transactions-listing-page.css";
 
 export const TransactionListingPage = () => {
   const [Transaction, setTransaction] = React.useState<TransactionGetDto[]>();
@@ -30,7 +31,7 @@ export const TransactionListingPage = () => {
     <>
       {Transaction && (
         <Segment>
-          <Header>Transaction</Header>{" "}
+          <h1 className="bottom-header">Transactions</h1>{" "}
           <div className='button'>
           <Button color= 'green' onClick={() => history.push(routes.transactionCreate)}>
             + Create
@@ -57,7 +58,7 @@ export const TransactionListingPage = () => {
                   <Table.Cell><Icon className="clickable" name='edit' onClick={() => history.push(`/transaction/${Transaction.id}`)}/></Table.Cell> 
                   <Table.Cell><Icon className="clickable" name='delete' onClick= {() => history.push(`/transaction/delete/${Transaction.id}`)}/></Table.Cell>
                     <Table.Cell>{Transaction.paymentType}</Table.Cell>
-                    <Table.Cell>{Transaction.id}#</Table.Cell>
+                    <Table.Cell>{Transaction.id}</Table.Cell>
                     <Table.Cell>${Transaction.amount}</Table.Cell>
                     <Table.Cell>{moment(Transaction.createdAt).format("MMMM Do YYYY")}</Table.Cell>
                   </Table.Row>
