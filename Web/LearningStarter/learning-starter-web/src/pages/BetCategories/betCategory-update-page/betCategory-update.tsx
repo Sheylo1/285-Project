@@ -11,9 +11,8 @@ import "./betCategory-update.css";
 
 export const BetCategoriesUpdatePage = () => {
     const [betCategory, setBetCategory] = useState<BetCategoryGetDto>();
-    const {params} = useRouteMatch();
-    const id = Number(params.id);
-
+    let match = useRouteMatch<{ id: string }>();
+    const id = match.params.id;
     const history = useHistory();
 
     useEffect(() => {
@@ -65,7 +64,7 @@ export const BetCategoriesUpdatePage = () => {
                     <Table.Row>
                         <Table.Cell>
                             <Field id="name" name="name">
-                                {({ field }) => <Input {...field } />}
+                                {({ field }) => <Input placeholder="Category Name" {...field } />}
                             </Field>
                         </Table.Cell>
                     </Table.Row>

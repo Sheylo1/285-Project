@@ -18,3 +18,12 @@
   display:flex;
   flex-direction: column;
 }
+
+.whitename{
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  right: 45%;
+  color: white;
+  font-size: 100cm;
+}

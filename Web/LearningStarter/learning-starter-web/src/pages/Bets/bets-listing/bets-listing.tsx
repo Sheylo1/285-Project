@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { Button, Header, Segment, Table } from "semantic-ui-react";
 import { ApiResponse, BetGetDto } from "../../../constants/types";
 import { routes } from "../../../routes/config";
+import "./bets-listing.css";
 
 export const BetsListingPage = () => {
   const [bets, setBets] = useState<BetGetDto[]>();
@@ -27,10 +28,12 @@ export const BetsListingPage = () => {
       {bets && (
         <Segment>
           <Header>Bets</Header>
+          <div className="betslisting-buttons">
           <Button type="button" onClick={() => history.push(routes.betCreate)}>
             + Create Bet
           </Button>
-          <Table>
+          </div>
+          <Table celled>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Id</Table.HeaderCell>

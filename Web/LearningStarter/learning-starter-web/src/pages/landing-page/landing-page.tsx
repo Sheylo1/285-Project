@@ -10,7 +10,9 @@ export const LandingPage = () => {
   return (
     <div className="home-page-container">
       <div className="home-items">
-        <img className="abstract-img" src={GamblingHome} width={1550} height={828} ></img>
+        <h1 className="whitename">
+        To the Moon Gambling
+        </h1>
       </div>
     </div>
   );

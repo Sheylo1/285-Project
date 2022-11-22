@@ -45,7 +45,7 @@ const onSubmit = async (values: BetCategoryCreateDto) => {
                             <Table.Row>
                                 <Table.Cell>
                                      <Field id="name" name="name">
-                                        {({field}) => <Input {...field} />}
+                                        {({field}) => <Input placeholder="Category Name" {...field} />}
                                      </Field>
                                 </Table.Cell>
                             </Table.Row>
