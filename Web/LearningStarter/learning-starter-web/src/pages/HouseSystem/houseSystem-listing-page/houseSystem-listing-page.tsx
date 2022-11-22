@@ -29,7 +29,7 @@ export const HouseSystemListingPage = () => {
     <>
       {HouseSystem && (
         <Segment>
-          <Header>House System</Header>{" "}
+          <h1 className="bottom-header">House System</h1>{" "}
           <div className='button'>
           <Button color= 'green' onClick={() => history.push(routes.housesystemCreate)}>
             + Create

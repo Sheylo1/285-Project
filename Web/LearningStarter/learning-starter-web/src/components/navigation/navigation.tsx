@@ -47,12 +47,28 @@ const DesktopNavigation = () => {
         },
       },
       {
+        text: "Transaction",
+        icon: "money",
+        hide: false,
+        nav: {
+          to: routes.transaction,
+        },
+      },
+      {
         text: "Employees",
         icon: "pied piper hat",
             hide: false,
             nav: {
               to: routes.employees,
             },
+      },
+      {
+        text: "House",
+        icon: "percent",
+        hide: false,
+        nav: {
+          to: routes.housesystem,
+        },
       },
       {
         text: "Bets",
@@ -86,23 +102,6 @@ const DesktopNavigation = () => {
           },
         ]
       },
-      {
-        text: "Transaction",
-        icon: "money",
-        hide: false,
-        nav: {
-          to: routes.transaction,
-        },
-      },
-      {
-        text: "House",
-        icon: "percent",
-        hide: false,
-        nav: {
-          to: routes.housesystem,
-        },
-      },
-
     ];
   }, []);
 
