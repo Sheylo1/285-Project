@@ -140,6 +140,7 @@ namespace LearningStarter.Controllers
             }
             betToUpdate.CreatedDate = DateTimeOffset.Now;
             betToUpdate.ClosedDate = DateTimeOffset.Now;
+            betToUpdate.BetDisputeCall = betUpdateDto.BetDisputeCall;
             betToUpdate.Name = betUpdateDto.Name;
             _dataContext.SaveChanges();
 
