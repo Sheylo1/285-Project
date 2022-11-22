@@ -1,0 +1,15 @@
+.betslisting-header {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.betslisting-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.betslistingsmall-header {
+    display: flex;
+    padding-top: 3px;
+}

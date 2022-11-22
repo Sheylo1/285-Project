@@ -9,12 +9,14 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .button-container-login-page {
   margin-top: 5px;
   display: flex;
   justify-content: center;
+  padding-top: 15px;
 }
 
 .loginpage-header {
@@ -46,4 +48,26 @@
   display: flex;
   justify-content: center;
   padding-bottom: 15px;
+}
+
+.whitename{
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: larger;
+}
+
+.whitenames1{
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.whitenamestest{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: small;
 }

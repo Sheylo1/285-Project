@@ -88,20 +88,24 @@ export const LoginPage = () => {
             <Form>
               <div>
                 <div>
-                  <div className="field-label">
+                  <div className="loginpage1-header">
                     <label htmlFor="userName">UserName</label>
                   </div>
+                  <div className="loginpage1-header">
                   <Field className="field" id="username" name="username">
                     {({ field }) => <Input placeholder= "username" type="username" {...field} />}
                   </Field>
+                  </div>
                 </div>
                 <div>
-                  <div className="field-label">
+                  <div className="loginpage1-header">
                     <label htmlFor="password">Password</label>
                   </div>
+                  <div className="loginpage1-header">
                   <Field className="field" id="password" name="password">
                     {({ field }) => <Input placeholder= "password" type="password" {...field} />}
                   </Field>
+                  </div>
                 </div>
                 <div className="button-container-login-page">
                   <Button color= 'green' className="login-button" type="submit">
@@ -109,21 +113,21 @@ export const LoginPage = () => {
                   </Button>
                 </div>
               </div>
+              <h2 className="whitename1">Create New Account</h2>
             </Form>
           </Formik>
-          <Header>Create New Account</Header>
       <Formik onSubmit={onSubmit} initialValues={originalValues }>
+        <div className="loginpage-buttons">
         <Modal 
         closeIcon
         as={Form}
         onOpen={()=> setOpen(true)}
         onClose={()=>setOpen(false)}
         open={open}
-        trigger={<Button color="blue">Sign Up</Button>}
-        >
+        trigger={<Button color="blue">Sign Up</Button>}>
             <Modal.Header>Create Account</Modal.Header>
             <Modal.Content>
-                         <div>
+            <div>
             <div>
             <div className="field-label">
                 <label htmlFor="userId">Date of Birth</label>
@@ -195,6 +199,7 @@ export const LoginPage = () => {
 
 
         </Modal>
+        </div>
       </Formik>
         </div>
       </div>
@@ -204,4 +209,3 @@ export const LoginPage = () => {
 function preventDefault() {
   throw new Error("Function not implemented.");
 }
-

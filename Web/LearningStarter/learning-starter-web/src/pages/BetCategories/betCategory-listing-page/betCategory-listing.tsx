@@ -40,10 +40,11 @@ useEffect (() => {
                       </Header.Subheader>
               </Header>
       </div>
-            <Table>
+            <Table celled>
               <Table.Header>
                 <Table.Row>
-                    <Table.HeaderCell></Table.HeaderCell>
+                    <Table.HeaderCell>Edit</Table.HeaderCell>
+                    <Table.HeaderCell>Delete</Table.HeaderCell>
                     <Table.HeaderCell>Id</Table.HeaderCell>
                     <Table.HeaderCell>Name</Table.HeaderCell>
                 </Table.Row>
@@ -52,9 +53,9 @@ useEffect (() => {
                 {BetCategories.map((betCategory) => {
                   return (
                     <Table.Row key={betCategory.id }>
+                      <Table.Cell><Icon name="edit" size="large" onClick= {() => history.push(`/betcategoryupdate/${betCategory.id}`)}></Icon></Table.Cell>
                       <Table.Cell>
                         <Icon name="window close" size="large" onClick= {() => history.push(`/betcategorydelete/${betCategory.id}`)}></Icon>
-                        <Icon name="edit" size="large" onClick= {() => history.push(`/betcategoryupdate/${betCategory.id}`)}></Icon>
                       </Table.Cell>
                       <Table.Cell>{betCategory.id}</Table.Cell>
                       <Table.Cell>{betCategory.name}</Table.Cell>
@@ -64,7 +65,7 @@ useEffect (() => {
 
                 </Table.Body>
             </Table>
-            <div>
+            <div className='button'>
               <Button onClick= {() => history.push(`/betcategorycreate`)} color="green">Create new Category</Button>
               <Button onClick= {() => history.push(`/home`)} icon="home" color="blue"></Button>
             </div>

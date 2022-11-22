@@ -3,6 +3,19 @@
     justify-content: center;
   }
 
-  .paddingaddlisting{
-   padding-bottom: 0px;
-  }
+  .betcategory-header {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.betcategory-buttons {
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+}
+
+.betcategorysmall-header {
+    display: flex;
+    padding-top: 3px;
+}

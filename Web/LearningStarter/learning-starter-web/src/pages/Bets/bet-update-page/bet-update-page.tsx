@@ -6,6 +6,7 @@ import { Button, Input } from "semantic-ui-react";
 import { ApiResponse, BetGetDto, BetUpdateDto } from "../../../constants/types";
 import { useRouteMatch } from "react-router-dom";
 import { routes } from "../../../routes/config";
+import "./bet-update-page.css";
 
 export const BetUpdatePagePage = () => {
   const history = useHistory();
@@ -41,28 +42,44 @@ export const BetUpdatePagePage = () => {
 
   return (
     <>
+    <h2 className="betcreate-header">Update Bet</h2>
       {bets && (
         <Formik initialValues={bets} onSubmit={onSubmit}>
           <Form>
-            <div>
+          <div className="betupdate1-header">
               <label htmlFor="name">Name</label>
             </div>
+            <div className="betcreate1-header">
             <Field className="field" id="name" name="name">
-              {({ field }) => <Input {...field} />}
+              {({ field }) => <Input placeholder="Bet Name" {...field} />}
             </Field>
+            </div>
             <div>
               <div>
+              <div className="betcreate1-header">
                 <label htmlFor="betDisputeCall">Dispute This Bet?</label>
               </div>
+              </div>
+              <div className="betupdate1-header">
               <Field
                 className="field"
                 id="betDisputeCall"
                 name="betDisputeCall"
               >
-                {({ field }) => <Input type="boolean" {...field} />}
+                {({ field }) => <Input type="boolean" placeholder="Dispute Value" {...field} />}
               </Field>
+              </div>
             </div>
+            <div className="employeecreate-buttons">
             <Button type="submit">Submit</Button>
+            <Button
+              secondary
+              type="button"
+              onClick={() => history.push(routes.bet)}
+            >
+              Cancel
+            </Button>
+            </div>
           </Form>
         </Formik>
       )}

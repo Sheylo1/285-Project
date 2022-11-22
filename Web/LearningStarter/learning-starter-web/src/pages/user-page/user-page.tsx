@@ -8,44 +8,39 @@ export const UserPage = () => {
   const user = useUser();
 
   return (
-    <div className="user-page-container">
       <div>
-      <Divider />
-        <Header>User Information</Header>
-        <Container textAlign="left">
+        <h1 className="whitenames">User Information</h1>
           <Divider />
-        <Header size="small">Date Of Birth</Header>
+        <h2 className="whitenames1">Date Of Birth</h2>
           <div className="user-page-header">
           <p>{moment(user.dateOfBirth).format("MMMM Do YYYY")}</p>
           </div>
           <Divider />
-          <Header size="small">First Name</Header>
+          <h3 className="whitenames1">First Name</h3>
           <div className="user-page-header">
           <p>{user.firstName}</p>
           </div>
           <Divider />
-          <Header size="small">Last Name</Header>
+          <h4 className="whitenames1">Last Name</h4>
           <div className="user-page-header">
           <p>{user.lastName}</p>
           </div>
           <Divider />
-          <Header size="small"> Account Balance</Header>
+          <h5 className="whitenames1"> Account Balance</h5>
           <div className="user-page-header">
           <p>{user.accountBalance}</p>
           </div>
           <Divider />
-          <Header size="small">Email</Header>
+          <h6 className="whitenames1">Email</h6>
           <div className="user-page-header">
           <p>{user.email}</p>
           </div>
           <Divider />
-          <Header size="small">Phone Number</Header>
+          <h6 className="whitenames1">Phone Number</h6>
           <div className="user-page-header">
           <p>{user.phoneNumber}</p>
           </div>
           <Divider />
-        </Container>
       </div>
-    </div>
   );
 };

@@ -1,38 +1,30 @@
-@font-face {
-    font-family: 'YourFontName';
-src: url("https://www.1001fonts.com//download/font/berkshire-swash.regular.ttf");
-}
-
-.classname {
-    font-family: 'YourFontName';
-}
-
-.employeeupdate-header {
+.betupdate-header {
     display: flex;
     justify-content: center;
     color: white;
 }
 
-.employeeupdate1-header {
+.betupdate1-header {
     display: flex;
     justify-content: center;
     padding-bottom: 5px;
+    padding-top: 5px;
     color: white;
 }
 
-.employeeupdate-buttons {
+.betupdate-buttons {
     display: flex;
     padding-top: 15px;
     justify-content: center;
     font-family: 'YourFontName';
 }
 
-.smallemployeeupdate-header {
+.smallbetupdate-header {
     display: flex;
     padding-top: 3px;
 }
 
-.employeeupdate-centertext {
+.betcreate-centertext {
     display: flex;
     justify-content: center;
     padding-bottom: 15px;

@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { routes } from "../../../routes/config";
 import { ApiResponse, BetCreateDto, BetGetDto } from "../../../constants/types";
 import axios from "axios";
+import "./bet-create-page.css";
 
 
 
@@ -29,25 +30,31 @@ export const BetsCreatePage = () => {
 
   return (
     <>
-      <Header>Create New Bet</Header>
+      <h2 className="betcreate-header">Create New Bet</h2>
       <Formik onSubmit={onSubmit} initialValues={{} as BetCreateDto}>
         <Form>
           <div>
             <div>
-              <div className="Field-label">
+            <div className="betcreate1-header">
                 <label htmlFor="name">Name</label>
               </div>
+              <div className="betcreate1-header">
               <Field className="field" id="name" name="name" >
-                {({ field }) => <Input {...field} />}
+                {({ field }) => <Input placeholder="Bet Name" {...field} />}
               </Field>
-              
-              <div>Bet Category</div>
+              </div>
+              <div className="betcreate1-header">
+                <label htmlFor="name">Bet Category</label>
+              </div>
+              <div className="betcreate1-header">
               <Field className="field" number="id" name="betCategoryId"  >
-                {({ field }) => <Input type="number" {...field} />}
+                {({ field }) => <Input placeholder="Bet Category" type="number" {...field} />}
               </Field>
+              </div>
             </div>
           </div>
           <div>
+          <div className="employeecreate-buttons">
             <Button primary type="submit">
               Submit
             </Button>
@@ -58,6 +65,7 @@ export const BetsCreatePage = () => {
             >
               Cancel
             </Button>
+            </div>
           </div>
         </Form>
       </Formik>
