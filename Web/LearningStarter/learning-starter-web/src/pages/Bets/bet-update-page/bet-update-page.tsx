@@ -66,7 +66,7 @@ export const BetUpdatePagePage = () => {
                 id="betDisputeCall"
                 name="betDisputeCall"
               >
-                {({ field }) => <Input type="boolean" placeholder="Dispute Value" {...field} />}
+                {({ field }) => <Input type="checkbox" placeholder="Dispute Value" {...field} />}
               </Field>
               </div>
             </div>
