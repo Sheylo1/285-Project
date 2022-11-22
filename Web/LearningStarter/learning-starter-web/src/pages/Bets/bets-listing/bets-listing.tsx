@@ -39,7 +39,7 @@ export const BetsListingPage = () => {
                 <Table.HeaderCell>Id</Table.HeaderCell>
                 <Table.HeaderCell>Join Bet</Table.HeaderCell>
                 <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Bet CategoryId</Table.HeaderCell>
+                <Table.HeaderCell>Bet Category Id</Table.HeaderCell>
                 <Table.HeaderCell>Created Date</Table.HeaderCell>
                 <Table.HeaderCell>Dispute Status</Table.HeaderCell>
                 <Table.HeaderCell>Delete Bet</Table.HeaderCell>
@@ -58,9 +58,8 @@ export const BetsListingPage = () => {
                           )
                         }
                       >
-                        Edit Bet
+                        Edit Bet #{bet.id}
                       </Button>
-                      {bet.id}
                     </Table.Cell>
                     <Table.Cell>
                       <Button
@@ -73,7 +72,7 @@ export const BetsListingPage = () => {
                     <Table.Cell>{bet.name}</Table.Cell>
                     <Table.Cell>{bet.betCategoryId}</Table.Cell>
                     <Table.Cell>{moment(bet.createdDate)
-                    .format("MM-DD-YYYY")
+                    .format("MMMM Do YYYY")
                     .toString()}</Table.Cell>
                     <Table.Cell>{bet.betDisputeCall.toString()}</Table.Cell>
                     <Table.Cell>
