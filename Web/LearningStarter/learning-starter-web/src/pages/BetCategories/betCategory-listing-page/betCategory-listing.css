@@ -19,3 +19,8 @@
     display: flex;
     padding-top: 3px;
 }
+
+.center{
+    display: flex;
+    justify-content: center;
+}

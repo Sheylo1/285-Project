@@ -27,9 +27,9 @@ export const BetsListingPage = () => {
     <>
       {bets && (
         <Segment>
-          <Header>Bets</Header>
+          <h1 className="bottom-header">Bets</h1>
           <div className="betslisting-buttons">
-          <Button type="button" onClick={() => history.push(routes.betCreate)}>
+          <Button type="button" color="green" onClick={() => history.push(routes.betCreate)}>
             + Create Bet
           </Button>
           </div>
@@ -51,7 +51,7 @@ export const BetsListingPage = () => {
                   <Table.Row>
                     <Table.Cell>
                       <Button
-                        type="button"
+                        type="button" color="yellow"
                         onClick={() =>
                           history.push(
                             routes.betUpdate.replace(":id", `${bet.id}`)
@@ -64,8 +64,8 @@ export const BetsListingPage = () => {
                     </Table.Cell>
                     <Table.Cell>
                       <Button
-                        type="button"
-                        onClick={() => history.push(routes.betCreate)}
+                        type="button" color="blue"
+                        onClick={() => history.push(routes.bet)}
                       >
                         Join Bet
                       </Button>
@@ -78,8 +78,7 @@ export const BetsListingPage = () => {
                     <Table.Cell>{bet.betDisputeCall}</Table.Cell>
                     <Table.Cell>
                       <Button
-                        style={{ color: "red" }}
-                        type="button"
+                        type="button" color="red"
                         onClick={() =>
                           history.push(
                             routes.betDelete.replace(":id", `${bet.id}`)

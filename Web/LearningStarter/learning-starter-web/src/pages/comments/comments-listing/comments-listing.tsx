@@ -36,7 +36,7 @@ export const CommentsListingPage = () => {
                 <h1 className="bottom-header">Comments Made Across To The Moon Gamblin</h1>
                     <div className='button'>
                         <Button color= 'green' onClick={() => history.push(routes.commentsCreate)}>
-                            Create a Message
+                            + Create a Message
                         </Button>
                     </div>
                     <Table celled>
@@ -59,7 +59,7 @@ export const CommentsListingPage = () => {
                                             ) : <Table.Cell></Table.Cell>}
 
                                         {user?.id === comment.createdByUserId ? ( 
-                                            <Table.Cell><Icon className="clickable" name='delete' onClick={() => history.push(`/comment/delete/${comment.id}`)}/></Table.Cell> 
+                                            <Table.Cell><Icon className="window close" name='delete' onClick={() => history.push(`/comment/delete/${comment.id}`)}/></Table.Cell> 
                                             ) : <Table.Cell></Table.Cell>}
                                         <Table.Cell>{comment.id}</Table.Cell>
                                         <Table.Cell>{moment(comment.createdAt).format("MMMM Do YYYY")}</Table.Cell>

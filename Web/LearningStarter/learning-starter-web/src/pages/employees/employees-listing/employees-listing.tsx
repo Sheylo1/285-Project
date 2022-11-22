@@ -30,7 +30,7 @@ export const EmployeesListingPage = () => {
     <>
       {employees && (
         <Segment>
-          <Header>Employees</Header>{" "}
+          <h1 className="bottom-header">Employees</h1>{" "}
           <div className='button'>
           <Button color= 'green' onClick={() => history.push(routes.employeescreate)}>
             + Create
@@ -67,7 +67,7 @@ export const EmployeesListingPage = () => {
           </Table>
           <div className = "button">
             <Button color= 'blue' onClick={() => history.push(routes.home)}>
-            Go Home
+            Home
           </Button>
           </div>
         </Segment>
