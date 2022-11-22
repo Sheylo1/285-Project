@@ -1,0 +1,26 @@
+
+.transactionupdate-header {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.transactionupdate1-header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.transactionupdate-buttons {
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+}
+
+
+.transactionupdate-centertext {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}

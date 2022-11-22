@@ -1,0 +1,30 @@
+
+.transactioncreate-header {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.transactioncreate1-header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.transactioncreate-buttons {
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+}
+
+.smallemployeeupdate-header {
+    display: flex;
+    padding-top: 3px;
+}
+
+.transactioncreate-centertext {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
