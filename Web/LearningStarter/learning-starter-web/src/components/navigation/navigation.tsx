@@ -86,6 +86,22 @@ const DesktopNavigation = () => {
           },
         ]
       },
+      {
+        text: "Transaction",
+        icon: "money",
+        hide: false,
+        nav: {
+          to: routes.transaction,
+        },
+      },
+      {
+        text: "House",
+        icon: "percent",
+        hide: false,
+        nav: {
+          to: routes.housesystem,
+        },
+      },
 
     ];
   }, []);

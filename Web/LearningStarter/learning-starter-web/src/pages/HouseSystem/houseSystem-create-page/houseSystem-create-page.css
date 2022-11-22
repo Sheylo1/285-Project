@@ -1,0 +1,23 @@
+.houseSystemcreate-header {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.houseSystemcreate1-header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.houseSystemcreate-buttons {
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+}
+.houseSystemcreate-centertext {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}

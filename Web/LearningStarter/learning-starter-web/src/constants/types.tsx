@@ -141,3 +141,67 @@ export type UserUpdateDto = {
   phoneNumber: string;
   dateOfBirth: Date;
 };
+
+export type TransactionGetDto ={
+    id: number;
+    paymentType: string;
+    amount: number;
+    createdAt: Date;
+};
+export type TransactionUpdateDto ={
+  paymentType: string;
+  amount: number;
+  createdAt: Date;
+};
+export type TransactionCreateDto ={
+  paymentType: string;
+  amount: number;
+  createdAt: Date;
+};
+export type TransactionDeleteDto = {
+
+  id: number;
+  amount: number;
+  paymentType: string;
+  createdAt: Date;
+};
+
+export type PositionGetDto = {
+
+  id: number;
+  name: string;
+};
+
+export type PositionDeleteDto = {
+
+  id: number;
+  name: string;
+};
+
+export type PositionUpdateDto = {
+  name: string;
+};
+export type PositionCreateDto = {
+  name: string;
+};
+
+export type HouseSystemGetDto = {
+  id: number;
+  betPercentage: number;
+  payout: number;
+};
+
+export type HouseSystemCreateDto = {
+  betPercentage: number;
+  payout: number;
+};
+export type HouseSystemUpdateDto = {
+  betPercentage: number;
+  payout: number;
+};
+
+export type HouseSystemDeleteDto = {
+  id: number;
+  betPercentage: number;
+  payout: number;
+};

@@ -20,6 +20,14 @@ import { CommentsDeletePage } from "../pages/comments/comments-delete/comments-d
 import { EmployeesListingPage } from "../pages/employees/employees-listing/employees-listing";
 import { EmployeesCreatePage } from "../pages/employees/employee-create-page/employee-create-page";
 import { EmployeesUpdatePage } from "../pages/employees/employee-update-page/employee-update-page";
+import { HouseSystemCreatePage } from "../pages/HouseSystem/houseSystem-create-page/houseSystem-create-page";
+import { HouseSystemListingPage } from "../pages/HouseSystem/houseSystem-listing-page/houseSystem-listing-page";
+import { HouseSystemDeletePage } from "../pages/HouseSystem/houseSystem-delete-page/houseSystem-delete-page";
+import { HouseSystemUpdatePage } from "../pages/HouseSystem/houseSystem-update-page/houseSystem-update-page";
+import { TransactionListingPage } from "../pages/Transactions/transactions-listing-page/transactions-listing-page";
+import { TransactionDeletePage } from "../pages/Transactions/transactions-delete-page/transactions-delete-page";
+import { TransactionCreatePage } from "../pages/Transactions/transactions-create-page/transactions-create-page";
+import { TransactionUpdatePage } from "../pages/Transactions/transactions-update-page/transaction-update-page";
 
 //This is where you will declare all of your routes (the ones that show up in the search bar)
 export const routes = {
@@ -38,13 +46,25 @@ export const routes = {
   betDelete: `/bets/delete/:id`,
   users: `/users`,
   usercreate: `/user/create`,
+
   comment: `/comment`,
   commentsCreate: `/comment/create`,
   commentsUpdate: `/comment/:id`,
   commentsDelete: `/comment/delete/:id`,
+
   employees: `/employees`,
   employeescreate: `/employees/create`,
   employeesupdate: `/employees/:id`,
+
+  transaction:`/transaction`,
+  transactionDelete: `/transaction/delete/:id`,
+  transactionUpdate: `/transaction/:id`,
+  transactionCreate: `/transaction/create`,
+
+  housesystem: `/houseSystem`,
+  housesystemCreate: `/houseSystem/create`,
+  housesystemDelete:  `/houseSystem/delete/:id`,
+  housesystemUpdate: `/houseSystem/:id`,
 };
 
 //This is where you will tell React Router what to render when the path matches the route specified.
@@ -109,6 +129,33 @@ export const Routes = () => {
           <Route path={routes.employeesupdate} exact>
             <EmployeesUpdatePage/>
           </Route>
+
+          <Route path={routes.housesystem} exact>
+            <HouseSystemListingPage/>
+          </Route>
+          <Route path={routes.housesystemCreate} exact>
+            <HouseSystemCreatePage/>
+          </Route>
+          <Route path={routes.housesystemDelete} exact>
+            <HouseSystemDeletePage/>
+          </Route>
+          <Route path={routes.housesystemUpdate} exact>
+            <HouseSystemUpdatePage/>
+          </Route>
+
+          <Route path={routes.transaction} exact>
+            <TransactionListingPage/>
+          </Route>
+          <Route path={routes.transactionDelete} exact>
+            <TransactionDeletePage/>
+          </Route>
+          <Route path={routes.transactionCreate} exact>
+            <TransactionCreatePage/>
+          </Route>
+          <Route path={routes.transactionUpdate} exact>
+            <TransactionUpdatePage/>
+          </Route>
+
           {/* Going to route "localhost:5001/" will go to homepage */}
           <Route path={routes.root} exact>
             <Redirect to={routes.home} />

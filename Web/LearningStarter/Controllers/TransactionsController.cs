@@ -70,7 +70,7 @@ namespace LearningStarter.Controllers
 
                 if (transactionCreateDto.Amount <= 0)
                 {
-                    response.AddError("salary", "Amount cannot be negative.");
+                    response.AddError("Amount", "Amount cannot be negative.");
                 }
      
                 if (response.HasErrors)
