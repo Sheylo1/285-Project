@@ -43,8 +43,8 @@ export const EmployeesListingPage = () => {
                 {" "}
                 <Table.HeaderCell></Table.HeaderCell>
                 <Table.HeaderCell>Id</Table.HeaderCell>
-                <Table.HeaderCell>UserId</Table.HeaderCell>
-                <Table.HeaderCell>PositionId</Table.HeaderCell>
+                <Table.HeaderCell>User Id</Table.HeaderCell>
+                <Table.HeaderCell>Position Id</Table.HeaderCell>
                 <Table.HeaderCell>Salary</Table.HeaderCell>
                 <Table.HeaderCell>Employed</Table.HeaderCell>
               </Table.Row>

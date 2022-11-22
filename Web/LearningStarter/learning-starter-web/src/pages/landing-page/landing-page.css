@@ -4,6 +4,13 @@
   max-height: 100%;
 }
 
+.ttmg {
+  position: fixed;
+  top: 230px;
+  bottom: 15px;
+  left: 335px;
+}
+
 .header {
   display: flex;
   justify-content: center;
