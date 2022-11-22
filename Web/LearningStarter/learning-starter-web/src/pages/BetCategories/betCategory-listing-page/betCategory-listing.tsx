@@ -32,13 +32,11 @@ useEffect (() => {
     <>
       {BetCategories && (
         <Segment>
+          <h1 className="bottom-header">Bet Categories</h1>
+          <div className='center'>
+          <Button onClick= {() => history.push(`/betcategorycreate`)} color="green">+ Create new Category</Button>
+          </div>
        <div className="betCategory-listing-container">
-              <Header as='h2' icon>
-                      <Icon name='list'/>
-                      <Header.Subheader>
-                      <Label as='a' color='blue' size="huge">List of Bet Categories</Label>
-                      </Header.Subheader>
-              </Header>
       </div>
             <Table celled>
               <Table.Header>
@@ -53,9 +51,9 @@ useEffect (() => {
                 {BetCategories.map((betCategory) => {
                   return (
                     <Table.Row key={betCategory.id }>
-                      <Table.Cell><Icon name="edit" size="large" onClick= {() => history.push(`/betcategoryupdate/${betCategory.id}`)}></Icon></Table.Cell>
+                      <Table.Cell><Icon name="edit" onClick= {() => history.push(`/betcategoryupdate/${betCategory.id}`)}></Icon></Table.Cell>
                       <Table.Cell>
-                        <Icon name="window close" size="large" onClick= {() => history.push(`/betcategorydelete/${betCategory.id}`)}></Icon>
+                        <Icon name="window close" onClick= {() => history.push(`/betcategorydelete/${betCategory.id}`)}></Icon>
                       </Table.Cell>
                       <Table.Cell>{betCategory.id}</Table.Cell>
                       <Table.Cell>{betCategory.name}</Table.Cell>
@@ -66,8 +64,7 @@ useEffect (() => {
                 </Table.Body>
             </Table>
             <div className='button'>
-              <Button onClick= {() => history.push(`/betcategorycreate`)} color="green">Create new Category</Button>
-              <Button onClick= {() => history.push(`/home`)} icon="home" color="blue"></Button>
+              <Button onClick= {() => history.push(`/home`)} icon="home" color="blue">Home</Button>
             </div>
         </Segment>
       )}
