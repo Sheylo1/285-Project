@@ -65,6 +65,14 @@
   color: white;
 }
 
+.whitenames2{
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-top: 15px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
 .whitenamestest{
   display: flex;
   justify-content: center;

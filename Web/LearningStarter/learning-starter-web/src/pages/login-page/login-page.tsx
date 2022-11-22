@@ -113,7 +113,8 @@ export const LoginPage = () => {
                   </Button>
                 </div>
               </div>
-              <h2 className="whitename1">Create New Account</h2>
+              <div className="whitenames2">
+              <h2 className="whitename2">Create New User?</h2></div>
             </Form>
           </Formik>
       <Formik onSubmit={onSubmit} initialValues={originalValues }>

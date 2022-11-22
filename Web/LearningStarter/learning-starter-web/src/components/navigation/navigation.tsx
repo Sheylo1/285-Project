@@ -39,36 +39,68 @@ const DesktopNavigation = () => {
         },
       },
       {
-        text: "User",
-        icon: "user",
-        hide: false,
-        nav: {
-          to: routes.user,
-        },
+        
+        text: "User Features",
+        icon: "user circle",
+        children: [
+          {
+            text: "User Info",
+            icon: "user",
+            hide: false,
+            nav: {
+              to: routes.user,
+            },
+          },
+          {
+            text: "Comments",
+            icon: "comment",
+            hide: false,
+            nav: {
+              to: routes.comment,
+            },
+          },
+          {
+            text: "Transaction",
+            icon: "money",
+            hide: false,
+            nav: {
+              to: routes.transaction,
+            },
+          },
+        ]
       },
+
       {
-        text: "Transaction",
-        icon: "money",
-        hide: false,
-        nav: {
-          to: routes.transaction,
-        },
-      },
-      {
-        text: "Employees",
-        icon: "pied piper hat",
+        
+        text: "Employee Features",
+        icon: "id card",
+        
+        children: [
+          {
+            text: "Employee Info",
+            icon: "pied piper hat",
             hide: false,
             nav: {
               to: routes.employees,
             },
-      },
-      {
-        text: "House",
-        icon: "percent",
-        hide: false,
-        nav: {
-          to: routes.housesystem,
-        },
+          },
+          {
+            text: "Bet Categories",
+            icon: "list",
+            hide: false,
+            nav: {
+              to: routes.betCategories.listing,
+            }, 
+          },
+          {
+            text: "House",
+            icon: "percent",
+            hide: false,
+            nav: {
+              to: routes.housesystem,
+            },
+          },
+        ]
       },
       {
         text: "Bets",
@@ -78,29 +110,6 @@ const DesktopNavigation = () => {
           to: routes.bet,
         },
         
-      },
-      {
-        text: "Bet Categories",
-        icon: "list",
-        hide: false,
-        nav: {
-          to: routes.betCategories.listing,
-        }, 
-      },
-      {
-        
-        text: "Listings",
-        icon: "sort amount down",
-        children: [
-          {
-            text: "Comments",
-            icon: "comment",
-            hide: false,
-            nav: {
-              to: routes.comment,
-            },
-          },
-        ]
       },
     ];
   }, []);
@@ -190,6 +199,9 @@ export const PrimaryNavigation: React.FC<PrimaryNavigationProps> = ({
               icon={null}
             >
               <Dropdown.Menu>
+              <Dropdown.Item>
+                {user.firstName}
+              </Dropdown.Item>
                 <Dropdown.Item
                   onClick={async () => {
                     logoutUser();
