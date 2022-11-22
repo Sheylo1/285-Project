@@ -75,7 +75,7 @@ export const BetsListingPage = () => {
                     <Table.Cell>{moment(bet.createdDate)
                     .format("MM-DD-YYYY")
                     .toString()}</Table.Cell>
-                    <Table.Cell>{bet.betDisputeCall}</Table.Cell>
+                    <Table.Cell>{bet.betDisputeCall.toString()}</Table.Cell>
                     <Table.Cell>
                       <Button
                         type="button" color="red"

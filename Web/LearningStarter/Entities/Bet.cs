@@ -13,7 +13,7 @@ namespace LearningStarter.Entities
         public DateTimeOffset? ClosedDate { get; set; }
         public int? CommentId { get; set; }
         public Comment? Comment { get; set; }
-        public Boolean BetDisputeCall { get; set; }
+        public bool BetDisputeCall { get; set; }
         public int? EscrowSystemId { get; set; }
         public EscrowSystem? EscrowSystem { get; set; }
         public List<BetTransaction> BetTransactions { get; set; } = new List<BetTransaction>();
