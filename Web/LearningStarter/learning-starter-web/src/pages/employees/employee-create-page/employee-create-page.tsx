@@ -53,7 +53,7 @@ export const EmployeesCreatePage = () => {
           <div>
             <div>
               <div className="employeecreate1-header">
-                <label htmlFor="userId">UserId</label>
+                <label htmlFor="userId">User</label>
                 </div>
                 <div className="employeecreate1-header">
               <Field className="field" id="userId" name="userId">
@@ -62,7 +62,7 @@ export const EmployeesCreatePage = () => {
               </div>
               <div>
               <div className="employeecreate1-header">
-                <label htmlFor="positionId">PositionsId</label>
+                <label htmlFor="positionId">Position</label>
                 </div>
                 <div className="employeecreate1-header">
               <Field className="field" id="positionId" name="positionId">

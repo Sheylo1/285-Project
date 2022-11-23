@@ -42,7 +42,6 @@ namespace LearningStarter.Entities
 
     public class EmployeeUpdateDto
     {
-        public int UserId { get; set; }
         public int PositionId { get; set; }
 
         public decimal Salary { get; set; }

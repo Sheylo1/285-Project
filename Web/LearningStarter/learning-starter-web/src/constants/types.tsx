@@ -107,8 +107,6 @@ export type EmployeeCreateDto = {
   employed: Boolean;
 };
 export type EmployeeUpdateDto = {
-
-  userId: number;
   positionId:number;
   salary: number;
   employed: Boolean;
