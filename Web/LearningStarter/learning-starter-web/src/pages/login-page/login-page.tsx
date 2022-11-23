@@ -92,7 +92,7 @@ export const LoginPage = () => {
                     <label htmlFor="userName">UserName</label>
                   </div>
                   <div className="loginpage1-header">
-                  <Field className="field" id="username" name="username">
+                  <Field className="fixwhitetext" id="username" name="username">
                     {({ field }) => <Input placeholder= "username" type="username" {...field} />}
                   </Field>
                   </div>
@@ -113,8 +113,6 @@ export const LoginPage = () => {
                   </Button>
                 </div>
               </div>
-              <div className="whitenames2">
-              <h2 className="whitename2">Create New User?</h2></div>
             </Form>
           </Formik>
       <Formik onSubmit={onSubmit} initialValues={originalValues }>

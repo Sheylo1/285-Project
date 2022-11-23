@@ -36,7 +36,7 @@ export const TransactionListingPage = () => {
           <Button color= 'green' onClick={() => history.push(routes.transactionCreate)}>
             + Create
           </Button>
-          </div>
+          </div> 
           <Table celled>
             {" "}
             <Table.Header>
@@ -45,7 +45,6 @@ export const TransactionListingPage = () => {
                 <Table.HeaderCell>Edit</Table.HeaderCell>
                 <Table.HeaderCell>Delete</Table.HeaderCell>
                 <Table.HeaderCell>Payment Type</Table.HeaderCell>
-                <Table.HeaderCell>Id</Table.HeaderCell>
                 <Table.HeaderCell>Amount</Table.HeaderCell>
                 <Table.HeaderCell>Transaction Date</Table.HeaderCell>
               </Table.Row>
@@ -58,7 +57,6 @@ export const TransactionListingPage = () => {
                   <Table.Cell><Icon className="clickable" name='edit' onClick={() => history.push(`/transaction/${Transaction.id}`)}/></Table.Cell> 
                   <Table.Cell><Icon className="clickable" name='delete' onClick= {() => history.push(`/transaction/delete/${Transaction.id}`)}/></Table.Cell>
                     <Table.Cell>{Transaction.paymentType}</Table.Cell>
-                    <Table.Cell>{Transaction.id}</Table.Cell>
                     <Table.Cell>${Transaction.amount}</Table.Cell>
                     <Table.Cell>{moment(Transaction.createdAt).format("MMMM Do YYYY")}</Table.Cell>
                   </Table.Row>

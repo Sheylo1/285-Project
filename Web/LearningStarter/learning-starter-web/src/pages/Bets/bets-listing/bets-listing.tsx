@@ -36,10 +36,10 @@ export const BetsListingPage = () => {
           <Table celled>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>Id</Table.HeaderCell>
+                <Table.HeaderCell>Edit</Table.HeaderCell>
                 <Table.HeaderCell>Join Bet</Table.HeaderCell>
                 <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Bet Category Id</Table.HeaderCell>
+                <Table.HeaderCell>Bet Category</Table.HeaderCell>
                 <Table.HeaderCell>Created Date</Table.HeaderCell>
                 <Table.HeaderCell>Dispute Status</Table.HeaderCell>
                 <Table.HeaderCell>Delete Bet</Table.HeaderCell>
@@ -58,7 +58,7 @@ export const BetsListingPage = () => {
                           )
                         }
                       >
-                        Edit Bet #{bet.id}
+                        Edit Bet
                       </Button>
                     </Table.Cell>
                     <Table.Cell>

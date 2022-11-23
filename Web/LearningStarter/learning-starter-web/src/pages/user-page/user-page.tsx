@@ -28,7 +28,7 @@ export const UserPage = () => {
           <Divider />
           <h5 className="whitenames1"> Account Balance</h5>
           <div className="user-page-header">
-          <p>{user.accountBalance}</p>
+          <p>${user.accountBalance}</p>
           </div>
           <Divider />
           <h6 className="whitenames1">Email</h6>

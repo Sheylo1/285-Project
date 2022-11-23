@@ -43,7 +43,6 @@ useEffect (() => {
                 <Table.Row>
                     <Table.HeaderCell>Edit</Table.HeaderCell>
                     <Table.HeaderCell>Delete</Table.HeaderCell>
-                    <Table.HeaderCell>Id</Table.HeaderCell>
                     <Table.HeaderCell>Name</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
@@ -55,7 +54,6 @@ useEffect (() => {
                       <Table.Cell>
                         <Icon name="window close" onClick= {() => history.push(`/betcategorydelete/${betCategory.id}`)}></Icon>
                       </Table.Cell>
-                      <Table.Cell>{betCategory.id}</Table.Cell>
                       <Table.Cell>{betCategory.name}</Table.Cell>
                     </Table.Row>
                   );

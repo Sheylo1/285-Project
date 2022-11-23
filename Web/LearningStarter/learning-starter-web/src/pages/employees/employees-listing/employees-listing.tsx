@@ -42,9 +42,8 @@ export const EmployeesListingPage = () => {
               <Table.Row>
                 {" "}
                 <Table.HeaderCell></Table.HeaderCell>
-                <Table.HeaderCell>Id</Table.HeaderCell>
-                <Table.HeaderCell>User Id</Table.HeaderCell>
-                <Table.HeaderCell>Position Id</Table.HeaderCell>
+                <Table.HeaderCell>User</Table.HeaderCell>
+                <Table.HeaderCell>Position</Table.HeaderCell>
                 <Table.HeaderCell>Salary</Table.HeaderCell>
                 <Table.HeaderCell>Employed</Table.HeaderCell>
               </Table.Row>
@@ -54,11 +53,9 @@ export const EmployeesListingPage = () => {
                 <React.Fragment key={employee.id}>
                   <Table.Row>
                   <Table.Cell><Icon name="edit" onClick= {() => history.push(`employees/${employee.id}`)}/></Table.Cell>
-
-                    <Table.Cell>{employee.id}</Table.Cell>
                     <Table.Cell>{employee.userId}</Table.Cell>
                     <Table.Cell>{employee.positionId}</Table.Cell>
-                    <Table.Cell>{employee.salary}</Table.Cell>
+                    <Table.Cell>${employee.salary}</Table.Cell>
                     <Table.Cell>{employee.employed.toString()}</Table.Cell>
                   </Table.Row>
                 </React.Fragment>
