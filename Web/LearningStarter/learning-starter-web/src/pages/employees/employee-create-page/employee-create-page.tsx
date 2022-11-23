@@ -82,11 +82,11 @@ export const EmployeesCreatePage = () => {
             </div>
             <div>
             <div className="employeecreate1-header">
-                <label htmlFor="employed">Employment</label>
+                <label htmlFor="employed">Employed?</label>
               </div>
               <div className="employeecreate1-header">
               <Field className="field" id="employed" name="employed">
-                {({ field }) => <Input placeholder="Employment" {...field} />}
+                {({ field }) => <Input type="checkbox" placeholder="Employment" {...field} />}
               </Field>
               </div>
             </div>
