@@ -42,7 +42,6 @@ export const HouseSystemListingPage = () => {
                 {" "}
                 <Table.HeaderCell>Edit</Table.HeaderCell>
                 <Table.HeaderCell>Delete</Table.HeaderCell>
-                <Table.HeaderCell>Id</Table.HeaderCell>
                 <Table.HeaderCell>Payout</Table.HeaderCell>
                 <Table.HeaderCell>HousePercentage</Table.HeaderCell>
               </Table.Row>
@@ -53,7 +52,6 @@ export const HouseSystemListingPage = () => {
                   <Table.Row>
                   <Table.Cell><Icon className="clickable" name='edit' onClick={() => history.push(`/houseSystem/${HouseSystem.id}`)}/></Table.Cell> 
                   <Table.Cell><Icon className="clickable" name='delete' onClick= {() => history.push(`/houseSystem/delete/${HouseSystem.id}`)}/></Table.Cell>
-                    <Table.Cell>{HouseSystem.id}#</Table.Cell>
                     <Table.Cell>${HouseSystem.payout}</Table.Cell>
                     <Table.Cell>{HouseSystem.betPercentage}%</Table.Cell>
                   </Table.Row>
