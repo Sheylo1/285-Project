@@ -166,7 +166,7 @@ export const LoginPage = () => {
                 <label htmlFor="userId">Password</label>
               </div>
               <Field className="field" id="password" name="password">
-                {({ field }) => <Input error={{ content: 'Please enter your password', pointing: 'below' }} placeholder= "Password" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your password', pointing: 'below' }} placeholder= "Password" type="password" {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Phone Number</label>

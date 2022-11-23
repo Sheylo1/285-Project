@@ -16,7 +16,6 @@ export const EmployeesUpdatePage = () => {
 
   const initialValues: EmployeeUpdateDto = {
     // id: 0,
-    userId: 0,
     positionId: 0,
     salary: 0,
     employed: false,
@@ -25,7 +24,6 @@ export const EmployeesUpdatePage = () => {
   const onSubmit = async (values: EmployeeUpdateDto) => {
     values = {
     //   id: Number(values.id),
-      userId: Number(values.userId),
       positionId: Number(values.positionId),
       salary: Number(values.salary),
       employed: Boolean(values.employed),
@@ -51,17 +49,9 @@ export const EmployeesUpdatePage = () => {
         <Form>
           <div>
             <div>
-            <div className="employeeupdate1-header">
-                <label htmlFor="userId">UserId</label>
-              </div>
-              <div className="employeeupdate1-header">
-              <Field className="field" id="userId" name="userId">
-                {({ field }) => <Input placeholder="UserId" {...field} />}
-              </Field>
-              </div>
               <div>
               <div className="employeeupdate1-header">
-                  <label htmlFor="positionId">PositionsId</label>
+                  <label htmlFor="positionId">Position</label>
                 </div>
                 <div className="employeeupdate1-header">
                 <Field className="field" id="positionId" name="positionId">

@@ -133,10 +133,6 @@ namespace LearningStarter.Controllers
             {
                 response.AddError("salary", "Salary cannot be negative.");
             }
-            if (employeeToUpdate.UserId <= 0)
-            {
-                response.AddError("userid", "There must be a UserId.");
-            }
 
             if(employeeToUpdate.PositionId <= 0)
             {
@@ -150,9 +146,8 @@ namespace LearningStarter.Controllers
             }
 
                 employeeToUpdate.Salary = employeeUpdateDto.Salary;
-                employeeToUpdate.UserId = employeeUpdateDto.UserId;
                 employeeToUpdate.Employed = employeeUpdateDto.Employed;
-            employeeToUpdate.PositionId = employeeUpdateDto.PositionId;
+                employeeToUpdate.PositionId = employeeUpdateDto.PositionId;
 
             _dataContext.SaveChanges();
 
