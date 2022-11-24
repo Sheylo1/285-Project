@@ -16,6 +16,8 @@ namespace LearningStarter.Entities
         public bool BetDisputeCall { get; set; }
         public int? EscrowSystemId { get; set; }
         public EscrowSystem? EscrowSystem { get; set; }
+        public User CreatedByUser { get; set; }
+        public int? CreatedByUserId { get; set; }
         public List<BetTransaction> BetTransactions { get; set; } = new List<BetTransaction>();
         public List<BetDispute> BetDisputes { get; set; } = new List<BetDispute>();
     }
@@ -30,7 +32,8 @@ namespace LearningStarter.Entities
         public int? CommentId { get; set; }
         public bool BetDisputeCall { get; set; }
         public int? EscrowSystemId { get; set; }
-        
+        public int? CreatedByUserId { get; set; }
+
     }
 
     public class BetCreateDto

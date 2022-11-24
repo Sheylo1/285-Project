@@ -5,12 +5,15 @@ import Header from "semantic-ui-react/dist/commonjs/elements/Header/Header";
 import { ApiResponse, TransactionGetDto } from "../../../constants/types";
 import {useHistory} from 'react-router-dom'
 import { routes } from "../../../routes/config";
+import { useUser } from '../../../authentication/use-auth';
 import moment from "moment";
 import "./transactions-listing-page.css";
 
 export const TransactionListingPage = () => {
   const [Transaction, setTransaction] = React.useState<TransactionGetDto[]>();
     const history = useHistory()
+    const user = useUser();
+    console.log("debug", user)
   console.log(Transaction);
   React.useEffect(() => {
     const fetchTransaction = async () => {
@@ -54,8 +57,10 @@ export const TransactionListingPage = () => {
                  return (
                 <React.Fragment key={Transaction.id}>
                   <Table.Row>
-                  <Table.Cell><Icon className="clickable" name='edit' onClick={() => history.push(`/transaction/${Transaction.id}`)}/></Table.Cell> 
-                  <Table.Cell><Icon className="clickable" name='delete' onClick= {() => history.push(`/transaction/delete/${Transaction.id}`)}/></Table.Cell>
+                  {user?.id === Transaction.createdByUserId ? (
+                  <Table.Cell><Icon className="clickable" name='edit' onClick={() => history.push(`/transaction/${Transaction.id}`)}/></Table.Cell> ) : <Table.Cell></Table.Cell>}
+                  {user?.id === Transaction.createdByUserId ? (
+                  <Table.Cell><Icon className="clickable" name='delete' onClick= {() => history.push(`/transaction/delete/${Transaction.id}`)}/></Table.Cell> ) : <Table.Cell></Table.Cell>}
                     <Table.Cell>{Transaction.paymentType}</Table.Cell>
                     <Table.Cell>${Transaction.amount}</Table.Cell>
                     <Table.Cell>{moment(Transaction.createdAt).format("MMMM Do YYYY")}</Table.Cell>

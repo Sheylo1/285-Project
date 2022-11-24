@@ -11,6 +11,8 @@ namespace LearningStarter.Entities
         public string PaymentType { get; set; }
 
         public DateTimeOffset CreatedAt { get; set; }
+        public User CreatedByUser { get; set; }
+        public int? CreatedByUserId { get; set; }
 
         public List<TransactionsUser> TransactionsUsers { get; set; } = new List<TransactionsUser>();
         public List<BetTransaction> BetTransactions { get; set; } = new List<BetTransaction>(); 
@@ -23,6 +25,8 @@ namespace LearningStarter.Entities
         public string PaymentType { get; set; }
 
         public DateTimeOffset CreatedAt { get; set; }
+
+        public int? CreatedByUserId { get; set; }
 
     }
     public class TransactionCreateDto

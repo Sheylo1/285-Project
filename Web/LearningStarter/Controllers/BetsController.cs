@@ -1,6 +1,7 @@
 ﻿using LearningStarter.Common;
 using LearningStarter.Data;
 using LearningStarter.Entities;
+using LearningStarter.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
@@ -13,9 +14,11 @@ namespace LearningStarter.Controllers
     public class BetsController : ControllerBase
     {
         private readonly DataContext _dataContext;
+        private readonly IAuthenticationService _authenticationService;
 
-        public BetsController(DataContext dataContext)
+        public BetsController(DataContext dataContext, IAuthenticationService authenticationService)
         {
+            _authenticationService = authenticationService;
             _dataContext = dataContext;
         }
 
@@ -35,7 +38,8 @@ namespace LearningStarter.Controllers
                     ClosedDate = Bet.ClosedDate,
                     CommentId = Bet.CommentId,
                     BetDisputeCall = Bet.BetDisputeCall,
-                    EscrowSystemId = Bet.EscrowSystemId
+                    EscrowSystemId = Bet.EscrowSystemId,
+                    CreatedByUserId = Bet.CreatedByUserId,
 
                 }).ToList();
 
@@ -60,7 +64,8 @@ namespace LearningStarter.Controllers
                     ClosedDate = bet.ClosedDate,
                     CommentId = bet.CommentId,
                     BetDisputeCall = bet.BetDisputeCall,
-                    EscrowSystemId = bet.EscrowSystemId
+                    EscrowSystemId = bet.EscrowSystemId,
+                    CreatedByUserId = bet.CreatedByUserId,
 
                 })
                 .FirstOrDefault(bet => bet.Id == id);
@@ -79,6 +84,7 @@ namespace LearningStarter.Controllers
         public IActionResult Create([FromBody] BetCreateDto betCreateDto)
         {
             var response = new Response();
+            var currentUser = _authenticationService.GetLoggedInUser();
 
             if (string.IsNullOrEmpty(betCreateDto.Name))
             {
@@ -98,7 +104,8 @@ namespace LearningStarter.Controllers
                 ClosedDate = DateTimeOffset.Now,
                 CommentId = betCreateDto.CommentId,
                 BetDisputeCall = betCreateDto.BetDisputeCall,
-                EscrowSystemId = betCreateDto.EscrowSystemId
+                EscrowSystemId = betCreateDto.EscrowSystemId,
+                CreatedByUser = currentUser,
             };
 
             _dataContext.Bets.Add(betToAdd);
@@ -113,7 +120,8 @@ namespace LearningStarter.Controllers
                 ClosedDate = betToAdd.ClosedDate,
                 CommentId = betToAdd.CommentId,
                 BetDisputeCall = betToAdd.BetDisputeCall,
-                EscrowSystemId = betToAdd.EscrowSystemId
+                EscrowSystemId = betToAdd.EscrowSystemId,
+                CreatedByUserId = currentUser.Id,
 
             };
 
@@ -152,7 +160,8 @@ namespace LearningStarter.Controllers
                 ClosedDate = betToUpdate.ClosedDate,
                 CommentId = betToUpdate.CommentId,
                 BetDisputeCall = betToUpdate.BetDisputeCall,
-                EscrowSystemId = betToUpdate.EscrowSystemId
+                EscrowSystemId = betToUpdate.EscrowSystemId,
+                CreatedByUserId = betToUpdate.CreatedByUserId,
             };
 
             response.Data = betToReturn;

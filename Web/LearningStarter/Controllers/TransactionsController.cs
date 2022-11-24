@@ -1,6 +1,7 @@
 ﻿using LearningStarter.Common;
 using LearningStarter.Data;
 using LearningStarter.Entities;
+using LearningStarter.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -12,8 +13,10 @@ namespace LearningStarter.Controllers
         public class TransactionsController : ControllerBase
         {
             private readonly DataContext _dataContext;
-            public TransactionsController(DataContext dataContext)
+            private readonly IAuthenticationService _authenticationService;
+            public TransactionsController(DataContext dataContext, IAuthenticationService authenticationService)
             {
+                _authenticationService = authenticationService;
                 _dataContext = dataContext;
             }
 
@@ -30,6 +33,7 @@ namespace LearningStarter.Controllers
                         Amount = transactions.Amount,   
                         CreatedAt = transactions.CreatedAt, 
                         PaymentType = transactions.PaymentType,
+                        CreatedByUserId = transactions.CreatedByUserId,
                     })
                     .ToList();
 
@@ -50,6 +54,7 @@ namespace LearningStarter.Controllers
                         Amount = transactions.Amount,
                         CreatedAt = transactions.CreatedAt,
                         PaymentType = transactions.PaymentType,
+                        CreatedByUserId= transactions.CreatedByUserId,
                     })
                     .FirstOrDefault(Transaction => Transaction.Id == id);
 
@@ -67,6 +72,7 @@ namespace LearningStarter.Controllers
             public IActionResult Create([FromBody] TransactionCreateDto transactionCreateDto)
             {
                 var response = new Response();
+            var currentUser = _authenticationService.GetLoggedInUser();
 
                 if (transactionCreateDto.Amount <= 0)
                 {
@@ -83,6 +89,7 @@ namespace LearningStarter.Controllers
                     Amount = transactionCreateDto.Amount,
                     CreatedAt = transactionCreateDto.CreatedAt,
                     PaymentType = transactionCreateDto.PaymentType,
+                    CreatedByUser = currentUser,
                 };
 
                 _dataContext.Transactions.Add(transactionToAdd);
@@ -94,6 +101,7 @@ namespace LearningStarter.Controllers
                     Amount = transactionToAdd.Amount,
                     CreatedAt = transactionToAdd.CreatedAt,
                     PaymentType = transactionToAdd.PaymentType,
+                    CreatedByUserId = currentUser.Id,
 
                 };
 
@@ -140,6 +148,7 @@ namespace LearningStarter.Controllers
                     Amount = transactionToUpdate.Amount,
                     CreatedAt = transactionToUpdate.CreatedAt,
                     PaymentType = transactionToUpdate.PaymentType,
+                    CreatedByUserId= transactionToUpdate.CreatedByUserId
                  
 
                 };
