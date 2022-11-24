@@ -21,7 +21,7 @@ export const UserDeletePage = () => {
 
   const onSubmit = async (values: UserDeleteDto) => {
     const response = await axios.delete<ApiResponse<UserDto>>(
-      `/api/users/${user.id}`
+      `/api/users/delete/${id}`
       /*,values*/
     );
 
