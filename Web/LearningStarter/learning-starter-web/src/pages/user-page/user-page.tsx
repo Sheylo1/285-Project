@@ -1,11 +1,14 @@
 import React from "react";
 import { useUser } from "../../authentication/use-auth";
-import { Header, Container, Divider, Card, Icon, Image } from "semantic-ui-react";
+import { Header, Container, Divider, Card, Icon, Image, Button } from "semantic-ui-react";
 import moment from "moment";
 import "./user-page.css";
+import { routes } from "../../routes/config";
+import { useHistory } from "react-router-dom";
 
 export const UserPage = () => {
   const user = useUser();
+  const history = useHistory();
 
   return (
       <div>
@@ -41,6 +44,19 @@ export const UserPage = () => {
           <p>{user.phoneNumber}</p>
           </div>
           <Divider />
+          <h6 className="whitenames1">Update Info</h6>
+          <div className="user-page-header">
+          <Button color= 'yellow' onClick={() => history.push(routes.userUpdate)}>
+            Edit
+          </Button>
+          </div>
+          <Divider />
+          <h6 className="whitenames1">Delete Account?</h6>
+          <div className="user-page-header">
+          <Button color= 'red' onClick={() => history.push(routes.userDelete)}>
+            Delete
+          </Button>
+          </div>
       </div>
   );
 };

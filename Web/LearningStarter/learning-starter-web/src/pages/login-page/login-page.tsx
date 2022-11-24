@@ -35,6 +35,7 @@ export const LoginPage = () => {
     email: "",
     phoneNumber: "",
     dateOfBirth: undefined,
+    socialId: 1
   };
   const[open, setOpen] = useState(false);
   const history = useHistory();
