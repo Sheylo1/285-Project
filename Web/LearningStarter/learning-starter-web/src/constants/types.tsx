@@ -58,6 +58,7 @@ export type BetGetDto = {
   commentId: number;
   betDisputeCall: boolean;
   escrowSystemId: number;
+  createdByUserId: Number;
 };
 
 export type BetUpdateDto = {
@@ -145,6 +146,7 @@ export type TransactionGetDto ={
     paymentType: string;
     amount: number;
     createdAt: Date;
+    createdByUserId: Number;
 };
 export type TransactionUpdateDto ={
   paymentType: string;

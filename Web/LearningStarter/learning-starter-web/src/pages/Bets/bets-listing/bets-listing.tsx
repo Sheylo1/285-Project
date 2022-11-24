@@ -5,11 +5,14 @@ import { useHistory } from "react-router-dom";
 import { Button, Header, Segment, Table } from "semantic-ui-react";
 import { ApiResponse, BetGetDto } from "../../../constants/types";
 import { routes } from "../../../routes/config";
+import { useUser } from '../../../authentication/use-auth';
 import "./bets-listing.css";
 
 export const BetsListingPage = () => {
   const [bets, setBets] = useState<BetGetDto[]>();
   const history = useHistory();
+  const user = useUser();
+    console.log("debug", user)
   useEffect(() => {
     const fetchBets = async () => {
       const response = await axios.get<ApiResponse<BetGetDto[]>>("api/bet");
@@ -49,6 +52,7 @@ export const BetsListingPage = () => {
               {bets.map((bet) => {
                 return (
                   <Table.Row>
+                    {user?.id === bet.createdByUserId ? (
                     <Table.Cell>
                       <Button
                         type="button" color="yellow"
@@ -61,6 +65,7 @@ export const BetsListingPage = () => {
                         Edit Bet
                       </Button>
                     </Table.Cell>
+                    ) : <Table.Cell></Table.Cell>}
                     <Table.Cell>
                       <Button
                         type="button" color="blue"
@@ -75,6 +80,7 @@ export const BetsListingPage = () => {
                     .format("MMMM Do YYYY")
                     .toString()}</Table.Cell>
                     <Table.Cell>{bet.betDisputeCall.toString()}</Table.Cell>
+                    {user?.id === bet.createdByUserId ? (
                     <Table.Cell>
                       <Button
                         type="button" color="red"
@@ -87,6 +93,7 @@ export const BetsListingPage = () => {
                         Delete
                       </Button>
                     </Table.Cell>
+                     ) : <Table.Cell></Table.Cell>}
                   </Table.Row>
                 );
               })}
