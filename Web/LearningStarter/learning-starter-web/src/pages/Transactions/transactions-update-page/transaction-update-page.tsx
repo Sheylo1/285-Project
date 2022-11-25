@@ -35,7 +35,6 @@ export const TransactionUpdatePage = () => {
       alert("Something went wrong.");
       return;
     } else {
-      alert("Nothing went wrong!");
       history.push(routes.transaction);
     }
   };
