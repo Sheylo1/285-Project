@@ -13,3 +13,11 @@
     display: flex;
     padding-top: 3px;
 }
+
+.test{
+    background-color: linear-gradient(to right, #7803ff00, #d516ea);
+}
+
+div1 {
+    background-color: rgba(193, 8, 230, 0.73);
+  }

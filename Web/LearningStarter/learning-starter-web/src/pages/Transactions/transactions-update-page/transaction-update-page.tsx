@@ -58,11 +58,11 @@ export const TransactionUpdatePage = () => {
           </div>
         </div>
         <div className="transactionupdate1-header">
-        <label htmlFor="payment">PaymentType</label>
+        <label htmlFor="payment">Payment Type</label>
         </div>
         <div className="transactionupdate1-header">
         <Field className="field" id="paymentType" name="paymentType">
-            {({ field }) => <Input placeholder="PaymentType" {...field} />}
+            {({ field }) => <Input placeholder="Payment Type" {...field} />}
           </Field>
         </div>
         </div>

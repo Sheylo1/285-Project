@@ -32,21 +32,21 @@ export const TransactionListingPage = () => {
   }, []);
   return (
     <>
-      {Transaction && (
-        <Segment>
-          <h1 className="bottom-header">Transactions</h1>{" "}
+    <h1 className="bottom-header">Transactions</h1>{" "}
           <div className='button'>
           <Button color= 'green' onClick={() => history.push(routes.transactionCreate)}>
             + Create
           </Button>
           </div> 
-          <Table celled>
+      {Transaction && (
+        <Segment inverted>
+          <Table celled inverted>
             {" "}
             <Table.Header>
               <Table.Row>
                 {" "}
-                <Table.HeaderCell>Edit</Table.HeaderCell>
-                <Table.HeaderCell>Delete</Table.HeaderCell>
+                <Table.HeaderCell></Table.HeaderCell>
+                <Table.HeaderCell></Table.HeaderCell>
                 <Table.HeaderCell>Payment Type</Table.HeaderCell>
                 <Table.HeaderCell>Amount</Table.HeaderCell>
                 <Table.HeaderCell>Transaction Date</Table.HeaderCell>
@@ -58,9 +58,11 @@ export const TransactionListingPage = () => {
                 <React.Fragment key={Transaction.id}>
                   <Table.Row>
                   {user?.id === Transaction.createdByUserId ? (
-                  <Table.Cell><Icon className="clickable" name='edit' onClick={() => history.push(`/transaction/${Transaction.id}`)}/></Table.Cell> ) : <Table.Cell></Table.Cell>}
+                  <Table.Cell><Button
+                  type="button" color="yellow" onClick={() => history.push(`/transaction/${Transaction.id}`)}>Edit</Button></Table.Cell> ) : <Table.Cell></Table.Cell>}
                   {user?.id === Transaction.createdByUserId ? (
-                  <Table.Cell><Icon className="clickable" name='delete' onClick= {() => history.push(`/transaction/delete/${Transaction.id}`)}/></Table.Cell> ) : <Table.Cell></Table.Cell>}
+                  <Table.Cell><Button
+                  type="button" color="red" onClick= {() => history.push(`/transaction/delete/${Transaction.id}`)}>Delete</Button></Table.Cell> ) : <Table.Cell></Table.Cell>}
                     <Table.Cell>{Transaction.paymentType}</Table.Cell>
                     <Table.Cell>${Transaction.amount}</Table.Cell>
                     <Table.Cell>{moment(Transaction.createdAt).format("MMMM Do YYYY")}</Table.Cell>
@@ -70,13 +72,13 @@ export const TransactionListingPage = () => {
                  })}
             </Table.Body>
           </Table>
-          <div className = "button">
+        </Segment>
+      )}
+      <div className = "button">
             <Button color= 'blue' onClick={() => history.push(routes.home)}>
             Go Home
           </Button>
           </div>
-        </Segment>
-      )}
     </>
   );
 };

@@ -1,7 +1,8 @@
 .update-header {
     display: flex;
     justify-content: center;
-    color: white;
+    color: #dcff00;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }
 
 .update-buttons {
@@ -14,6 +15,7 @@
     display: flex;
     padding-top: 3px;
     color: white;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }
 
 .update-centertext {

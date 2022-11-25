@@ -36,8 +36,8 @@ export const routes = {
   root: `/`,
   home: `/home`,
   user: `/user`,
-  userDelete: `/users/delete/:id`,
-  userUpdate: `/users/update/:id`,
+  userDelete: `/user/delete/:id`,
+  userUpdate: `/user/update/:id`,
   betCategories: {
     listing: "/betcategorylisting",
     create: "/betcategorycreate",

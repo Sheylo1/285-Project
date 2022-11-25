@@ -28,24 +28,26 @@ export const BetsListingPage = () => {
 
   return (
     <>
-      {bets && (
-        <Segment>
+          <div className="test">
           <h1 className="bottom-header">Bets</h1>
           <div className="betslisting-buttons">
           <Button type="button" color="green" onClick={() => history.push(routes.betCreate)}>
             + Create Bet
           </Button>
           </div>
-          <Table celled>
+          </div>
+          {bets && (
+          <Segment inverted>
+          <Table celled inverted>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>Edit</Table.HeaderCell>
-                <Table.HeaderCell>Join Bet</Table.HeaderCell>
+                <Table.HeaderCell></Table.HeaderCell>
+                <Table.HeaderCell></Table.HeaderCell>
                 <Table.HeaderCell>Name</Table.HeaderCell>
                 <Table.HeaderCell>Bet Category</Table.HeaderCell>
                 <Table.HeaderCell>Created Date</Table.HeaderCell>
                 <Table.HeaderCell>Dispute Status</Table.HeaderCell>
-                <Table.HeaderCell>Delete Bet</Table.HeaderCell>
+                <Table.HeaderCell></Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
@@ -101,6 +103,11 @@ export const BetsListingPage = () => {
           </Table>
         </Segment>
       )}
+    <div className = "button">
+            <Button color= 'blue' onClick={() => history.push(routes.home)}>
+            Home
+          </Button>
+          </div>
     </>
   );
 };

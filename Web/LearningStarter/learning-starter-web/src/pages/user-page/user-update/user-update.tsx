@@ -21,7 +21,7 @@ export const UserUpdatePage = () => {
 
   const onSubmit = async (values: UserUpdateDto) => {
     const response = await axios.put<ApiResponse<UserDto>>(
-      `/api/users/update/${id}`,
+      `/api/user/update/${id}`,
       values
     );
 

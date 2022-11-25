@@ -141,6 +141,17 @@ export type UserUpdateDto = {
   dateOfBirth: Date;
 };
 
+export type UserDeleteDto = {
+  id: number;
+  firstName: string;
+  lastName: string;
+  userName: string;
+  accountBalance: number;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: Date;
+};
+
 export type TransactionGetDto ={
     id: number;
     paymentType: string;

@@ -11,6 +11,7 @@ import {
 import axios from "axios";
 import { BaseUrl } from "../../../constants/env-vars";
 import { useUser } from "../../../authentication/use-auth";
+import { logoutUser } from "../../../authentication/authentication-services";
 
 
 export const UserDeletePage = () => {
@@ -21,7 +22,7 @@ export const UserDeletePage = () => {
 
   const onSubmit = async (values: UserDeleteDto) => {
     const response = await axios.delete<ApiResponse<UserDto>>(
-      `/api/users/delete/${id}`
+      `/api/user/delete/${id}`
       /*,values*/
     );
 
@@ -37,7 +38,7 @@ export const UserDeletePage = () => {
   return (
     <>
       <h2 className="delete-header">Delete Your Account</h2>
-      <Formik onSubmit={onSubmit} initialValues={{} as UserDto}>
+      <Formik onSubmit={onSubmit} initialValues={{} as UserDeleteDto}>
         <Form>
           <div>
             <div>
@@ -48,13 +49,17 @@ export const UserDeletePage = () => {
               </div>
             </div>
             <div className="delete-buttons">
-              <Button primary type="submit">
+              <Button 
+              primary
+              type="submit"
+              onClick={async () => {logoutUser();}}
+              >
                 Delete
               </Button>
               <Button
                 secondary
                 type="button"
-                onClick={() => history.push(routes.root)}
+                onClick={() => history.push(routes.user)}
               >
                 Cancel
               </Button>

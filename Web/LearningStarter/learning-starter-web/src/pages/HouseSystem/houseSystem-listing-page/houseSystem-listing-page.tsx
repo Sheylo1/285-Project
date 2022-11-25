@@ -27,21 +27,21 @@ export const HouseSystemListingPage = () => {
   }, []);
   return (
     <>
-      {HouseSystem && (
-        <Segment>
-          <h1 className="bottom-header">House System</h1>{" "}
+     <h1 className="bottom-header">House System</h1>{" "}
           <div className='button'>
           <Button color= 'green' onClick={() => history.push(routes.housesystemCreate)}>
             + Create
           </Button>
           </div>
-          <Table celled>
+      {HouseSystem && (
+        <Segment inverted>
+          <Table celled inverted>
             {" "}
             <Table.Header>
               <Table.Row>
                 {" "}
-                <Table.HeaderCell>Edit</Table.HeaderCell>
-                <Table.HeaderCell>Delete</Table.HeaderCell>
+                <Table.HeaderCell></Table.HeaderCell>
+                <Table.HeaderCell></Table.HeaderCell>
                 <Table.HeaderCell>Payout</Table.HeaderCell>
                 <Table.HeaderCell>HousePercentage</Table.HeaderCell>
               </Table.Row>
@@ -50,8 +50,10 @@ export const HouseSystemListingPage = () => {
               {HouseSystem.map((HouseSystem) => (
                 <React.Fragment key={HouseSystem.id}>
                   <Table.Row>
-                  <Table.Cell><Icon className="clickable" name='edit' onClick={() => history.push(`/houseSystem/${HouseSystem.id}`)}/></Table.Cell> 
-                  <Table.Cell><Icon className="clickable" name='delete' onClick= {() => history.push(`/houseSystem/delete/${HouseSystem.id}`)}/></Table.Cell>
+                  <Table.Cell><Button
+                        type="button" color="yellow" onClick={() => history.push(`/houseSystem/${HouseSystem.id}`)}>Edit</Button></Table.Cell> 
+                  <Table.Cell><Button
+                        type="button" color="red" onClick= {() => history.push(`/houseSystem/delete/${HouseSystem.id}`)}>Delete</Button></Table.Cell>
                     <Table.Cell>${HouseSystem.payout}</Table.Cell>
                     <Table.Cell>{HouseSystem.betPercentage}%</Table.Cell>
                   </Table.Row>
@@ -59,13 +61,13 @@ export const HouseSystemListingPage = () => {
               ))}
             </Table.Body>
           </Table>
-          <div className = "button">
+        </Segment>
+      )}
+    <div className = "button">
             <Button color= 'blue' onClick={() => history.push(routes.home)}>
             Go Home
           </Button>
           </div>
-        </Segment>
-      )}
     </>
   );
 };

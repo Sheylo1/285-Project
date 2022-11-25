@@ -28,15 +28,15 @@ export const EmployeesListingPage = () => {
   }, []);
   return (
     <>
-      {employees && (
-        <Segment>
-          <h1 className="bottom-header">Employees</h1>{" "}
+    <h1 className="bottom-header">Employees</h1>{" "}
           <div className='button'>
           <Button color= 'green' onClick={() => history.push(routes.employeescreate)}>
             + Create
           </Button>
           </div>
-          <Table celled>
+      {employees && (
+        <Segment inverted>
+          <Table celled inverted>
             {" "}
             <Table.Header>
               <Table.Row>
@@ -52,7 +52,8 @@ export const EmployeesListingPage = () => {
               {employees.map((employee) => (
                 <React.Fragment key={employee.id}>
                   <Table.Row>
-                  <Table.Cell><Icon name="edit" onClick= {() => history.push(`employees/${employee.id}`)}/></Table.Cell>
+                  <Table.Cell><Button
+                        type="button" color="yellow" onClick= {() => history.push(`employees/${employee.id}`)}>Edit</Button></Table.Cell>
                     <Table.Cell>{employee.userId}</Table.Cell>
                     <Table.Cell>{employee.positionId}</Table.Cell>
                     <Table.Cell>${employee.salary}</Table.Cell>
@@ -62,13 +63,13 @@ export const EmployeesListingPage = () => {
               ))}
             </Table.Body>
           </Table>
-          <div className = "button">
+        </Segment>
+      )}
+    <div className = "button">
             <Button color= 'blue' onClick={() => history.push(routes.home)}>
             Home
           </Button>
           </div>
-        </Segment>
-      )}
     </>
   );
 };

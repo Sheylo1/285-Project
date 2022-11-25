@@ -55,7 +55,7 @@
 .top-navigation.ui.secondary.menu
   .ui.secondary.menu.desktop-navigation
   .item.active:hover {
-  background-color: rgba(40, 90, 133);
+  background-color: #9900ff;
 }
 
 .top-navigation.ui.secondary.menu
@@ -65,7 +65,7 @@
   .ui.secondary.menu.desktop-navigation
   .item.active:hover
   > .label {
-  background-color: rgba(40, 90, 133);
+  background-color: #9900ff;
   color: lighten(0.05, #1b1c1d);
 }
 
@@ -75,7 +75,7 @@
   .item.active,
 .item.active:hover {
   border: none;
-  background-color: rgba(40, 90, 133);
+  background-color: #9900ff;
 }
 
 .top-navigation.ui.secondary.menu

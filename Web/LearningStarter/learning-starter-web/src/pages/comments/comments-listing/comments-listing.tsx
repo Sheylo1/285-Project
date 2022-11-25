@@ -31,15 +31,15 @@ export const CommentsListingPage = () => {
 
     return (
     <>
-        {comments && (
-            <Segment>
-                <h1 className="bottom-header">Comments Made Across To The Moon Gamblin</h1>
+    <h1 className="bottomcomment-header">Comments</h1>
                     <div className='button'>
                         <Button color= 'green' onClick={() => history.push(routes.commentsCreate)}>
                             + Create a Message
                         </Button>
                     </div>
-                    <Table celled>
+        {comments && (
+            <Segment inverted>
+                    <Table celled inverted>
                         <Table.Header>
                         <Table.Row>
                         <Table.HeaderCell>Edit</Table.HeaderCell>
@@ -55,11 +55,13 @@ export const CommentsListingPage = () => {
                                 return (
                                     <Table.Row key={comment.id}>
                                         {user?.id === comment.createdByUserId ? ( 
-                                            <Table.Cell><Icon className="clickable" name='edit' onClick={() => history.push(`/comment/${comment.id}`)}/></Table.Cell> 
+                                            <Table.Cell><Button
+                                            type="button" color="yellow" onClick={() => history.push(`/comment/${comment.id}`)}>Edit</Button></Table.Cell> 
                                             ) : <Table.Cell></Table.Cell>}
 
                                         {user?.id === comment.createdByUserId ? ( 
-                                            <Table.Cell><Icon className="window close" name='delete' onClick={() => history.push(`/comment/delete/${comment.id}`)}/></Table.Cell> 
+                                            <Table.Cell><Button
+                                            type="button" color="red"  onClick={() => history.push(`/comment/delete/${comment.id}`)}>Delete</Button></Table.Cell> 
                                             ) : <Table.Cell></Table.Cell>}
                                         <Table.Cell>{comment.id}</Table.Cell>
                                         <Table.Cell>{moment(comment.createdAt).format("MMMM Do YYYY")}</Table.Cell>
@@ -70,14 +72,13 @@ export const CommentsListingPage = () => {
                             })}
                         </Table.Body>
                     </Table>
-                    <div className = "button">
+            </Segment>
+    )}
+    <div className = "button">
                         <Button color= 'blue' onClick={() => history.push(routes.home)}>
                             Home
                         </Button>
-                    </div>
-            </Segment>
-    )}
-        
+    </div> 
     </>
     )
 }
