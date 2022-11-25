@@ -1,7 +1,8 @@
 .delete-header {
     display: flex;
     justify-content: center;
-    color: white;
+    color: #dcff00;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }
 
 .delete-buttons {
@@ -13,4 +14,5 @@
 .small-header {
     display: flex;
     padding-top: 3px;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }

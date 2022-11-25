@@ -35,6 +35,7 @@ export const LoginPage = () => {
     email: "",
     phoneNumber: "",
     dateOfBirth: undefined,
+
   };
   const[open, setOpen] = useState(false);
   const history = useHistory();
@@ -47,10 +48,10 @@ export const LoginPage = () => {
     );
 
     if (response.data.hasErrors) {
-      alert("Something went wrong.");
+      alert("Account Could Not Be Made!");
       return;
     }else{
-            alert("Nothing went wrong!");
+            alert("Account Created!");
      history.push(routes.home);
     }
     setOpen(false);
@@ -142,37 +143,43 @@ export const LoginPage = () => {
                 <label htmlFor="userId">First Name</label>
               </div>
               <Field className="field" id="firstName" name="firstName">
-                {({ field }) => <Input error={{ content: 'Please enter your first name', pointing: 'below' }} placeholder= "First Name" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your first name', pointing: 'below' }} placeholder= "First Name" minlength="2" maxlength="32" required {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Last Name</label>
               </div>
               <Field className="field" id="lastName" name="lastName">
-                {({ field }) => <Input error={{ content: 'Please enter your last name', pointing: 'below' }} placeholder= "Last Name" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your last name', pointing: 'below' }} placeholder= "Last Name" minlength="2" maxlength="32" required {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Username</label>
               </div>
               <Field className="field" id="userName" name="userName">
-                {({ field }) => <Input error={{ content: 'Please enter your username', pointing: 'below' }} placeholder= "Username" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your username', pointing: 'below' }} placeholder= "Username" minlength="2" maxlength="32" required {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Email</label>
               </div>
               <Field className="field" id="email" name="email">
-                {({ field }) => <Input error={{ content: 'Please enter your email', pointing: 'below' }} placeholder= "Email" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your email', pointing: 'below' }} placeholder= "Email" minlength="6" maxlength="32" required {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Password</label>
               </div>
               <Field className="field" id="password" name="password">
-                {({ field }) => <Input error={{ content: 'Please enter your password', pointing: 'below' }} placeholder= "Password" type="password" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your password', pointing: 'below' }} placeholder= "Password" type="password" minlength="2" maxlength="32" required {...field} />}
+              </Field>
+              <div className="field-label">
+                <label htmlFor="userId">Re-enter Password</label>
+              </div>
+              <Field className="field" id="password" name="re-enter password">
+                {({ field }) => <Input error={{ content: 'Please enter your password again', pointing: 'below' }} placeholder= "Re-enter Password" type="password" minlength="2" maxlength="32" required {...field} />}
               </Field>
               <div className="field-label">
                 <label htmlFor="userId">Phone Number</label>
               </div>
               <Field className="field" id="phoneNumber" name="phoneNumber">
-                {({ field }) => <Input error={{ content: 'Please enter your phonenumber', pointing: 'below' }} placeholder= "Phone Number" {...field} />}
+                {({ field }) => <Input error={{ content: 'Please enter your phonenumber', pointing: 'below' }} placeholder= "Phone Number" minlength="10" maxlength="10" required onclick="checkLength()"  {...field} />}
               </Field>
             </div>
           </div> 

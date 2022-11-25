@@ -2,7 +2,8 @@
 .transactionupdate-header {
     display: flex;
     justify-content: center;
-    color: white;
+    color: #dcff00;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }
 
 .transactionupdate1-header {
@@ -10,6 +11,7 @@
     justify-content: center;
     padding-bottom: 5px;
     color: white;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }
 
 .transactionupdate-buttons {

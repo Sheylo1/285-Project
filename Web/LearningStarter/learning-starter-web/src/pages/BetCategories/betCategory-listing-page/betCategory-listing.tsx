@@ -27,22 +27,22 @@ useEffect (() => {
 
     fetchBetCategories();
 }, []);
-
+    
     return(
     <>
-      {BetCategories && (
-        <Segment>
           <h1 className="bottom-header">Bet Categories</h1>
           <div className='center'>
           <Button onClick= {() => history.push(`/betcategorycreate`)} color="green">+ Create new Category</Button>
           </div>
        <div className="betCategory-listing-container">
       </div>
-            <Table celled>
+      {BetCategories && (
+        <Segment inverted>
+            <Table celled inverted>
               <Table.Header>
                 <Table.Row>
-                    <Table.HeaderCell>Edit</Table.HeaderCell>
-                    <Table.HeaderCell>Delete</Table.HeaderCell>
+                    <Table.HeaderCell></Table.HeaderCell>
+                    <Table.HeaderCell></Table.HeaderCell>
                     <Table.HeaderCell>Name</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
@@ -50,9 +50,11 @@ useEffect (() => {
                 {BetCategories.map((betCategory) => {
                   return (
                     <Table.Row key={betCategory.id }>
-                      <Table.Cell><Icon name="edit" onClick= {() => history.push(`/betcategoryupdate/${betCategory.id}`)}></Icon></Table.Cell>
+                      <Table.Cell><Button
+                        type="button" color="yellow" onClick= {() => history.push(`/betcategoryupdate/${betCategory.id}`)}>Edit</Button></Table.Cell>
                       <Table.Cell>
-                        <Icon name="window close" onClick= {() => history.push(`/betcategorydelete/${betCategory.id}`)}></Icon>
+                      <Button
+                        type="button" color="red" onClick= {() => history.push(`/betcategorydelete/${betCategory.id}`)}>Delete</Button>
                       </Table.Cell>
                       <Table.Cell>{betCategory.name}</Table.Cell>
                     </Table.Row>
@@ -61,11 +63,11 @@ useEffect (() => {
 
                 </Table.Body>
             </Table>
-            <div className='button'>
-              <Button onClick= {() => history.push(`/home`)} icon="home" color="blue">Home</Button>
-            </div>
         </Segment>
       )}
+     <div className='button'>
+              <Button onClick= {() => history.push(`/home`)} icon="home" color="blue">Home</Button>
+            </div>
     </>
   );
 };

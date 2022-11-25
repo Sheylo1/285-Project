@@ -28,12 +28,16 @@ import { TransactionListingPage } from "../pages/Transactions/transactions-listi
 import { TransactionDeletePage } from "../pages/Transactions/transactions-delete-page/transactions-delete-page";
 import { TransactionCreatePage } from "../pages/Transactions/transactions-create-page/transactions-create-page";
 import { TransactionUpdatePage } from "../pages/Transactions/transactions-update-page/transaction-update-page";
+import { UserDeletePage } from "../pages/user-page/user-delete/user-delete";
+import { UserUpdatePage } from "../pages/user-page/user-update/user-update";
 
 //This is where you will declare all of your routes (the ones that show up in the search bar)
 export const routes = {
   root: `/`,
   home: `/home`,
   user: `/user`,
+  userDelete: `/user/delete/:id`,
+  userUpdate: `/user/update/:id`,
   betCategories: {
     listing: "/betcategorylisting",
     create: "/betcategorycreate",
@@ -83,6 +87,12 @@ export const Routes = () => {
           {/* When path === /iser render UserPage */}
           <Route path={routes.user} exact>
             <UserPage />
+          </Route>
+          <Route path={routes.userDelete} exact>
+            <UserDeletePage/>
+          </Route>
+          <Route path={routes.userUpdate} exact>
+            <UserUpdatePage/>
           </Route>
           <Route path={routes.betCategories.create} exact>
             <BetCategoriesCreatePage />

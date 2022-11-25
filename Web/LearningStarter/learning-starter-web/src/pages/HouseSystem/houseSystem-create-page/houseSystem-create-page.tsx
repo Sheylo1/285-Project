@@ -37,7 +37,7 @@ export const HouseSystemCreatePage = () => {
   };
   return (
     <>
-      <h2 className="houseSystemcreate-header">Add New HouseSystem</h2>
+      <h2 className="houseSystemcreate-header">Add New House System</h2>
       <Formik onSubmit={onSubmit} initialValues={initialValues }>
         <Form>
           <div>

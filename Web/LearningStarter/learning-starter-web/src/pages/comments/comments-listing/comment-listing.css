@@ -11,10 +11,11 @@ background-color: rgba(40, 90, 133);
     justify-content: center;
 }
 
-.bottom-header{
+.bottomcomment-header{
     display: flex;
     justify-content: center;
-    color: black;
+    color: #dcff00;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
     font-size: x-large;
     padding-top: 15px;
     padding-bottom: 15px;
