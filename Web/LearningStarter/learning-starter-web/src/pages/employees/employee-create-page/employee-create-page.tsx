@@ -39,7 +39,6 @@ export const EmployeesCreatePage = () => {
       alert("Something went wrong.");
       return;
     }else{
-            alert("Nothing went wrong!");
      history.push(routes.employees);
     }
 

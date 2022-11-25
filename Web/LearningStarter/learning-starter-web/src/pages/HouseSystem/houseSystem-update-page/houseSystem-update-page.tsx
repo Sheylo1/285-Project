@@ -31,7 +31,6 @@ export const HouseSystemUpdatePage = () => {
       alert("Something went wrong.");
       return;
     } else {
-      alert("Nothing went wrong!");
       history.push(routes.housesystem);
     }
   };

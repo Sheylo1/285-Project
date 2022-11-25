@@ -38,7 +38,6 @@ export const EmployeesUpdatePage = () => {
       alert("Something went wrong.");
       return;
     } else {
-      alert("Nothing went wrong!");
       history.push(routes.employees);
     }
   };
