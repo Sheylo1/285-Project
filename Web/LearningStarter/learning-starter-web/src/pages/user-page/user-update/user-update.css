@@ -1,0 +1,56 @@
+.userupdate-page-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .userupdate-page-header {
+    display: flex;
+    justify-content: center;
+    color: #dcff00;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    font-size: medium;
+  }
+
+  .userupdate-page-header1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .userupdatepaddinginfo{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px;
+  }
+  
+  .userupdateheadertitles{
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
+  
+  .userupdatewhitename{
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
+  
+  .userupdatewhitenames{
+    display: flex;
+    justify-content: center;
+    color: #dcff00;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+  }
+  
+  .userupdatewhitenames1{
+    display: flex;
+    justify-content: center;
+    color: #dcff00;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size:medium;
+  }
+  
+  .userupdatefixwhitetext{
+    color: black;
+  }

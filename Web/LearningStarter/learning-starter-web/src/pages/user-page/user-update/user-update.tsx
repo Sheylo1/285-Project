@@ -12,6 +12,7 @@ import axios from "axios";
 import { BaseUrl } from "../../../constants/env-vars";
 import { useUser } from "../../../authentication/use-auth";
 import SemanticDatepicker from "react-semantic-ui-datepickers";
+import "./user-update.css";
 
 export const UserUpdatePage = () => {
   let match = useRouteMatch<{ id: string }>();
@@ -45,9 +46,10 @@ export const UserUpdatePage = () => {
         </div>
         <div>
             <div>
-            <div className="field-label">
+            <div className="userupdatewhitenames1">
                 <label htmlFor="userId">Date of Birth</label>
               </div>
+              <div className="userupdate-page-header1">
               <Field className="date" id="dateOfBirth" name="dateOfBirth">
                 {({field, form}) => <SemanticDatepicker {...field} onChange={(_, { name, value }) =>{
                   console.log("debug",name)
@@ -55,42 +57,55 @@ export const UserUpdatePage = () => {
                   form.setFieldValue(name, value)}
                 }  />}
               </Field>
-              <div className="field-label">
+              </div>
+              <div className="userupdatewhitenames1">
                 <label htmlFor="userId">First Name</label>
               </div>
+              <div className="userupdate-page-header1">
               <Field className="field" id="firstName" name="firstName">
                 {({ field }) => <Input error={{ content: 'Please enter your first name', pointing: 'below' }} placeholder= "First Name" {...field} />}
               </Field>
-              <div className="field-label">
+              </div>
+              <div className="userupdatewhitenames1">
                 <label htmlFor="userId">Last Name</label>
               </div>
+              <div className="userupdate-page-header1">
               <Field className="field" id="lastName" name="lastName">
                 {({ field }) => <Input error={{ content: 'Please enter your last name', pointing: 'below' }} placeholder= "Last Name" {...field} />}
               </Field>
-              <div className="field-label">
+              </div>
+              <div className="userupdatewhitenames1">
                 <label htmlFor="userId">Username</label>
               </div>
+              <div className="userupdate-page-header1">
               <Field className="field" id="userName" name="userName">
                 {({ field }) => <Input error={{ content: 'Please enter your username', pointing: 'below' }} placeholder= "Username" {...field} />}
               </Field>
-              <div className="field-label">
+              </div>
+              <div className="userupdatewhitenames1">
                 <label htmlFor="userId">Email</label>
               </div>
+              <div className="userupdate-page-header1">
               <Field className="field" id="email" name="email">
                 {({ field }) => <Input error={{ content: 'Please enter your email', pointing: 'below' }} placeholder= "Email" {...field} />}
               </Field>
-              <div className="field-label">
+              </div>
+              <div className="userupdatewhitenames1">
                 <label htmlFor="userId">Password</label>
               </div>
+              <div className="userupdate-page-header1">
               <Field className="field" id="password" name="password">
                 {({ field }) => <Input error={{ content: 'Please enter your password', pointing: 'below' }} placeholder= "Password" type="password" {...field} />}
               </Field>
-              <div className="field-label">
+              </div>
+              <div className="userupdatewhitenames1">
                 <label htmlFor="userId">Phone Number</label>
               </div>
+              <div className="userupdate-page-header1">
               <Field className="field" id="phoneNumber" name="phoneNumber">
                 {({ field }) => <Input error={{ content: 'Please enter your phonenumber', pointing: 'below' }} placeholder= "Phone Number" {...field} />}
               </Field>
+              </div>
             </div>
           </div> 
           <div>
