@@ -44,7 +44,6 @@ export const CommentsListingPage = () => {
                         <Table.Row>
                         <Table.HeaderCell>Edit</Table.HeaderCell>
                         <Table.HeaderCell>Delete</Table.HeaderCell>
-                        <Table.HeaderCell>Id</Table.HeaderCell>
                         <Table.HeaderCell>Comment Date</Table.HeaderCell>
                         <Table.HeaderCell>Comment Author</Table.HeaderCell>
                         <Table.HeaderCell>Comment Message</Table.HeaderCell>
@@ -63,7 +62,6 @@ export const CommentsListingPage = () => {
                                             <Table.Cell><Button
                                             type="button" color="red"  onClick={() => history.push(`/comment/delete/${comment.id}`)}>Delete</Button></Table.Cell> 
                                             ) : <Table.Cell></Table.Cell>}
-                                        <Table.Cell>{comment.id}</Table.Cell>
                                         <Table.Cell>{moment(comment.createdAt).format("MMMM Do YYYY")}</Table.Cell>
                                         <Table.Cell>{comment.createdByUserName}</Table.Cell>
                                         <Table.Cell>{comment.commentText}</Table.Cell>
