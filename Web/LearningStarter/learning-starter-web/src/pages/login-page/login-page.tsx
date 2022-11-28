@@ -176,10 +176,10 @@ export const LoginPage = () => {
                 {({ field }) => <Input placeholder= "Re-enter Password" type="password" minlength="6" maxlength="32" required {...field} />}
               </Field>
               <div className="paddinglogin">
-                <label htmlFor="userId">Phone Number</label><div className="allaroundredlogin">Max of 10 integers</div>
+                <label htmlFor="userId">Phone Number</label><div className="allaroundredlogin">Max of 11 integers</div>
               </div>
               <Field className="field" id="phoneNumber" name="phoneNumber">
-                {({ field }) => <Input type="tel" placeholder= "Phone Number" minlength="10" maxlength="10" required onclick="checkLength()"  {...field} />}
+                {({ field }) => <Input type="tel" placeholder= "Phone Number" maxlength="11" {...field} />}
               </Field>
             </div>
           </div> 
