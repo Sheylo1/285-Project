@@ -158,16 +158,16 @@ export const LoginPage = () => {
                 {({ field }) => <Input placeholder= "Username" minlength="2" maxlength="32" required {...field} />}
               </Field>
               <div className="paddinglogin">
-                <label htmlFor="userId">Email</label><div className="allaroundredlogin">Must enter at least 3 char and less than 33 char</div>
+                <label htmlFor="userId">Email</label><div className="allaroundredlogin">Must enter at least 3 char</div>
               </div>
               <Field className="field" id="email" name="email">
-                {({ field }) => <Input type="email" placeholder= "Email" minlength="3" maxlength="32" required {...field} />}
+                {({ field }) => <Input type="email" placeholder= "Email" minlength="3" required {...field} />}
               </Field>
               <div className="paddinglogin">
-                <label htmlFor="userId">Password</label><div className="allaroundredlogin">Must enter at least 6 char and less than 33 char</div>
+                <label htmlFor="userId">Password</label><div className="allaroundredlogin">Must enter at least 6 char</div>
               </div>
               <Field className="field" id="password" name="password">
-                {({ field }) => <Input placeholder= "Password" type="password" minlength="6" maxlength="32" required {...field} />}
+                {({ field }) => <Input placeholder= "Password" type="password" minlength="6" required {...field} />}
               </Field>
               <div className="paddinglogin">
                 <label htmlFor="userId">Re-enter Password</label><div className="allaroundredlogin">Passwords must match!</div>

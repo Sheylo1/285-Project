@@ -305,12 +305,6 @@ namespace LearningStarter.Controllers
                 return BadRequest(response);
             }
 
-            if ((user.Password.Length) >= 33)
-            {
-                response.AddError("password", "Must enter less than 33 characters");
-                return BadRequest(response);
-            }
-
             if (userToEdit.Email == null || userToEdit.Email == "")
             {
                 response.AddError("email", "Email cannot be empty.");
@@ -319,12 +313,6 @@ namespace LearningStarter.Controllers
             if ((user.Email.Length) <= 2)
             {
                 response.AddError("email", "Must enter at least 3 characters");
-                return BadRequest(response);
-            }
-
-            if ((user.Email.Length) >= 33)
-            {
-                response.AddError("email", "Must enter less than 33 characters");
                 return BadRequest(response);
             }
 
