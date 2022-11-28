@@ -140,43 +140,43 @@ export const LoginPage = () => {
                 }  />}
               </Field>
               <div className="paddinglogin">
-                <label htmlFor="userId">First Name</label><div className="allaroundredlogin">Must enter at least 3 char and less than 33 char</div>
+                <label htmlFor="userId">First Name</label><div className="allaroundredlogin">*Must enter at least 3 char and less than 33 char</div>
               </div>
               <Field className="field" id="firstName" name="firstName">
                 {({ field }) => <Input placeholder= "First Name" minlength="2" maxlength="32" required {...field} />}
               </Field>
               <div className="paddinglogin">
-                <label htmlFor="userId">Last Name</label><div className="allaroundredlogin">Must enter at least 3 char and less than 33 char</div>
+                <label htmlFor="userId">Last Name</label><div className="allaroundredlogin">*Must enter at least 3 char and less than 33 char</div>
               </div>
               <Field className="field" id="lastName" name="lastName">
                 {({ field }) => <Input placeholder= "Last Name" minlength="2" maxlength="32" required {...field} />}
               </Field>
               <div className="paddinglogin">
-                <label htmlFor="userId">Username</label><div className="allaroundredlogin">Must enter at least 3 char and less than 33 char</div>
+                <label htmlFor="userId">Username</label><div className="allaroundredlogin">*Must enter at least 3 char and less than 33 char</div>
               </div>
               <Field className="field" id="userName" name="userName">
                 {({ field }) => <Input placeholder= "Username" minlength="2" maxlength="32" required {...field} />}
               </Field>
               <div className="paddinglogin">
-                <label htmlFor="userId">Email</label><div className="allaroundredlogin">Must enter at least 3 char</div>
+                <label htmlFor="userId">Email</label><div className="allaroundredlogin">*Must enter at least 3 char</div>
               </div>
               <Field className="field" id="email" name="email">
                 {({ field }) => <Input type="email" placeholder= "Email" minlength="3" required {...field} />}
               </Field>
               <div className="paddinglogin">
-                <label htmlFor="userId">Password</label><div className="allaroundredlogin">Must enter at least 6 char</div>
+                <label htmlFor="userId">Password</label><div className="allaroundredlogin">*Must enter at least 6 char</div>
               </div>
               <Field className="field" id="password" name="password">
                 {({ field }) => <Input placeholder= "Password" type="password" minlength="6" required {...field} />}
               </Field>
               <div className="paddinglogin">
-                <label htmlFor="userId">Re-enter Password</label><div className="allaroundredlogin">Passwords must match!</div>
+                <label htmlFor="userId">Re-enter Password</label><div className="allaroundredlogin">*Passwords must match!</div>
               </div>
               <Field className="field" id="password" name="re-enter password">
                 {({ field }) => <Input placeholder= "Re-enter Password" type="password" minlength="6" maxlength="32" required {...field} />}
               </Field>
               <div className="paddinglogin">
-                <label htmlFor="userId">Phone Number</label><div className="allaroundredlogin">Max of 11 integers</div>
+                <label htmlFor="userId">Phone Number</label><div className="allaroundredlogin">*Max of 11 integers</div>
               </div>
               <Field className="field" id="phoneNumber" name="phoneNumber">
                 {({ field }) => <Input type="tel" placeholder= "Phone Number" maxlength="11" {...field} />}
