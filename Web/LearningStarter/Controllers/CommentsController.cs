@@ -89,6 +89,18 @@ namespace LearningStarter.Controllers
                 return BadRequest(response);
             }
 
+            if ((commentCreateDto.CommentText.Length) <= 2)
+            {
+                response.AddError("CommentText", "Must enter at least 3 characters");
+                return BadRequest(response);
+            }
+
+            if ((commentCreateDto.CommentText.Length) >= 65)
+            {
+                response.AddError("CommentText", "Must enter less than 65 characters");
+                return BadRequest(response);
+            }
+
             if (response.HasErrors)
             {
                 return BadRequest(response);

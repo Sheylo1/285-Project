@@ -129,8 +129,8 @@ export const LoginPage = () => {
             <Modal.Content>
             <div>
             <div>
-            <div className="field-label">
-                <label htmlFor="userId">Date of Birth</label>
+            <div className="paddinglogin">
+                <label htmlFor="userId">Date of Birth</label><div className="allaroundredlogin">Must enter D.O.B.</div>
               </div>
               <Field className="date" id="dateOfBirth" name="dateOfBirth">
                 {({field, form}) => <SemanticDatepicker {...field} onChange={(_, { name, value }) =>{
@@ -139,47 +139,47 @@ export const LoginPage = () => {
                   form.setFieldValue(name, value)}
                 }  />}
               </Field>
-              <div className="field-label">
-                <label htmlFor="userId">First Name</label>
+              <div className="paddinglogin">
+                <label htmlFor="userId">First Name</label><div className="allaroundredlogin">Must enter at least 2 char and less than 33 char</div>
               </div>
               <Field className="field" id="firstName" name="firstName">
-                {({ field }) => <Input error={{ content: 'Please enter your first name', pointing: 'below' }} placeholder= "First Name" minlength="2" maxlength="32" required {...field} />}
+                {({ field }) => <Input placeholder= "First Name" minlength="2" maxlength="32" required {...field} />}
               </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Last Name</label>
+              <div className="paddinglogin">
+                <label htmlFor="userId">Last Name</label><div className="allaroundredlogin">Must enter at least 2 char and less than 33 char</div>
               </div>
               <Field className="field" id="lastName" name="lastName">
-                {({ field }) => <Input error={{ content: 'Please enter your last name', pointing: 'below' }} placeholder= "Last Name" minlength="2" maxlength="32" required {...field} />}
+                {({ field }) => <Input placeholder= "Last Name" minlength="2" maxlength="32" required {...field} />}
               </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Username</label>
+              <div className="paddinglogin">
+                <label htmlFor="userId">Username</label><div className="allaroundredlogin">Must enter at least 2 char and less than 33 char</div>
               </div>
               <Field className="field" id="userName" name="userName">
-                {({ field }) => <Input error={{ content: 'Please enter your username', pointing: 'below' }} placeholder= "Username" minlength="2" maxlength="32" required {...field} />}
+                {({ field }) => <Input placeholder= "Username" minlength="2" maxlength="32" required {...field} />}
               </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Email</label>
+              <div className="paddinglogin">
+                <label htmlFor="userId">Email</label><div className="allaroundredlogin">Must enter at least 6 char and less than 33 char</div>
               </div>
               <Field className="field" id="email" name="email">
-                {({ field }) => <Input error={{ content: 'Please enter your email', pointing: 'below' }} placeholder= "Email" minlength="6" maxlength="32" required {...field} />}
+                {({ field }) => <Input type="email" placeholder= "Email" minlength="6" maxlength="32" required {...field} />}
               </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Password</label>
+              <div className="paddinglogin">
+                <label htmlFor="userId">Password</label><div className="allaroundredlogin">Must enter at least 6 char and less than 33 char</div>
               </div>
               <Field className="field" id="password" name="password">
-                {({ field }) => <Input error={{ content: 'Please enter your password', pointing: 'below' }} placeholder= "Password" type="password" minlength="2" maxlength="32" required {...field} />}
+                {({ field }) => <Input placeholder= "Password" type="password" minlength="6" maxlength="32" required {...field} />}
               </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Re-enter Password</label>
+              <div className="paddinglogin">
+                <label htmlFor="userId">Re-enter Password</label><div className="allaroundredlogin">Passwords must match!</div>
               </div>
               <Field className="field" id="password" name="re-enter password">
-                {({ field }) => <Input error={{ content: 'Please enter your password again', pointing: 'below' }} placeholder= "Re-enter Password" type="password" minlength="2" maxlength="32" required {...field} />}
+                {({ field }) => <Input placeholder= "Re-enter Password" type="password" minlength="6" maxlength="32" required {...field} />}
               </Field>
-              <div className="field-label">
-                <label htmlFor="userId">Phone Number</label>
+              <div className="paddinglogin">
+                <label htmlFor="userId">Phone Number</label><div className="allaroundredlogin">Max of 10 integers</div>
               </div>
               <Field className="field" id="phoneNumber" name="phoneNumber">
-                {({ field }) => <Input error={{ content: 'Please enter your phonenumber', pointing: 'below' }} placeholder= "Phone Number" minlength="10" maxlength="10" required onclick="checkLength()"  {...field} />}
+                {({ field }) => <Input type="tel" placeholder= "Phone Number" minlength="10" maxlength="10" required onclick="checkLength()"  {...field} />}
               </Field>
             </div>
           </div> 

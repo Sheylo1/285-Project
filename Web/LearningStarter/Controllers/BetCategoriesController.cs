@@ -39,6 +39,24 @@ namespace LearningStarter.Controllers
         {
             var response = new Response();
 
+            if (string.IsNullOrEmpty(betCategoryCreateDto.Name))
+            {
+                response.AddError("Name", "Category name needed");
+                return BadRequest(response);
+            }
+
+            if ((betCategoryCreateDto.Name.Length) <= 2)
+            {
+                response.AddError("Name", "Must enter at least 3 characters");
+                return BadRequest(response);
+            }
+
+            if ((betCategoryCreateDto.Name.Length) >= 33)
+            {
+                response.AddError("Name", "Must enter less than 33 characters");
+                return BadRequest(response);
+            }
+
             var betCategoryToAdd = new BetCategory
             {
                 Name = betCategoryCreateDto.Name
@@ -73,7 +91,7 @@ namespace LearningStarter.Controllers
 
             if(betCategoryToReturn == null)
             {
-                response.AddError("id", "Category not found.");
+                response.AddError("id", "Category not found");
                 return BadRequest(response);
             }
 
@@ -92,7 +110,19 @@ namespace LearningStarter.Controllers
 
             if (betCategoryToUpdate == null)
             {
-                response.AddError("id", "Category not found.");
+                response.AddError("id", "Category not found");
+                return BadRequest(response);
+            }
+
+            if ((betCategoryUpdateDto.Name.Length) <= 2)
+            {
+                response.AddError("Name", "Must enter at least 3 characters");
+                return BadRequest(response);
+            }
+
+            if ((betCategoryUpdateDto.Name.Length) >= 33)
+            {
+                response.AddError("Name", "Must enter less than 33 characters");
                 return BadRequest(response);
             }
 
@@ -120,7 +150,7 @@ namespace LearningStarter.Controllers
 
             if (betCategoryToDelete == null)
             {
-                response.AddError("id", "Category not found.");
+                response.AddError("id", "Category not found");
                 return BadRequest(response);
             }
 
