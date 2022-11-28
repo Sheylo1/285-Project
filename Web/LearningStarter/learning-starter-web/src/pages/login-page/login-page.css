@@ -83,3 +83,14 @@
 .fixwhitetext{
   color: black;
 }
+
+.allaroundredlogin {
+  color: rgb(255, 0, 0);
+  font-size: xx-small;
+}
+
+.paddinglogin{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: small;
+}

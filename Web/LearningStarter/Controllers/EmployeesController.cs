@@ -69,10 +69,6 @@ namespace LearningStarter.Controllers
         {
             var response = new Response();
 
-            if (employeeCreateDto.Salary <= 0)
-            {
-                response.AddError("salary", "Salary cannot be negative.");
-            }
             if (employeeCreateDto.UserId <= 0)
             {
                 response.AddError("userid", "There must be a UserId.");
@@ -127,11 +123,6 @@ namespace LearningStarter.Controllers
             if (employeeToUpdate == null)
             {
                 response.AddError("id", "Employee not found");
-            }
-
-            if (employeeToUpdate.Salary <= 0)
-            {
-                response.AddError("salary", "Salary cannot be negative.");
             }
 
             if(employeeToUpdate.PositionId <= 0)

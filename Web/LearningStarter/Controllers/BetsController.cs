@@ -91,6 +91,19 @@ namespace LearningStarter.Controllers
                 response.AddError("name", "Bet Name cannot be empty");
                 return BadRequest(response);
             }
+
+            if ((betCreateDto.Name.Length) <= 2)
+            {
+                response.AddError("Name", "Must enter at least 3 characters");
+                return BadRequest(response);
+            }
+
+            if ((betCreateDto.Name.Length) >= 33)
+            {
+                response.AddError("Name", "Must enter less than 33 characters");
+                return BadRequest(response);
+            }
+
             if (response.HasErrors)
             {
                 return BadRequest(response);
@@ -146,6 +159,30 @@ namespace LearningStarter.Controllers
                 response.AddError("id", "Bet was not found.");
                 return BadRequest(response);
             }
+
+            if (string.IsNullOrEmpty(betUpdateDto.Name))
+            {
+                response.AddError("name", "Bet Name cannot be empty");
+                return BadRequest(response);
+            }
+
+            if ((betUpdateDto.Name.Length) <= 2)
+            {
+                response.AddError("Name", "Must enter at least 3 characters");
+                return BadRequest(response);
+            }
+
+            if ((betUpdateDto.Name.Length) >= 33)
+            {
+                response.AddError("Name", "Must enter less than 33 characters");
+                return BadRequest(response);
+            }
+
+            if (response.HasErrors)
+            {
+                return BadRequest(response);
+            }
+
             betToUpdate.CreatedDate = DateTimeOffset.Now;
             betToUpdate.ClosedDate = DateTimeOffset.Now;
             betToUpdate.BetDisputeCall = betUpdateDto.BetDisputeCall;

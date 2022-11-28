@@ -29,3 +29,11 @@
     justify-content: center;
     padding-bottom: 15px;
 }
+
+.allaroundred {
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 0, 0);
+    font-size: x-small;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+}

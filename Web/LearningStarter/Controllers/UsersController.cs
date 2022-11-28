@@ -88,9 +88,33 @@ namespace LearningStarter.Controllers
                 response.AddError("firstName", "First name cannot be empty.");
             }
 
+            if ((userCreateDto.FirstName.Length) <= 1)
+                    {
+                response.AddError("FirstName", "Must enter at least 2 characters");
+                return BadRequest(response);
+            }
+
+            if ((userCreateDto.FirstName.Length) >= 33)
+            {
+                response.AddError("FirstName", "Must enter less than 33 characters");
+                return BadRequest(response);
+            }
+
             if (userCreateDto.LastName == null || userCreateDto.LastName == "")
             {
                 response.AddError("lastName", "Last name cannot be empty.");
+            }
+
+            if ((userCreateDto.LastName.Length) <= 1)
+            {
+                response.AddError("LastName", "Must enter at least 2 characters");
+                return BadRequest(response);
+            }
+
+            if ((userCreateDto.LastName.Length) >= 33)
+            {
+                response.AddError("LastName", "Must enter less than 33 characters");
+                return BadRequest(response);
             }
 
             if (userCreateDto.Username == null || userCreateDto.Username == "")
@@ -98,14 +122,68 @@ namespace LearningStarter.Controllers
                 response.AddError("userName", "User name cannot be empty.");
             }
 
+            if ((userCreateDto.Username.Length) <= 2)
+            {
+                response.AddError("Username", "Must enter at least 3 characters");
+                return BadRequest(response);
+            }
+
+            if ((userCreateDto.Username.Length) >= 33)
+            {
+                response.AddError("Username", "Must enter less than 33 characters");
+                return BadRequest(response);
+            }
+
             if (userCreateDto.Password == null || userCreateDto.Password == "")
             {
                 response.AddError("password", "Password cannot be empty.");
+
+            }
+
+            if ((userCreateDto.Password.Length) <= 5)
+            {
+                response.AddError("Password", "Must enter at least 6 characters");
+                return BadRequest(response);
+            }
+
+            if ((userCreateDto.Password.Length) >= 33)
+            {
+                response.AddError("Password", "Must enter less than 33 characters");
+                return BadRequest(response);
             }
 
             if (userCreateDto.Email == null || userCreateDto.Email == "")
             {
                 response.AddError("email", "Email cannot be empty.");
+            }
+
+            if ((userCreateDto.Email.Length) <= 5)
+            {
+                response.AddError("Email", "Must enter at least 6 characters");
+                return BadRequest(response);
+            }
+
+            if ((userCreateDto.Email.Length) >= 33)
+            {
+                response.AddError("Email", "Must enter less than 33 characters");
+                return BadRequest(response);
+            }
+
+            if (userCreateDto.PhoneNumber == null || userCreateDto.PhoneNumber == "")
+            {
+                response.AddError("PhoneNumber", "Email cannot be empty.");
+            }
+
+            if ((userCreateDto.PhoneNumber.Length) <= 9)
+            {
+                response.AddError("PhoneNumber", "Must enter at least 10 characters");
+                return BadRequest(response);
+            }
+
+            if ((userCreateDto.PhoneNumber.Length) >= 11)
+            {
+                response.AddError("PhoneNumber", "Must enter less than 11 characters");
+                return BadRequest(response);
             }
 
             if (response.HasErrors)
@@ -176,9 +254,33 @@ namespace LearningStarter.Controllers
                 response.AddError("firstName", "First name cannot be empty.");
             }
 
+            if ((user.FirstName.Length) <= 1)
+            {
+                response.AddError("FirstName", "Must enter at least 2 characters");
+                return BadRequest(response);
+            }
+
+            if ((user.FirstName.Length) >= 33)
+            {
+                response.AddError("firstName", "Must enter less than 33 characters");
+                return BadRequest(response);
+            }
+
             if (userToEdit.LastName == null || userToEdit.LastName == "")
             {
                 response.AddError("lastName", "Last name cannot be empty.");
+            }
+
+            if ((user.LastName.Length) <= 1)
+            {
+                response.AddError("lastName", "Must enter at least 2 characters");
+                return BadRequest(response);
+            }
+
+            if ((user.LastName.Length) >= 33)
+            {
+                response.AddError("lastName", "Must enter less than 33 characters");
+                return BadRequest(response);
             }
 
             if (userToEdit.Username == null || userToEdit.Username == "")
@@ -186,14 +288,67 @@ namespace LearningStarter.Controllers
                 response.AddError("userName", "User name cannot be empty.");
             }
 
+            if ((user.Username.Length) <= 1)
+            {
+                response.AddError("userName", "Must enter at least 2 characters");
+                return BadRequest(response);
+            }
+
+            if ((user.Username.Length) >= 33)
+            {
+                response.AddError("username", "Must enter less than 33 characters");
+                return BadRequest(response);
+            }
+
             if (userToEdit.Password == null || userToEdit.Password == "")
             {
                 response.AddError("password", "Password cannot be empty.");
             }
 
+            if ((user.Password.Length) <= 5)
+            {
+                response.AddError("password", "Must enter at least 6 characters");
+                return BadRequest(response);
+            }
+
+            if ((user.Password.Length) >= 33)
+            {
+                response.AddError("password", "Must enter less than 33 characters");
+                return BadRequest(response);
+            }
+
             if (userToEdit.Email == null || userToEdit.Email == "")
             {
                 response.AddError("email", "Email cannot be empty.");
+            }
+
+            if ((user.Email.Length) <= 5)
+            {
+                response.AddError("email", "Must enter at least 6 characters");
+                return BadRequest(response);
+            }
+
+            if ((user.Email.Length) >= 33)
+            {
+                response.AddError("email", "Must enter less than 33 characters");
+                return BadRequest(response);
+            }
+
+            if (userToEdit.PhoneNumber == null || userToEdit.PhoneNumber == "")
+            {
+                response.AddError("phonNumber", "phoneNumber cannot be empty.");
+            }
+
+            if ((user.PhoneNumber.Length) <= 9)
+            {
+                response.AddError("phoneNumber", "Must enter at least 10 characters");
+                return BadRequest(response);
+            }
+
+            if ((user.PhoneNumber.Length) >= 11)
+            {
+                response.AddError("phoneNumber", "Must enter less than 11 characters");
+                return BadRequest(response);
             }
 
             if (response.HasErrors)

@@ -83,6 +83,7 @@ export const BetCategoriesUpdatePage = () => {
         </Formik>
         )}
         </div>
+        <h3 className="allaroundred">Must enter at least 3 char and less than 32 char</h3>
         </>
         );
     };
