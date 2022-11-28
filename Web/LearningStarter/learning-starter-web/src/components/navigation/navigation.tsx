@@ -60,7 +60,7 @@ const DesktopNavigation = () => {
             },
           },
           {
-            text: "Transaction",
+            text: "Transactions",
             icon: "money",
             hide: false,
             nav: {
