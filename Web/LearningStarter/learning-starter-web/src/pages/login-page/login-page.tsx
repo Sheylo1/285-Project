@@ -130,7 +130,7 @@ export const LoginPage = () => {
             <div>
             <div>
             <div className="paddinglogin">
-                <label htmlFor="userId">Date of Birth</label><div className="allaroundredlogin">Must enter D.O.B.</div>
+                <label htmlFor="userId">Date of Birth</label><div className="allaroundredlogin">*Must enter D.O.B.</div>
               </div>
               <Field className="date" id="dateOfBirth" name="dateOfBirth">
                 {({field, form}) => <SemanticDatepicker {...field} onChange={(_, { name, value }) =>{
