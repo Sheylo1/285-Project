@@ -88,9 +88,9 @@ namespace LearningStarter.Controllers
                 response.AddError("firstName", "First name cannot be empty.");
             }
 
-            if ((userCreateDto.FirstName.Length) <= 1)
+            if ((userCreateDto.FirstName.Length) <= 2)
                     {
-                response.AddError("FirstName", "Must enter at least 2 characters");
+                response.AddError("FirstName", "Must enter at least 3 characters");
                 return BadRequest(response);
             }
 
@@ -105,9 +105,9 @@ namespace LearningStarter.Controllers
                 response.AddError("lastName", "Last name cannot be empty.");
             }
 
-            if ((userCreateDto.LastName.Length) <= 1)
+            if ((userCreateDto.LastName.Length) <= 2)
             {
-                response.AddError("LastName", "Must enter at least 2 characters");
+                response.AddError("LastName", "Must enter at least 3 characters");
                 return BadRequest(response);
             }
 
@@ -157,9 +157,9 @@ namespace LearningStarter.Controllers
                 response.AddError("email", "Email cannot be empty.");
             }
 
-            if ((userCreateDto.Email.Length) <= 5)
+            if ((userCreateDto.Email.Length) <= 2)
             {
-                response.AddError("Email", "Must enter at least 6 characters");
+                response.AddError("Email", "Must enter at least 3 characters");
                 return BadRequest(response);
             }
 
@@ -254,9 +254,9 @@ namespace LearningStarter.Controllers
                 response.AddError("firstName", "First name cannot be empty.");
             }
 
-            if ((user.FirstName.Length) <= 1)
+            if ((user.FirstName.Length) <= 2)
             {
-                response.AddError("FirstName", "Must enter at least 2 characters");
+                response.AddError("FirstName", "Must enter at least 3 characters");
                 return BadRequest(response);
             }
 
@@ -271,9 +271,9 @@ namespace LearningStarter.Controllers
                 response.AddError("lastName", "Last name cannot be empty.");
             }
 
-            if ((user.LastName.Length) <= 1)
+            if ((user.LastName.Length) <= 2)
             {
-                response.AddError("lastName", "Must enter at least 2 characters");
+                response.AddError("lastName", "Must enter at least 3 characters");
                 return BadRequest(response);
             }
 
@@ -288,9 +288,9 @@ namespace LearningStarter.Controllers
                 response.AddError("userName", "User name cannot be empty.");
             }
 
-            if ((user.Username.Length) <= 1)
+            if ((user.Username.Length) <= 2)
             {
-                response.AddError("userName", "Must enter at least 2 characters");
+                response.AddError("userName", "Must enter at least 3 characters");
                 return BadRequest(response);
             }
 
@@ -322,9 +322,9 @@ namespace LearningStarter.Controllers
                 response.AddError("email", "Email cannot be empty.");
             }
 
-            if ((user.Email.Length) <= 5)
+            if ((user.Email.Length) <= 2)
             {
-                response.AddError("email", "Must enter at least 6 characters");
+                response.AddError("email", "Must enter at least 3 characters");
                 return BadRequest(response);
             }
 
