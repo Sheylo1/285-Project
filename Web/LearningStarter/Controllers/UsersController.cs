@@ -174,15 +174,9 @@ namespace LearningStarter.Controllers
                 response.AddError("PhoneNumber", "Email cannot be empty.");
             }
 
-            if ((userCreateDto.PhoneNumber.Length) <= 9)
+            if ((userCreateDto.PhoneNumber.Length) >= 12)
             {
-                response.AddError("PhoneNumber", "Must enter at least 10 characters");
-                return BadRequest(response);
-            }
-
-            if ((userCreateDto.PhoneNumber.Length) >= 11)
-            {
-                response.AddError("PhoneNumber", "Must enter less than 11 characters");
+                response.AddError("PhoneNumber", "Must enter less than 12 characters");
                 return BadRequest(response);
             }
 
@@ -339,15 +333,9 @@ namespace LearningStarter.Controllers
                 response.AddError("phonNumber", "phoneNumber cannot be empty.");
             }
 
-            if ((user.PhoneNumber.Length) <= 9)
+            if ((user.PhoneNumber.Length) >= 12)
             {
-                response.AddError("phoneNumber", "Must enter at least 10 characters");
-                return BadRequest(response);
-            }
-
-            if ((user.PhoneNumber.Length) >= 11)
-            {
-                response.AddError("phoneNumber", "Must enter less than 11 characters");
+                response.AddError("phoneNumber", "Must enter less than 12 characters");
                 return BadRequest(response);
             }
 
