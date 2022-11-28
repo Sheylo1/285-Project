@@ -71,7 +71,7 @@ export const BetUpdatePagePage = () => {
               </div>
             </div>
             <div className="employeecreate-buttons">
-            <Button type="submit">Submit</Button>
+            <Button color="blue" type="submit">Submit</Button>
             <Button
               secondary
               type="button"
