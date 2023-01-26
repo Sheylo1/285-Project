@@ -362,9 +362,9 @@ namespace LearningStarter.Controllers
                 response.AddError("id", "There was a problem deleting the user.");
                 return NotFound(response);
             }
-
             _context.Users.Remove(user);
-            _context.SaveChanges();
+
+            _context.SaveChanges(); // wow
 
             return Ok(response);
         }
